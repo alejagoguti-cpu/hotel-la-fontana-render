@@ -100,14 +100,14 @@ export class MasterplanScene {
     sunLight.castShadow = true;
     sunLight.shadow.mapSize.width = 4096;
     sunLight.shadow.mapSize.height = 4096;
-    sunLight.shadow.normalBias = 0.03;
-    sunLight.shadow.radius = 3;
+    sunLight.shadow.normalBias = 0.06;
+    sunLight.shadow.radius = 4;
     sunLight.shadow.camera.near = 10;
-    sunLight.shadow.camera.far = 240;
-    sunLight.shadow.camera.left = -65;
-    sunLight.shadow.camera.right = 65;
-    sunLight.shadow.camera.top = 65;
-    sunLight.shadow.camera.bottom = -65;
+    sunLight.shadow.camera.far = 420;
+    sunLight.shadow.camera.left = -150;
+    sunLight.shadow.camera.right = 150;
+    sunLight.shadow.camera.top = 150;
+    sunLight.shadow.camera.bottom = -150;
     sunLight.shadow.bias = -0.0003;
     this.sunLight = sunLight;
     this.scene.add(sunLight);
@@ -136,6 +136,12 @@ export class MasterplanScene {
     if (this.useGoogle) {
       try {
         this.city = new GoogleContext(this.scene, { renderer: this.renderer, camera: this.camera, sky: this.skyEnv, hotelFootprints: ctxBuildings.map((b) => b.pts), low: !!this.postfx?.low, mobile: /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent) });
+        // Google solo trae la foto sobre el terreno en esta zona: los edificios reales de catastro y el arbolado van encima, en 3D
+        const cc = new CityContext(this.scene, { renderer: this.renderer, mobile: /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent) });
+        this.scene.remove(cc.group); this.city.group.add(cc.group);
+        const hideGround = () => cc.group.children.forEach((c) => { if (c !== cc.buildings && c !== cc.trees) c.visible = false; });
+        const iv = setInterval(hideGround, 250);
+        cc.ready.then(() => { clearInterval(iv); hideGround(); this.city.trees = cc.trees; this.renderer.shadowMap.needsUpdate = true; });
       } catch (e) { console.warn('Malla de Google no disponible', e); }
     }
     const building = this.buildingBuilder.build(arch, ctxBuildings, urbanNetwork, revitWindows, roofs);

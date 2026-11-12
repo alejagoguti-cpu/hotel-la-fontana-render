@@ -785,7 +785,6 @@ export class HotelBuildingBuilder {
       const [tx, tz] = candidatePoints[i];
       if (isInsideRoadway(tx, tz)) continue;
       const explicitTree = courtyardTrees.some(([cx, cz]) => cx === tx && cz === tz);
-      if (this.googleContext && !explicitTree) continue;
       if (!explicitTree && tx >= -16 && tx <= 50 && tz >= -16 && tz <= 15) {
         const inCourtyard = (tx >= 6.5 && tx <= 25.5 && tz >= -5.8 && tz <= 9.8);
         if (!inCourtyard) continue;
@@ -898,7 +897,7 @@ export class HotelBuildingBuilder {
       // Tráfico de la Calle 127 × Cra 15 con semáforos y seguimiento vehicular (sin choques)
       let k = 0;
       const mix = ['sedan', 'suv', 'sedan', 'taxi', 'suv', 'sedan', 'taxi', 'sedan'];
-      if (!this.googleContext) this.traffic = new Traffic(ROAD_AXES, carGroup, () => makeCar(mix[k++ % mix.length], k));
+      this.traffic = new Traffic(ROAD_AXES, carGroup, () => makeCar(mix[k++ % mix.length], k));
     });
 
     this.contextGroup.add(carGroup);

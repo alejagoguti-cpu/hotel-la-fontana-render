@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { addMacroVariation } from './PBRSurfaces.js';
 
 /**
  * RoofBuilder — Cubiertas a cuatro aguas del Hotel La Fontana.
@@ -124,8 +125,10 @@ export class RoofBuilder {
     const { tex, bump } = makeTejaTexture();
     this.tileMat = new THREE.MeshStandardMaterial({
       map: tex, bumpMap: bump, bumpScale: 0.9,
-      roughness: 0.82, metalness: 0.0, side: THREE.DoubleSide
+      roughness: 0.93, metalness: 0.0, side: THREE.DoubleSide, color: 0xc9b3a6, envMapIntensity: 0.3
     });
+    // teja envejecida: parches mas oscuros, musgo y variacion entre faldones
+    addMacroVariation(this.tileMat, { macroScale: 0.06, strength: 0.42 });
     this.ridgeMat = new THREE.MeshStandardMaterial({ color: 0xa65136, roughness: 0.8 });
     this.flatMat = new THREE.MeshStandardMaterial({ color: 0x8a5a44, roughness: 0.95 });
     this.fasciaMat = new THREE.MeshStandardMaterial({ color: 0x9a4a30, roughness: 0.85 });

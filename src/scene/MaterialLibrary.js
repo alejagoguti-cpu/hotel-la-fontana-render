@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { addMacroVariation } from './PBRSurfaces.js';
 
 /**
  * Real-life PBR Material Library for Hotel La Fontana
@@ -49,11 +50,14 @@ export class MaterialLibrary {
     this.materials.set('BRICK_FACADE', new THREE.MeshStandardMaterial({
       map: brickMap,
       bumpMap: brickBump,
-      bumpScale: 0.048,
-      color: 0xffffff, // 100% pure Revit texture - no color distortion
-      roughness: 0.78,
-      metalness: 0.02
+      bumpScale: 0.11,
+      color: 0xe2d6cc, // ladrillo un poco menos saturado, como se ve a la intemperie
+      roughness: 0.9,
+      metalness: 0.0,
+      envMapIntensity: 0.35
     }));
+    // manchas de humedad y desgaste a gran escala + rotura de la repeticion del ladrillo
+    addMacroVariation(this.materials.get('BRICK_FACADE'), { macroScale: 0.045, strength: 0.3 });
 
     // 1B. Spanish Terracotta Clay Roof Tiles (Teja de barro colonial roja - Photo 1 & 2 reference)
     const tileCanvas = document.createElement('canvas');
@@ -88,9 +92,10 @@ export class MaterialLibrary {
       map: tileTex,
       bumpMap: tileTex,
       bumpScale: 0.06,
-      color: 0xb54d30,
-      roughness: 0.76,
-      metalness: 0.04
+      color: 0x9c5a44,
+      roughness: 0.92,
+      metalness: 0.0,
+      envMapIntensity: 0.3
     }));
 
     // 1C. Overhanging Dark Timber Eaves & Beams (Alero colonial de madera oscura)

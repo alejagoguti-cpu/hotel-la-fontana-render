@@ -22,13 +22,14 @@ export class GoogleContext {
     this.scene = scene; this.renderer = renderer; this.camera = camera; this.sky = sky;
     this.group = new THREE.Group(); this.group.name = 'GoogleContext';
     scene.add(this.group);
-    this.goal = mobile ? 18 : (low ? 14 : 7);
+    this.goal = mobile ? 16 : (low ? 10 : 6);
     this.dy = 0; this.t = 0; this.calib = 0; this.failed = false; this.mats = new Set();
     this.uniforms = {
       uLuz: { value: new THREE.Color(1, 1, 1) },
       uMask: { value: this._makeMask(hotelFootprints) },
       uMaskBox: { value: new THREE.Vector3(MASK.x0, MASK.z0, MASK.size) },
-      uSat: { value: 0.96 }
+      uSat: { value: 0.96 },
+      uShadow: { value: 1 }
     };
     this._buildSiteGround();
     this.ready = new Promise((res) => { this._ready = res; });
@@ -87,27 +88,35 @@ export class GoogleContext {
 
     const aniso = this.renderer.capabilities.getMaxAnisotropy(), U = this.uniforms;
     tiles.addEventListener('load-model', ({ scene: s }) => s.traverse((c) => {
-      const m = c.isMesh && c.material; if (!m || !m.map) return;
+      let m = c.isMesh && c.material; if (!m || !m.map) return;
       m.map.anisotropy = aniso;
-      if (!m.isMeshBasicMaterial) { m.emissiveMap = m.map; m.emissive.setScalar(1); m.color.setScalar(0); m.roughness = 1; m.metalness = 0; }
+      // material con luces (aunque la foto va como emisivo) para poder leer el mapa de sombras del sol
+      const map = m.map; m.dispose?.();
+      m = c.material = new THREE.MeshStandardMaterial({ emissiveMap: map, emissive: 0xffffff, color: 0x000000, roughness: 1, metalness: 0, envMapIntensity: 0, flatShading: true });
       m.onBeforeCompile = (sh) => {
         Object.assign(sh.uniforms, U);
         sh.vertexShader = sh.vertexShader.replace('#include <common>', '#include <common>\nvarying vec2 vHlfXZ;')
-          .replace('#include <project_vertex>', '#include <project_vertex>\nvHlfXZ = (modelMatrix * vec4(transformed, 1.0)).xz;');
+          .replace('#include <project_vertex>', '#include <project_vertex>\nvHlfXZ = (modelMatrix * vec4(transformed, 1.0)).xz;')
+          // la malla no trae normales: sin una normal valida el sesgo de la sombra da NaN y la sombra no se dibuja
+          .replace('#include <beginnormal_vertex>', '#include <beginnormal_vertex>\nobjectNormal = vec3(0.0, 0.0, 1.0);');
         sh.fragmentShader = sh.fragmentShader
-          .replace('#include <common>', '#include <common>\nvarying vec2 vHlfXZ; uniform sampler2D uMask; uniform vec3 uMaskBox; uniform vec3 uLuz; uniform float uSat;')
+          .replace('#include <common>', '#include <common>\nvarying vec2 vHlfXZ; uniform sampler2D uMask; uniform vec3 uMaskBox; uniform vec3 uLuz; uniform float uSat; uniform float uShadow;')
+          .replace('#include <shadowmap_pars_fragment>', sh.fragmentShader.includes('shadowmask_pars_fragment') ? '#include <shadowmap_pars_fragment>' : '#include <shadowmap_pars_fragment>\n#include <shadowmask_pars_fragment>')
           .replace('#include <clipping_planes_fragment>', `#include <clipping_planes_fragment>
             { vec2 muv = (vHlfXZ - uMaskBox.xy) / uMaskBox.z;
               if (muv.x > 0.0 && muv.x < 1.0 && muv.y > 0.0 && muv.y < 1.0 && texture2D(uMask, muv).r > 0.5) discard; }`)
           .replace('#include <opaque_fragment>', `{ vec3 c = pow(max(outgoingLight, 0.0), vec3(0.80));   // abre las sombras de la foto: el tono fílmico del visor las cerraba
               float l = dot(c, vec3(0.2126, 0.7152, 0.0722));
               c = max(mix(vec3(l), c, uSat), 0.0);
+              // sombra del hotel sobre la foto: oscurece y enfría, como una sombra real a cielo abierto
+              float sh = 1.0 - getShadowMask();
+              c *= mix(vec3(1.0), vec3(0.42, 0.46, 0.55), sh * uShadow);
               outgoingLight = c * uLuz; }
             #include <opaque_fragment>`);
       };
-      m.customProgramCacheKey = () => 'hlfGoogle' + (m.isMeshBasicMaterial ? 'B' : 'S');
+      m.customProgramCacheKey = () => 'hlfGoogleS';
       m.needsUpdate = true;
-      c.castShadow = false; c.receiveShadow = false;
+      c.castShadow = false; c.receiveShadow = true;
       this.mats.add(m);
     }));
     tiles.addEventListener('dispose-model', ({ scene: s }) => s.traverse((c) => { if (c.isMesh) this.mats.delete(c.material); }));
@@ -156,6 +165,7 @@ export class GoogleContext {
       if (d) {
         const day = THREE.MathUtils.smoothstep(d.y, -0.04, 0.42), low = 1 - THREE.MathUtils.smoothstep(d.y, 0.05, 0.5);
         const b = 0.14 + 0.92 * day;
+        this.uniforms.uShadow.value = THREE.MathUtils.smoothstep(d.y, 0.02, 0.22);   // sin sol no hay sombra arrojada
         this.uniforms.uLuz.value.setRGB(b * (1 + 0.10 * low), b * (1 - 0.03 * low), b * (1 - 0.22 * low));
       }
       if ((this._at = (this._at || 0) - dt) <= 0) {

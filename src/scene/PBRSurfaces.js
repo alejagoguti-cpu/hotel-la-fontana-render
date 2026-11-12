@@ -25,7 +25,7 @@ export function load(id, kind, srgb) {
 }
 
 /** Inyecta variación macro + anti-tiling en el shader estándar. */
-function addMacroVariation(mat, { macroScale = 0.071, strength = 0.35 } = {}) {
+export function addMacroVariation(mat, { macroScale = 0.071, strength = 0.35 } = {}) {
   mat.onBeforeCompile = (shader) => {
     shader.uniforms.uMacroScale = { value: macroScale };
     shader.uniforms.uMacroStrength = { value: strength };

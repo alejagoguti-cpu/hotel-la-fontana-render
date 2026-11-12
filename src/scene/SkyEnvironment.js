@@ -252,7 +252,7 @@ export class SkyEnvironment {
     const sunCol = new THREE.Color().setRGB(1.0, 0.62 + 0.36 * k, 0.38 + 0.56 * k);
     const sunI = THREE.MathUtils.smoothstep(elev, -0.02, 0.25);
 
-    this.sunLight.position.copy(dir).multiplyScalar(110);
+    this.sunLight.position.copy(dir).multiplyScalar(200);
     this.sunLight.color.copy(sunCol);
     this.sunLight.intensity = 2.9 * sunI;
 

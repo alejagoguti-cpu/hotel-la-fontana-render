@@ -85,6 +85,7 @@ export class MasterplanScene {
     this.pixelRatio = this.maxPixelRatio;
     this.renderer.setPixelRatio(this.pixelRatio);
     this._perf = { t: 0, n: 0, ms: 0 };
+    this._holdRender = true;   // no se dibuja nada hasta que los shaders estén compilados (ver precompile)
     if (this.postfx?.low && this.skyEnv?.cloudMaterial) this.skyEnv.cloudMaterial.uniforms.uSteps.value = 16;
     this.setupEvents();
     this.animate();
@@ -531,8 +532,21 @@ export class MasterplanScene {
     this.postfx?.setSize(w, h);
   }
 
+  /**
+   * Compila todos los shaders EN PARALELO y sin bloquear (KHR_parallel_shader_compile) antes del primer
+   * cuadro. Antes el primer render compilaba ~90 programas de forma síncrona: 15+ s de página congelada.
+   */
+  async precompile(timeout = 12000) {
+    this._holdRender = true;
+    try {
+      if (this.renderer.compileAsync) await Promise.race([this.renderer.compileAsync(this.scene, this.camera), new Promise((r) => setTimeout(r, timeout))]);
+    } catch (e) { console.warn('precompilación', e); }
+    this._holdRender = false;
+  }
+
   animate() {
     requestAnimationFrame(() => this.animate());
+    if (this._holdRender) { this.clock.getDelta(); return; }
     const dt = Math.min(this.clock.getDelta(), 0.1);
     this.skyEnv?.update(dt);
     this.buildingBuilder?.update?.(dt);

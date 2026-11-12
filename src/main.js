@@ -41,6 +41,8 @@ class App {
     this.setupTopBar();
     this.scene.loadData().then(async () => {
       this.windowEditor = new WindowEditor(this.scene);
+      this.loading.set(0.5, 'Preparando materiales…');
+      await this.scene.precompile();
       this.loading.set(0.7, 'Cargando el contexto urbano de Bogotá…');
       // se muestra apenas el entorno tiene suelo calibrado (máx. 6 s); el resto termina de llegar con la escena ya visible
       await Promise.race([this.scene.city?.ready || Promise.resolve(), new Promise((r) => setTimeout(r, 6000))]);
@@ -49,7 +51,7 @@ class App {
       this.loading.done();
       // el interior del Piso 2 se descarga en segundo plano, después del exterior
       setTimeout(() => this.scene.loadInterior?.(), 4000);
-    }).catch((e) => { console.error(e); this.loading.done(); });
+    }).catch((e) => { console.error(e); this.scene._holdRender = false; this.loading.done(); });
   }
 
   setupTopBar() {

@@ -598,8 +598,8 @@
   "pbrCatalog": {
     "REF01": {
       "name": "HLF-REF 01 PISO VINILICO MADERA 5mm",
-      "texture": "./assets/textures/hlf_piso_madera.png",
-      "bump": "./assets/textures/hlf_ref01_veta_seamless.png",
+      "texture": "./assets/textures/hlf_piso_madera.webp",
+      "bump": "./assets/textures/hlf_ref01_veta_seamless.webp",
       "scaleMm": 1800,
       "color": "#966442",
       "roughness": 0.62,
@@ -607,7 +607,7 @@
     },
     "REF02": {
       "name": "HLF-REF 02 PORCELANATO MOS THE DREAM 30x30 BLANCO",
-      "texture": "./assets/textures/hlf_mosaico2.png",
+      "texture": "./assets/textures/hlf_mosaico2.webp",
       "scaleMm": 700,
       "color": "#d6c8ac",
       "roughness": 0.55,
@@ -615,7 +615,7 @@
     },
     "REF03": {
       "name": "HLF-REF 03 PAPEL COLGADURA TESSERA 1071.27 VESCOM",
-      "texture": "./assets/textures/hlf_grasscloth.png",
+      "texture": "./assets/textures/hlf_grasscloth.webp",
       "scaleMm": 600,
       "color": "#c8b696",
       "roughness": 0.88,
@@ -623,7 +623,7 @@
     },
     "REF04": {
       "name": "HLF-REF 04 PANEL MELAMINICO SIKUANI PRIMADERA",
-      "texture": "./assets/textures/hlf_nogal4_v.png",
+      "texture": "./assets/textures/hlf_nogal4_v.webp",
       "scaleMm": 1000,
       "color": "#60422c",
       "roughness": 0.58,
@@ -639,7 +639,7 @@
     },
     "REF07": {
       "name": "HLF-REF 07 PAPEL COLGADURA LISMORE 1097.28 VESCOM",
-      "texture": "./assets/textures/hlf_roble_claro_v.png",
+      "texture": "./assets/textures/hlf_roble_claro_v.webp",
       "scaleMm": 900,
       "color": "#d2b892",
       "roughness": 0.8,
@@ -647,7 +647,7 @@
     },
     "REF08": {
       "name": "HLF-REF 08 CABECERO MELAMINA SIKUANI",
-      "texture": "./assets/textures/hlf_nogal4_v.png",
+      "texture": "./assets/textures/hlf_nogal4_v.webp",
       "scaleMm": 1000,
       "color": "#60422c",
       "roughness": 0.55,
@@ -655,7 +655,7 @@
     },
     "REF09": {
       "name": "HLF-REF 09 PORCELANATO SANTORINI GREY 120x120",
-      "texture": "./assets/textures/hlf_piedra_grey.png",
+      "texture": "./assets/textures/hlf_piedra_grey.webp",
       "scaleMm": 1200,
       "color": "#cec2aa",
       "roughness": 0.72,
@@ -663,7 +663,7 @@
     },
     "REF10": {
       "name": "HLF-REF 10/14 MARMOL ANTIK SILVER BLUE",
-      "texture": "./assets/textures/hlf_marmol3.png",
+      "texture": "./assets/textures/hlf_marmol3.webp",
       "scaleMm": 900,
       "color": "#8a7866",
       "roughness": 0.25,
@@ -671,7 +671,7 @@
     },
     "REF28": {
       "name": "HLF-REF 28 PORCELANATO SANTORINI BONE 120x60",
-      "texture": "./assets/textures/hlf_piedra_bone.png",
+      "texture": "./assets/textures/hlf_piedra_bone.webp",
       "scaleMm": 1200,
       "color": "#d4c6aa",
       "roughness": 0.72,
@@ -687,7 +687,7 @@
     },
     "HALL_MARMOL": {
       "name": "HLF-PISO HALL BORDE MARMOL 20mm",
-      "texture": "./assets/textures/hlf_marmol.png",
+      "texture": "./assets/textures/hlf_marmol.webp",
       "scaleMm": 1000,
       "color": "#d8d0c2",
       "roughness": 0.28,
@@ -695,8 +695,8 @@
     },
     "LADRILLO": {
       "name": "HLF-FACHADA LADRILLO A LA VISTA BOGOTA",
-      "texture": "./assets/textures/hlf_ladrillo.png",
-      "bump": "./assets/textures/hlf_ladrillo_bump.png",
+      "texture": "./assets/textures/hlf_ladrillo.webp",
+      "bump": "./assets/textures/hlf_ladrillo_bump.webp",
       "scaleMm": 1200,
       "color": "#9c4f36",
       "roughness": 0.82,
@@ -704,7 +704,7 @@
     },
     "HIEDRA": {
       "name": "HLF-VEGETACION FACHADA HIEDRA",
-      "texture": "./assets/textures/hlf_hiedra.png",
+      "texture": "./assets/textures/hlf_hiedra.webp",
       "scaleMm": 900,
       "color": "#3b5e34",
       "roughness": 0.85,
@@ -712,7 +712,7 @@
     },
     "NOGAL": {
       "name": "HLF-MOB MELAMINA SIKUANI NOGAL",
-      "texture": "./assets/textures/hlf_nogal4_v.png",
+      "texture": "./assets/textures/hlf_nogal4_v.webp",
       "scaleMm": 1000,
       "color": "#60422c",
       "roughness": 0.52,
@@ -720,7 +720,7 @@
     },
     "TAPIZ": {
       "name": "HLF-MOB TAPIZ TRAILBLAZER 32 MARBLE",
-      "texture": "./assets/textures/hlf_boucle_taupe.png",
+      "texture": "./assets/textures/hlf_boucle_taupe.webp",
       "scaleMm": 300,
       "color": "#967a62",
       "roughness": 0.88,
@@ -728,7 +728,7 @@
     },
     "AVENA": {
       "name": "HLF-MOB TEJIDO AVENA",
-      "texture": "./assets/textures/hlf_tejido_avena.png",
+      "texture": "./assets/textures/hlf_tejido_avena.webp",
       "scaleMm": 300,
       "color": "#c0b6a6",
       "roughness": 0.88,
@@ -736,7 +736,7 @@
     },
     "OLIVA": {
       "name": "HLF-MOB TEJIDO OLIVA",
-      "texture": "./assets/textures/hlf_tejido_oliva.png",
+      "texture": "./assets/textures/hlf_tejido_oliva.webp",
       "scaleMm": 250,
       "color": "#706c42",
       "roughness": 0.88,
@@ -744,7 +744,7 @@
     },
     "TERRACOTA": {
       "name": "HLF-MOB TEJIDO TERRACOTA",
-      "texture": "./assets/textures/hlf_tejido_terracota.png",
+      "texture": "./assets/textures/hlf_tejido_terracota.webp",
       "scaleMm": 250,
       "color": "#d48a70",
       "roughness": 0.88,
@@ -752,7 +752,7 @@
     },
     "QUILT": {
       "name": "HLF-MOB QUILT OSCURO",
-      "texture": "./assets/textures/hlf_quilt_oscuro.png",
+      "texture": "./assets/textures/hlf_quilt_oscuro.webp",
       "scaleMm": 400,
       "color": "#3e3026",
       "roughness": 0.75,
@@ -760,7 +760,7 @@
     },
     "MARMOL": {
       "name": "HLF-MOB MARMOL ANTIK SILVER",
-      "texture": "./assets/textures/hlf_marmol3.png",
+      "texture": "./assets/textures/hlf_marmol3.webp",
       "scaleMm": 900,
       "color": "#887868",
       "roughness": 0.25,
@@ -768,7 +768,7 @@
     },
     "PIEDRA": {
       "name": "HLF-MOB PIEDRA SINTERIZADA ALTEA PHANTOM DARK",
-      "texture": "./assets/textures/hlf_marmol.png",
+      "texture": "./assets/textures/hlf_marmol.webp",
       "scaleMm": 900,
       "color": "#5a5654",
       "roughness": 0.35,
@@ -776,7 +776,7 @@
     },
     "TA01": {
       "name": "HLF-TAPETE TA-01",
-      "texture": "./assets/textures/hlf_tapete_ta01.png",
+      "texture": "./assets/textures/hlf_tapete_ta01.webp",
       "scaleMm": 600,
       "color": "#e2d0b0",
       "roughness": 0.92,
@@ -784,7 +784,7 @@
     },
     "TA02": {
       "name": "HLF-TAPETE TA-02",
-      "texture": "./assets/textures/hlf_tapete_ta02.png",
+      "texture": "./assets/textures/hlf_tapete_ta02.webp",
       "scaleMm": 600,
       "color": "#b9a076",
       "roughness": 0.92,
@@ -792,7 +792,7 @@
     },
     "TA04": {
       "name": "HLF-TAPETE TA-04",
-      "texture": "./assets/textures/hlf_tapete_ta04.png",
+      "texture": "./assets/textures/hlf_tapete_ta04.webp",
       "scaleMm": 600,
       "color": "#8c9298",
       "roughness": 0.92,

@@ -307,6 +307,10 @@ export class FloorTour {
     const groups = [b.upperBuildingGroup, b.exteriorShellPiso2].filter(Boolean);
     if (up === this.lifted && !fast) return;
     this.lifted = up;
+    // el interior (GLB 3ds Max, ~3 M triángulos) solo se dibuja con la cubierta levantada
+    if (up) { this.app.loadInterior?.(); this.app.setInteriorVisible?.(true); }
+    else if (fast) this.app.setInteriorVisible?.(false);
+    else gsap.delayedCall(1.6, () => { if (!this.lifted) this.app.setInteriorVisible?.(false); });
     groups.forEach((g, i) => {
       gsap.killTweensOf(g.position);
       if (up) {

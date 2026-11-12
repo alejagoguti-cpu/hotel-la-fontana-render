@@ -137,6 +137,9 @@ export class GoogleContext {
           .replace('#include <opaque_fragment>', `{ vec3 c = pow(max(outgoingLight, 0.0), vec3(0.80));   // abre las sombras de la foto: el tono fílmico del visor las cerraba
               float l = dot(c, vec3(0.2126, 0.7152, 0.0722));
               c = max(mix(vec3(l), c, uSat), 0.0);
+              // vegetación de la foto: quita el tono amarillo/seco y la lleva a verde césped
+              float veg = smoothstep(0.0, 0.05, c.g - max(c.b, c.r * 0.92)) * smoothstep(0.75, 0.3, l);
+              c = mix(c, c * vec3(0.78, 1.02, 0.8), veg);
               // sombra del hotel sobre la foto: oscurece y enfría, como una sombra real a cielo abierto
               float sh = 1.0 - getShadowMask();
               c *= mix(vec3(1.0), vec3(0.42, 0.46, 0.55), sh * uShadow);

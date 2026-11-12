@@ -452,7 +452,8 @@ export class HotelBuildingBuilder {
     applyPBR(calzadaMat, SURFACES.ASPHALT, { metersPerTile: 5.0, tint: 0xdcdcda, normalScale: 1.0, macro: { macroScale: 0.06, strength: 0.38 } });
     const andenMat = this.materials.get('SIDEWALK_PAVING');
     const alamedaMat = this.materials.get('TURF_GRASS');
-    applyPBR(alamedaMat, SURFACES.GRASS, { metersPerTile: 2.4, tint: 0xd8e2c8, normalScale: 1.25, rough: true, macro: { macroScale: 0.045, strength: 0.35 } });
+    // la textura base es café-amarilla (hojarasca): el tinte la lleva a césped verde de Bogotá
+    applyPBR(alamedaMat, SURFACES.GRASS, { metersPerTile: 2.4, tint: 0x6fd08a, normalScale: 1.1, rough: true, macro: { macroScale: 0.045, strength: 0.18 } });
     const cicloMat = this.materials.get('BIKEWAY_BLUE');
 
     // Con la malla de Google las vías reales de Catastro (calzadas, andenes, separadores) van ENCIMA de la
@@ -472,12 +473,14 @@ export class HotelBuildingBuilder {
       } catch (e) {}
     }
 
+    // bordillo de concreto prefabricado en el canto del andén (antes el canto era del mismo adoquín)
+    const curbMat = new THREE.MeshStandardMaterial({ color: 0xc4bfb4, roughness: 0.85, envMapIntensity: 0.5 });
     for (const poly of (urbanNetwork.andenes || [])) {
       try {
         const shape = ptsToShape(poly);
         const geo = new THREE.ExtrudeGeometry(shape, { depth: this.roadY + 0.14, bevelEnabled: false });
         geo.rotateX(-Math.PI / 2);
-        const mesh = new THREE.Mesh(geo, andenMat);
+        const mesh = new THREE.Mesh(geo, [andenMat, curbMat]);
         mesh.position.y = 0.0;
         mesh.receiveShadow = true;
         this.contextGroup.add(mesh);
@@ -509,6 +512,7 @@ export class HotelBuildingBuilder {
 
     // 4. Photorealistic Road Surface Markings & Signage
     this.buildRoadMarkings();
+    this.buildRoadDetail(urbanNetwork.calzadas || []);
 
     // 5. Hotel La Fontana Central Courtyard & Traditional Multi-Tier Stone Fountain (Photos 1, 2, 3)
     this.buildCourtyard(andenMat, stoneMat);
@@ -654,6 +658,70 @@ export class HotelBuildingBuilder {
     this.contextGroup.add(markGroup);
   }
 
+  /**
+   * Detalle de calzada sobre TODAS las vías de Catastro: línea blanca de borde junto al sardinel,
+   * tapas de alcantarilla / cámaras de inspección, parches de reparcheo y manchas de aceite y desgaste
+   * en el centro de los carriles. Todo instanciado (pocas llamadas de dibujo).
+   */
+  buildRoadDetail(calzadas) {
+    const y = this.roadY ?? 0.04;
+    let seed = 7; const rnd = () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
+    const edgeL = [], holes = [], patches = [];
+    for (const P of calzadas) {
+      if (!P || P.length < 3) continue;
+      const n = P.length;
+      for (let i = 0; i < n; i++) {
+        const a = P[i], b = P[(i + 1) % n];
+        const dx = b[0] - a[0], dz = b[1] - a[1], L = Math.hypot(dx, dz);
+        if (L < 12) continue;                        // los tramos cortos son bocas de intersección: sin línea
+        const ux = dx / L, uz = dz / L;
+        let nx = -uz, nz = ux;                       // normal hacia adentro de la calzada
+        const mx = (a[0] + b[0]) / 2, mz = (a[1] + b[1]) / 2;
+        if (!pointInPolygon(mx + nx * 0.6, mz + nz * 0.6, P)) { nx = -nx; nz = -nz; }
+        if (!pointInPolygon(mx + nx * 2.5, mz + nz * 2.5, P)) continue;   // calzada muy angosta
+        const off = 0.45, trim = 2.0;
+        edgeL.push({ x: mx + nx * off, z: mz + nz * off, len: L - trim * 2, ang: Math.atan2(ux, uz) });
+        // tapas de alcantarilla cada ~30 m junto al borde (sumideros) y en el centro de carril
+        for (let s = 8; s < L - 8; s += 26 + rnd() * 10) {
+          const d = rnd() < 0.6 ? 0.9 : 2.6 + rnd() * 1.5;
+          const px = a[0] + ux * s + nx * d, pz = a[1] + uz * s + nz * d;
+          if (pointInPolygon(px, pz, P)) holes.push([px, pz, rnd() < 0.6]);
+        }
+        // reparcheo y desgaste
+        for (let s = 5; s < L - 5; s += 9 + rnd() * 16) {
+          const d = 1.2 + rnd() * 4.5, px = a[0] + ux * s + nx * d, pz = a[1] + uz * s + nz * d;
+          if (pointInPolygon(px, pz, P)) patches.push([px, pz, 1.2 + rnd() * 3.5, 0.8 + rnd() * 2.2, Math.atan2(ux, uz) + (rnd() - 0.5) * 0.3, rnd()]);
+        }
+      }
+    }
+    const M = new THREE.Matrix4(), q = new THREE.Quaternion(), up = new THREE.Vector3(0, 1, 0), s = new THREE.Vector3(), p = new THREE.Vector3();
+    const flat = (g) => g.rotateX(-Math.PI / 2);
+    const decal = (color, opts = {}) => new THREE.MeshStandardMaterial({ color, roughness: 0.9, polygonOffset: true, polygonOffsetFactor: -3, polygonOffsetUnits: -3, ...opts });
+    // líneas de borde
+    const lines = new THREE.InstancedMesh(flat(new THREE.PlaneGeometry(0.13, 1)), decal(0xeeeeea, { roughness: 0.7 }), Math.max(1, edgeL.length));
+    edgeL.forEach((e, i) => lines.setMatrixAt(i, M.compose(p.set(e.x, y + 0.012, e.z), q.setFromAxisAngle(up, e.ang), s.set(1, 1, e.len))));
+    lines.count = edgeL.length;
+    // tapas: aro de hierro + tapa (cuadradas los sumideros, redondas las cámaras)
+    const round = holes.filter((h) => !h[2]), square = holes.filter((h) => h[2]);
+    const iron = decal(0x2e2c2a, { roughness: 0.55, metalness: 0.6 });
+    const capR = new THREE.InstancedMesh(flat(new THREE.CircleGeometry(0.36, 14)), iron, Math.max(1, round.length));
+    round.forEach((h, i) => capR.setMatrixAt(i, M.compose(p.set(h[0], y + 0.014, h[1]), q.identity(), s.set(1, 1, 1))));
+    capR.count = round.length;
+    const capS = new THREE.InstancedMesh(flat(new THREE.PlaneGeometry(0.5, 0.9)), iron, Math.max(1, square.length));
+    square.forEach((h, i) => capS.setMatrixAt(i, M.compose(p.set(h[0], y + 0.014, h[1]), q.setFromAxisAngle(up, i * 0.7), s.set(1, 1, 1))));
+    capS.count = square.length;
+    // parches: unos más oscuros (asfalto nuevo), otros más claros (desgaste) y manchas de aceite
+    const patchMat = decal(0xffffff, { transparent: true, opacity: 0.32, depthWrite: false });
+    const pm = new THREE.InstancedMesh(flat(new THREE.PlaneGeometry(1, 1)), patchMat, Math.max(1, patches.length));
+    const c = new THREE.Color();
+    patches.forEach(([x, z, w, l, a, t], i) => {
+      pm.setMatrixAt(i, M.compose(p.set(x, y + 0.008, z), q.setFromAxisAngle(up, a), s.set(w, 1, l)));
+      pm.setColorAt(i, t < 0.55 ? c.setHex(0x141516) : t < 0.85 ? c.setHex(0x8a877f) : c.setHex(0x0b0b0b));
+    });
+    pm.count = patches.length;
+    for (const m of [lines, capR, capS, pm]) { m.receiveShadow = true; m.computeBoundingSphere(); this.contextGroup.add(m); }
+  }
+
   buildRealisticTrees(treePoints = [], calzadaPolys = []) {
     const treeGroup = new THREE.Group();
     const trunkMat = new THREE.MeshStandardMaterial({
@@ -767,10 +835,11 @@ export class HotelBuildingBuilder {
     ];
     candidatePoints.push(...courtyardTrees);
 
-    for (let x = -75; x <= 0; x += 10.0) candidatePoints.push([x, 19.5]);
-    for (let x = -75; x <= 85; x += 9.5) candidatePoints.push([x, 85.0]);
-    for (let x = 12; x <= 72; x += 8.5) candidatePoints.push([x, 54.5]);
-    for (let z = -90; z <= 25; z += 9.0) candidatePoints.push([100.0, z]);
+    // arborización de andenes y separadores más tupida (como la Calle 127 real)
+    for (let x = -75; x <= 0; x += 7.0) candidatePoints.push([x, 19.5]);
+    for (let x = -75; x <= 85; x += 7.0) candidatePoints.push([x, 85.0]);
+    for (let x = 12; x <= 72; x += 6.5) candidatePoints.push([x, 54.5]);
+    for (let z = -90; z <= 25; z += 7.0) candidatePoints.push([100.0, z]);
 
     const addSafeGrove = (cx, cz, count, radius) => {
       for (let i = 0; i < count; i++) {
@@ -779,10 +848,12 @@ export class HotelBuildingBuilder {
         candidatePoints.push([+(cx + Math.cos(angle) * r).toFixed(2), +(cz + Math.sin(angle) * r).toFixed(2)]);
       }
     };
-    addSafeGrove(-85, 10, 16, 14);
-    addSafeGrove(45, -18, 12, 10);
-    addSafeGrove(-30, -55, 15, 12);
-    addSafeGrove(115, 75, 18, 15);
+    addSafeGrove(-85, 10, 26, 16);
+    addSafeGrove(45, -18, 16, 11);
+    addSafeGrove(-30, -55, 24, 15);
+    addSafeGrove(115, 75, 26, 16);
+    addSafeGrove(-55, -20, 18, 13);
+    addSafeGrove(-60, 45, 14, 10);
 
     // Árboles reales (texturas del archivo SKPTrees de Aleja), instanciados y con viento
     const points = [];
@@ -847,22 +918,24 @@ export class HotelBuildingBuilder {
     const modelCache = {};
     const loadModel = (url) => loader.loadAsync(url).catch(err => { console.warn('Vehicle model load fallback for:', url, err); return null; });
 
-    const makeCar = (type, colorIdx) => {
+    const lodCache = {};
+    const shadowGeo = new THREE.PlaneGeometry(2.5, 5.2).rotateX(-Math.PI / 2);
+    // lod = modelo simplificado (~1.200 triángulos, sin esqueleto) para el tráfico: ~5x más liviano
+    const makeCar = (type, colorIdx, lod = false) => {
       const car = new THREE.Group();
       if (carShadowMat) {
-        const shadow = new THREE.Mesh(new THREE.PlaneGeometry(2.5, 5.2), carShadowMat);
-        shadow.rotation.x = -Math.PI / 2;
+        const shadow = new THREE.Mesh(shadowGeo, carShadowMat);
         shadow.position.y = 0.03;
         car.add(shadow);
       }
-      const gltf = modelCache[type] || modelCache.sedan;
+      const gltf = lod ? (lodCache[type] || lodCache.sedan) : (modelCache[type] || modelCache.sedan);
       if (gltf && gltf.scene) {
-        const m = SkeletonUtils.clone(gltf.scene);
+        const m = lod ? gltf.scene.clone() : SkeletonUtils.clone(gltf.scene);
         m.traverse(child => {
           if (child.isMesh) {
-            child.castShadow = true;
+            child.castShadow = !lod;
             child.receiveShadow = true;
-            if (child.material) child.material = Array.isArray(child.material) ? child.material.map(x => x.clone()) : child.material.clone();
+            if (child.material && !lod) child.material = Array.isArray(child.material) ? child.material.map(x => x.clone()) : child.material.clone();
             if (type === 'sports' && child.name === 'body' && child.material) {
               child.material.color.setHex(colorIdx % 2 ? 0x181c22 : 0xcc1824);
               child.material.metalness = 0.9; child.material.roughness = 0.18;
@@ -880,7 +953,7 @@ export class HotelBuildingBuilder {
       loadModel('./assets/models/sedan.glb').then(g => { if (g) modelCache.sedan = g; }),
       loadModel('./assets/models/suv.glb').then(g => { if (g) modelCache.suv = g; }),
       loadModel('./assets/models/taxi.glb').then(g => { if (g) modelCache.taxi = g; }),
-      loadModel('./assets/models/ferrari.glb').then(g => { if (g) modelCache.sports = g; })
+      ...['sedan', 'suv', 'taxi'].map((n) => loadModel(`./assets/models/lod/${n}.glb`).then(g => { if (g) lodCache[n] = g; }))
     ]).then(() => {
       let c = 0;
       lanes.forEach((lane, li) => {
@@ -901,8 +974,8 @@ export class HotelBuildingBuilder {
       this.updateTraffic(0);
       // Tráfico de la Calle 127 × Cra 15 con semáforos y seguimiento vehicular (sin choques)
       let k = 0;
-      const mix = ['sedan', 'suv', 'sedan', 'taxi', 'suv', 'sedan', 'taxi', 'sedan', 'suv', 'taxi', 'sedan', 'sports'];
-      this.traffic = new Traffic(ROAD_AXES, carGroup, () => makeCar(mix[k++ % mix.length], k), { y: (this.roadY ?? 0.04) - 0.02 });
+      const mix = ['sedan', 'suv', 'sedan', 'taxi', 'suv', 'sedan', 'taxi', 'sedan', 'suv', 'sedan'];
+      this.traffic = new Traffic(ROAD_AXES, carGroup, () => makeCar(mix[k++ % mix.length], k, true), { y: (this.roadY ?? 0.04) - 0.02 });
     });
 
     this.contextGroup.add(carGroup);

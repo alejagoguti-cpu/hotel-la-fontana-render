@@ -272,7 +272,7 @@ export class RealTrees {
         #if NUM_DIR_LIGHTS > 0
         { vec3 L = directionalLights[0].direction; vec3 V = normalize(vViewPosition);
           float back = pow(clamp(dot(-V, L) * 0.5 + 0.5, 0.0, 1.0), 3.0);
-          outgoingLight += diffuseColor.rgb * directionalLights[0].color * vec3(0.55, 0.62, 0.22) * (0.10 + 0.55 * back); }
+          outgoingLight += diffuseColor.rgb * directionalLights[0].color * vec3(0.45, 0.55, 0.2) * (0.05 + 0.45 * back); }
         #endif
         #include <opaque_fragment>`);
     };
@@ -292,7 +292,7 @@ export class RealTrees {
     if (!this.variants[key]) {
       let sp = SPECIES[name];
       // LOD 1 (arbolado de la ciudad, lejos): menos ramilletes pero más grandes → misma silueta, 1/3 del costo
-      if (lod) sp = { ...sp, cards: Math.round((sp.cards || 0) * 0.32), card: sp.card * 1.7, branches: Math.max(4, Math.round((sp.branches || 6) * 0.6)), fronds: sp.fronds ? 10 : undefined };
+      if (lod) sp = { ...sp, cards: Math.round((sp.cards || 0) * 0.22), card: sp.card * 2.0, branches: 4, fronds: sp.fronds ? 9 : undefined };
       const seed = 17 + k * 101 + name.length * 7;
       this.variants[key] = sp.kind === 'palm' ? palm(sp, seed) : sp.kind === 'conifer' ? conifer(sp, seed) : broadleaf(sp, seed);
     }
@@ -320,7 +320,8 @@ export class RealTrees {
       // cada ejemplar con su propio tono (verde oliva, verde azulado, más seco…) como en un arbolado real
       const hv = (h * 31.7) % 1, bv = (h * 57.1) % 1;
       c.setHSL(0.22 + (hv - 0.5) * 0.07, 0.35 + 0.25 * hv, 0.5);
-      c.multiplyScalar(1.25).lerp(new THREE.Color(1, 1, 1), 0.55).multiplyScalar(0.82 + 0.3 * bv);
+      // follaje más oscuro y profundo (verde bogotano de sabana, no verde claro)
+      c.multiplyScalar(1.25).lerp(new THREE.Color(1, 1, 1), 0.45).multiplyScalar(0.56 + 0.2 * bv);
       if (tints?.[i]) c.lerp(t.copy(tints[i]), 0.25);
       buckets.get(key).cols.push(c.clone());
     });

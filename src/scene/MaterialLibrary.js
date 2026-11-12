@@ -45,8 +45,8 @@ export class MaterialLibrary {
 
   initAll() {
     // 1. Exterior Brick Facade (Iconic Hotel Estelar La Fontana Bogotá red brick - 1:1 Revit material)
-    const brickMap = this.getTexture('./assets/textures/hlf_ladrillo.png', 1.0, 1.0, true);
-    const brickBump = this.getTexture('./assets/textures/hlf_ladrillo_bump.png', 1.0, 1.0, false);
+    const brickMap = this.getTexture('./assets/textures/hlf_ladrillo.webp', 1.0, 1.0, true);
+    const brickBump = this.getTexture('./assets/textures/hlf_ladrillo_bump.webp', 1.0, 1.0, false);
     this.materials.set('BRICK_FACADE', new THREE.MeshStandardMaterial({
       map: brickMap,
       bumpMap: brickBump,
@@ -141,7 +141,7 @@ export class MaterialLibrary {
       metalness: 0.05
     }));
 
-    const ivyTex = this.getTexture('./assets/textures/hlf_hiedra.png', 1.0, 1.0, true);
+    const ivyTex = this.getTexture('./assets/textures/hlf_hiedra.webp', 1.0, 1.0, true);
     this.materials.set('REVIT_WIN_IVY', new THREE.MeshStandardMaterial({
       map: ivyTex,
       transparent: true,
@@ -169,7 +169,7 @@ export class MaterialLibrary {
     }));
 
     // 2. Exterior Ivy Greenery
-    const ivyMap = this.getTexture('./assets/textures/hlf_hiedra.png', 0.5, 0.5, true);
+    const ivyMap = this.getTexture('./assets/textures/hlf_hiedra.webp', 0.5, 0.5, true);
     this.materials.set('IVY', new THREE.MeshStandardMaterial({
       map: ivyMap,
       bumpMap: ivyMap,
@@ -180,8 +180,8 @@ export class MaterialLibrary {
 
     // 3. REF 01 — Wood Vinyl Bedroom Floor (with real wood grain & bump)
     // ExtrudeGeometry uses meters as UVs, so repeat 0.65 = ~1.5m plank pattern
-    const woodMap = this.getTexture('./assets/textures/hlf_piso_madera.png', 0.65, 0.65, true);
-    const woodBump = this.getTexture('./assets/textures/hlf_ref01_veta_seamless.png', 0.65, 0.65, false);
+    const woodMap = this.getTexture('./assets/textures/hlf_piso_madera.webp', 0.65, 0.65, true);
+    const woodBump = this.getTexture('./assets/textures/hlf_ref01_veta_seamless.webp', 0.65, 0.65, false);
     this.materials.set('REF01', new THREE.MeshStandardMaterial({
       map: woodMap,
       bumpMap: woodBump,
@@ -191,7 +191,7 @@ export class MaterialLibrary {
     }));
 
     // 4. REF 02 — Bathroom Mosaic Porcelain (Mos The Dream 30x30)
-    const mosMap = this.getTexture('./assets/textures/hlf_mosaico2.png', 1.4, 1.4, true);
+    const mosMap = this.getTexture('./assets/textures/hlf_mosaico2.webp', 1.4, 1.4, true);
     this.materials.set('REF02', new THREE.MeshStandardMaterial({
       map: mosMap,
       bumpMap: mosMap,
@@ -201,14 +201,14 @@ export class MaterialLibrary {
     }));
 
     // 5. REF 28 / REF 09 — Santorini Bone / Grey Stone Porcelain
-    const boneMap = this.getTexture('./assets/textures/hlf_piedra_bone.png', 0.8, 0.8, true);
+    const boneMap = this.getTexture('./assets/textures/hlf_piedra_bone.webp', 0.8, 0.8, true);
     this.materials.set('REF28', new THREE.MeshStandardMaterial({
       map: boneMap,
       roughness: 0.42,
       metalness: 0.05
     }));
 
-    const greyStoneMap = this.getTexture('./assets/textures/hlf_piedra_grey.png', 0.8, 0.8, true);
+    const greyStoneMap = this.getTexture('./assets/textures/hlf_piedra_grey.webp', 0.8, 0.8, true);
     this.materials.set('REF09', new THREE.MeshStandardMaterial({
       map: greyStoneMap,
       roughness: 0.45,
@@ -225,7 +225,7 @@ export class MaterialLibrary {
       metalness: 0.0
     }));
 
-    const marbleLightMap = this.getTexture('./assets/textures/hlf_marmol.png', 0.7, 0.7, true);
+    const marbleLightMap = this.getTexture('./assets/textures/hlf_marmol.webp', 0.7, 0.7, true);
     this.materials.set('HALL_MARMOL', new THREE.MeshStandardMaterial({
       map: marbleLightMap,
       roughness: 0.22,
@@ -233,7 +233,7 @@ export class MaterialLibrary {
     }));
 
     // 7. Antik Silver Blue Marble (Countertops & Niches)
-    const marbleDarkMap = this.getTexture('./assets/textures/hlf_marmol3.png', 0.9, 0.9, true);
+    const marbleDarkMap = this.getTexture('./assets/textures/hlf_marmol3.webp', 0.9, 0.9, true);
     this.materials.set('MARMOL', new THREE.MeshStandardMaterial({
       map: marbleDarkMap,
       roughness: 0.2,
@@ -241,7 +241,7 @@ export class MaterialLibrary {
     }));
 
     // 8. Sikuani Walnut Wood (Headboards, Doors, Closets, Consoles)
-    const walnutMap = this.getTexture('./assets/textures/hlf_nogal4_v.png', 0.9, 0.9, true);
+    const walnutMap = this.getTexture('./assets/textures/hlf_nogal4_v.webp', 0.9, 0.9, true);
     this.materials.set('NOGAL', new THREE.MeshStandardMaterial({
       map: walnutMap,
       bumpMap: walnutMap,
@@ -251,7 +251,7 @@ export class MaterialLibrary {
     }));
 
     // 9. Wallpaper Tessera & Lismore + Paint "Sobre Las Nubes"
-    const grassMap = this.getTexture('./assets/textures/hlf_grasscloth.png', 1.2, 1.2, true);
+    const grassMap = this.getTexture('./assets/textures/hlf_grasscloth.webp', 1.2, 1.2, true);
     this.materials.set('WALL_TESSERA', new THREE.MeshStandardMaterial({
       map: grassMap,
       bumpMap: grassMap,
@@ -260,7 +260,7 @@ export class MaterialLibrary {
       metalness: 0.0
     }));
 
-    const oakWallMap = this.getTexture('./assets/textures/hlf_roble_claro_v.png', 1.0, 1.0, true);
+    const oakWallMap = this.getTexture('./assets/textures/hlf_roble_claro_v.webp', 1.0, 1.0, true);
     this.materials.set('WALL_LISMORE', new THREE.MeshStandardMaterial({
       map: oakWallMap,
       roughness: 0.75,
@@ -282,7 +282,7 @@ export class MaterialLibrary {
     this.materials.set('CEILING_PAINT', this.realMaterial('cielo', 1.5, { roughness: 1, normalScale: 0.3 }));
 
     // 10. Rugs TA-01, TA-02, TA-04
-    const ta01Map = this.getTexture('./assets/textures/hlf_tapete_ta01.png', 1.2, 1.2, true);
+    const ta01Map = this.getTexture('./assets/textures/hlf_tapete_ta01.webp', 1.2, 1.2, true);
     this.materials.set('TA01', new THREE.MeshStandardMaterial({
       map: ta01Map,
       bumpMap: ta01Map,
@@ -290,7 +290,7 @@ export class MaterialLibrary {
       roughness: 0.92
     }));
 
-    const ta02Map = this.getTexture('./assets/textures/hlf_tapete_ta02.png', 1.0, 1.0, true);
+    const ta02Map = this.getTexture('./assets/textures/hlf_tapete_ta02.webp', 1.0, 1.0, true);
     this.materials.set('TA02', new THREE.MeshStandardMaterial({
       map: ta02Map,
       bumpMap: ta02Map,
@@ -298,7 +298,7 @@ export class MaterialLibrary {
       roughness: 0.92
     }));
 
-    const ta04Map = this.getTexture('./assets/textures/hlf_tapete_ta04.png', 1.0, 1.0, true);
+    const ta04Map = this.getTexture('./assets/textures/hlf_tapete_ta04.webp', 1.0, 1.0, true);
     this.materials.set('TA04', new THREE.MeshStandardMaterial({
       map: ta04Map,
       bumpMap: ta04Map,
@@ -307,37 +307,37 @@ export class MaterialLibrary {
     }));
 
     // 11. Furniture Fabrics & Finishes
-    const boucleMap = this.getTexture('./assets/textures/hlf_boucle_taupe.png', 2.0, 2.0, true);
+    const boucleMap = this.getTexture('./assets/textures/hlf_boucle_taupe.webp', 2.0, 2.0, true);
     this.materials.set('TAPIZ', new THREE.MeshStandardMaterial({
       map: boucleMap,
       roughness: 0.88
     }));
 
-    const olivaMap = this.getTexture('./assets/textures/hlf_tejido_oliva.png', 2.2, 2.2, true);
+    const olivaMap = this.getTexture('./assets/textures/hlf_tejido_oliva.webp', 2.2, 2.2, true);
     this.materials.set('OLIVA', new THREE.MeshStandardMaterial({
       map: olivaMap,
       roughness: 0.88
     }));
 
-    const avenaMap = this.getTexture('./assets/textures/hlf_tejido_avena.png', 2.2, 2.2, true);
+    const avenaMap = this.getTexture('./assets/textures/hlf_tejido_avena.webp', 2.2, 2.2, true);
     this.materials.set('AVENA', new THREE.MeshStandardMaterial({
       map: avenaMap,
       roughness: 0.88
     }));
 
-    const terracotaMap = this.getTexture('./assets/textures/hlf_tejido_terracota.png', 2.2, 2.2, true);
+    const terracotaMap = this.getTexture('./assets/textures/hlf_tejido_terracota.webp', 2.2, 2.2, true);
     this.materials.set('TERRACOTA', new THREE.MeshStandardMaterial({
       map: terracotaMap,
       roughness: 0.88
     }));
 
-    const quiltMap = this.getTexture('./assets/textures/hlf_quilt_oscuro.png', 1.6, 1.6, true);
+    const quiltMap = this.getTexture('./assets/textures/hlf_quilt_oscuro.webp', 1.6, 1.6, true);
     this.materials.set('QUILT', new THREE.MeshStandardMaterial({
       map: quiltMap,
       roughness: 0.78
     }));
 
-    const linoMap = this.getTexture('./assets/textures/hlf_lino_cortina.png', 1.5, 1.5, true);
+    const linoMap = this.getTexture('./assets/textures/hlf_lino_cortina.webp', 1.5, 1.5, true);
     this.materials.set('LINO', new THREE.MeshStandardMaterial({
       map: linoMap,
       roughness: 0.88

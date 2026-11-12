@@ -98,8 +98,8 @@ export class SiteDetails {
   /** Plazoleta con adoquín de arcilla sobre un polígono [x,z] (llega hasta el andén). */
   buildCourtPavingPoly(pts, group) {
     const mat = new THREE.MeshStandardMaterial({ roughness: 0.9, metalness: 0.0 });
-    applyPBR(mat, SURFACES.HERRINGBONE, { metersPerTile: 2.2, tint: 0xffffff, normalScale: 1.25, rough: true, macro: { macroScale: 0.05, strength: 0.25 } });
-    mat.color.setScalar(1.75);   // el adoquín fotografiado es oscuro: se aclara para que empate con la foto aérea del contexto
+    applyPBR(mat, SURFACES.CONCRETE_PAVEMENT, { metersPerTile: 3.0, tint: 0xffffff, normalScale: 0.9, rough: true, macro: { macroScale: 0.05, strength: 0.15 } });
+    mat.color.setScalar(1.45);   // el adoquín fotografiado es oscuro: se aclara para que empate con la foto aérea del contexto
     const shape = new THREE.Shape(pts.map(([x, z]) => new THREE.Vector2(x, -z)));
     const geo = new THREE.ShapeGeometry(shape);
     geo.rotateX(-Math.PI / 2);
@@ -210,7 +210,7 @@ export class SiteDetails {
   /** Reja negra de lanzas con pilastras, faroles y seto bajo. */
   buildFence(points, group, { gaps = [] } = {}) {
     const iron = new THREE.MeshStandardMaterial({ color: 0x151617, roughness: 0.5, metalness: 0.6 });
-    const hedgeMat = new THREE.MeshStandardMaterial({ color: 0x5c5a34, roughness: 0.95 }); // photinia: verde con brotes rojizos
+    const hedgeMat = new THREE.MeshStandardMaterial({ color: 0x3e5a30, roughness: 0.95 }); // photinia: verde con brotes rojizos
     const hedgeRed = new THREE.MeshStandardMaterial({ color: 0x7a3a2c, roughness: 0.95 });
     const glow = new THREE.MeshStandardMaterial({ color: 0xfff1cc, emissive: 0xffc86a, emissiveIntensity: 0.4, roughness: 0.3 });
     const bars = [];

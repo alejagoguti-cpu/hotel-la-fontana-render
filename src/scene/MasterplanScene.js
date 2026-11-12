@@ -16,6 +16,7 @@ import { RevitRoomFurniture, ROOM_INSTANCES } from './RevitRoomFurniture.js';
 import { MaxPiso2Loader } from './MaxPiso2Loader.js';
 import { GoogleContext } from './GoogleContext.js';
 import { Unicentro } from './Unicentro.js';
+import { HotelGround, HOTEL_LOT, HOTEL_LOT_EAST } from './HotelGround.js';
 
 export class MasterplanScene {
   constructor(container) {
@@ -91,7 +92,7 @@ export class MasterplanScene {
 
   setupLighting() {
     // Ambient / Skylight dome illumination
-    const hemiLight = new THREE.HemisphereLight(0xffffff, 0xc8d6e5, 0.95);
+    const hemiLight = new THREE.HemisphereLight(0xffffff, 0xc8d6e5, 1.55);   // sombras abiertas de cielo (antes casi negras)
     this.hemiLight = hemiLight;
     this.scene.add(hemiLight);
 
@@ -115,7 +116,7 @@ export class MasterplanScene {
     this.scene.add(sunLight);
 
     // Warm bounce fill light
-    const fillLight = new THREE.DirectionalLight(0xe8f0fa, 0.35);
+    const fillLight = new THREE.DirectionalLight(0xe8f0fa, 0.55);
     fillLight.position.set(-50, 40, -40);
     this.scene.add(fillLight);
   }
@@ -140,6 +141,10 @@ export class MasterplanScene {
         this.city = new GoogleContext(this.scene, { renderer: this.renderer, camera: this.camera, sky: this.skyEnv, hotelFootprints: ctxBuildings.map((b) => b.pts), low: !!this.postfx?.low, mobile: /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent) });
         // las vías reales de Catastro van encima de la foto: bajo ellas se recorta la malla de Google
         this.city.addMask([...(urbanNetwork.calzadas || []), ...(urbanNetwork.andenes || []), ...(urbanNetwork.separadores || [])], 0.25);
+        // todo el predio del conjunto La Fontana con piso modelado (sin la foto aérea)
+        this.city.addMask([HOTEL_LOT, HOTEL_LOT_EAST], 0.3);
+        this.hotelGround = new HotelGround(this.city.group);
+        if (this.city.siteGround) this.city.siteGround.material.color.setHex(0x8f8a80);
         // Google solo trae la foto sobre el terreno en esta zona: los edificios reales de catastro y el arbolado van encima, en 3D
         const cc = new CityContext(this.scene, { renderer: this.renderer, mobile: /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent) });
         this.scene.remove(cc.group); this.city.group.add(cc.group);
@@ -166,12 +171,14 @@ export class MasterplanScene {
     const slabOnly = this.interiorBuilder.build({ slabLoops: arch.slabLoops, corridorCarpetLoop: arch.corridorCarpetLoop, corridorMarbleBorderLoops: arch.corridorMarbleBorderLoops, walls: [], columns: [], stairs: [] }, { wallFinishes: [] }, { items: [] }, rooms);
     this.scene.add(slabOnly);
     this.scene.add(this.maxPiso2.group);
-    this.maxPiso2Ready = this.maxPiso2.load().then(() => {
+    // El GLB del Piso 2 (16 MB) ya no bloquea la carga: se descarga después del exterior o al entrar al piso
+    this.loadInterior = () => this.maxPiso2Ready || (this.maxPiso2Ready = this.maxPiso2.load().then(() => {
       this.interiorBuilder.bimElements.push(...this.maxPiso2.interactiveMeshes);
       this.batchSoon();
       this.shadowsDirty = true;
       console.info('[3ds Max Piso 2] Modelo GLB cargado y alineado con éxito:', this.maxPiso2.interactiveMeshes.length, 'objetos interactivos');
-    }).catch((e) => console.error('Error cargando GLB Piso 2:', e));
+    }).catch((e) => console.error('Error cargando GLB Piso 2:', e)));
+    this.setInteriorVisible(store.state.viewMode !== 'exterior');
 
     // 3. Room highlights
     this.roomHighlighter.build(rooms);
@@ -180,6 +187,13 @@ export class MasterplanScene {
     store.setState({ rooms });
     this.applyViewMode(store.state.viewMode);
     this.batchSoon();
+  }
+
+  /** Interior del Piso 2: oculto en la vista exterior (queda dentro del edificio y costaba ~3 M triángulos por pasada). */
+  setInteriorVisible(on) {
+    if (this.maxPiso2?.group) this.maxPiso2.group.visible = on;
+    if (this.interiorBuilder?.group) this.interiorBuilder.group.visible = on;
+    this.renderer.shadowMap.needsUpdate = true;
   }
 
   /** Fusiona las mallas quietas (ver StaticBatcher): de ~14.000 llamadas de dibujo a unos cientos. */

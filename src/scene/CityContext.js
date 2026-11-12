@@ -422,8 +422,8 @@ export class CityContext {
     const mpp = (L.x1 - L.x0) / W;
     // Menos ejemplares y mayor separación: el fondo conserva la lectura del barrio y no
     // compite con los árboles 3D detallados junto al hotel.
-    const step = this.mobile ? 12 : 9.5;
-    const max = this.mobile ? 850 : 3200;
+    const step = this.mobile ? 10 : 7.5;
+    const max = this.mobile ? 1200 : 4800;
     const greenAt = (u, v) => {
       if (u < 0 || v < 0 || u >= W || v >= H) return false;
       const i = (v * W + u) * 4, r = px[i], g = px[i + 1], b = px[i + 2];

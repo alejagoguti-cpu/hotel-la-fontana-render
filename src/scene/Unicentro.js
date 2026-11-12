@@ -123,8 +123,8 @@ export class Unicentro {
 
     // --- materiales ---
     const tl = new THREE.TextureLoader();
-    const brickMap = tl.load('./assets/textures/hlf_ladrillo.png'); brickMap.colorSpace = THREE.SRGBColorSpace;
-    const brickBump = tl.load('./assets/textures/hlf_ladrillo_bump.png');
+    const brickMap = tl.load('./assets/textures/hlf_ladrillo.webp'); brickMap.colorSpace = THREE.SRGBColorSpace;
+    const brickBump = tl.load('./assets/textures/hlf_ladrillo_bump.webp');
     [brickMap, brickBump].forEach((t) => { t.wrapS = t.wrapT = THREE.RepeatWrapping; t.anisotropy = aniso; });
     const brick = new THREE.MeshStandardMaterial({ map: brickMap, bumpMap: brickBump, bumpScale: 0.08, color: 0xf3e2d6, roughness: 0.88, envMapIntensity: 0.8 });
     const concrete = new THREE.MeshStandardMaterial({ color: 0xd9d4ca, roughness: 0.82, envMapIntensity: 0.7 });
@@ -248,7 +248,7 @@ export class Unicentro {
   /** Parqueaderos en superficie: filas de carros reales (sedán, SUV, taxi) instanciados. */
   async _parkedCars(lots) {
     const loader = new GLTFLoader();
-    const models = (await Promise.all(['sedan', 'suv', 'taxi', 'sedan', 'suv'].map((n) => loader.loadAsync(`./assets/models/${n}.glb`).catch(() => null)))).filter(Boolean);
+    const models = (await Promise.all(['sedan', 'suv', 'taxi', 'sedan', 'suv'].map((n) => loader.loadAsync(`./assets/models/lod/${n}.glb`).catch(() => null)))).filter(Boolean);
     if (!models.length) return;
     const spots = [], lines = [];
     for (const P of lots) {
@@ -316,3 +316,6 @@ export class Unicentro {
     this.group.position.y = ys[Math.floor(ys.length * 0.5)];
   }
 }
+
+/** Ortofoto Esri z19 de un polígono (también la usa el piso del predio del hotel como guía). */
+export const orthoTexture = (poly) => Unicentro.prototype._orthoTexture(poly);

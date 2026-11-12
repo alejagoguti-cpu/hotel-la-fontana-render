@@ -14,6 +14,7 @@ import { batchStatic, snapshotMatrices, movingSince } from './StaticBatcher.js';
 import { applyWind, windUniforms } from './Wind.js';
 import { RevitRoomFurniture, ROOM_INSTANCES } from './RevitRoomFurniture.js';
 import { MaxPiso2Loader } from './MaxPiso2Loader.js';
+import { GoogleContext } from './GoogleContext.js';
 
 export class MasterplanScene {
   constructor(container) {
@@ -70,7 +71,10 @@ export class MasterplanScene {
     this.skyEnv = new SkyEnvironment(this.renderer, this.scene, this.sunLight, this.hemiLight);
     // Contexto real de Bogotá: ortofoto, relieve (Cerros Orientales), catastro 3D y arbolado
     try {
-      this.city = new CityContext(this.scene, { renderer: this.renderer, mobile: /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent) });
+      // Con ?google=0 se usa el contexto anterior (catastro + ortofoto); por defecto, la malla fotorrealista de Google
+      this.useGoogle = new URLSearchParams(location.search).get('google') !== '0';
+      this.buildingBuilder.googleContext = this.useGoogle;
+      if (!this.useGoogle) this.city = new CityContext(this.scene, { renderer: this.renderer, mobile: /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent) });
       if (this.skyEnv.farGround) this.skyEnv.farGround.visible = false;
     } catch (e) { console.warn('Contexto urbano no disponible', e); }
     try { this.postfx = new PostFX(this.renderer, this.scene, this.camera, this.container); } catch (e) { console.warn('PostFX desactivado', e); }
@@ -128,9 +132,15 @@ export class MasterplanScene {
 
     // 1. Hotel building exterior + real Catastro urban context + real roads & trees + authentic Revit windows
     //    (los volúmenes blancos del entorno los reemplaza CityContext con el catastro real texturizado)
-    const ctxBuildings = this.city ? catastro.filter((b) => b.isHotel) : catastro;
+    const ctxBuildings = (this.city || this.useGoogle) ? catastro.filter((b) => b.isHotel) : catastro;
+    if (this.useGoogle) {
+      try {
+        this.city = new GoogleContext(this.scene, { renderer: this.renderer, camera: this.camera, sky: this.skyEnv, hotelFootprints: ctxBuildings.map((b) => b.pts), low: !!this.postfx?.low, mobile: /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent) });
+      } catch (e) { console.warn('Malla de Google no disponible', e); }
+    }
     const building = this.buildingBuilder.build(arch, ctxBuildings, urbanNetwork, revitWindows, roofs);
     if (this.city && this.buildingBuilder.groundPlane) this.buildingBuilder.groundPlane.visible = false;
+    if (this.useGoogle && this.skyEnv?.farGround) this.skyEnv.farGround.visible = false;
     this.scene.add(building);
 
     // 2. Interior Piso 2 — Modelo 1:1 Real exportado de Autodesk 3ds Max (hotel_la_fontana_piso_2.glb)
@@ -513,6 +523,7 @@ export class MasterplanScene {
     this._clampPivot();
     this._updateRange();
     this.tour?.update(dt);
+    this.city?.update?.(dt);
     this._adaptResolution(dt);
     // viento en el arbolado (urbano + ortofoto)
     windUniforms.uWindTime.value += dt;

@@ -455,7 +455,8 @@ export class HotelBuildingBuilder {
     applyPBR(alamedaMat, SURFACES.GRASS, { metersPerTile: 2.4, tint: 0xd8e2c8, normalScale: 1.25, rough: true, macro: { macroScale: 0.045, strength: 0.35 } });
     const cicloMat = this.materials.get('BIKEWAY_BLUE');
 
-    for (const poly of (urbanNetwork.calzadas || [])) {
+    const G = !!this.googleContext;   // con la malla de Google, las vías y el arbolado reales ya vienen en la foto
+    for (const poly of (G ? [] : urbanNetwork.calzadas || [])) {
       try {
         const shape = ptsToShape(poly);
         const geo = new THREE.ExtrudeGeometry(shape, { depth: 0.04, bevelEnabled: false });
@@ -467,7 +468,7 @@ export class HotelBuildingBuilder {
       } catch (e) {}
     }
 
-    for (const poly of (urbanNetwork.andenes || [])) {
+    for (const poly of (G ? [] : urbanNetwork.andenes || [])) {
       try {
         const shape = ptsToShape(poly);
         const geo = new THREE.ExtrudeGeometry(shape, { depth: 0.16, bevelEnabled: false });
@@ -479,7 +480,7 @@ export class HotelBuildingBuilder {
       } catch (e) {}
     }
 
-    for (const poly of (urbanNetwork.separadores || [])) {
+    for (const poly of (G ? [] : urbanNetwork.separadores || [])) {
       try {
         const shape = ptsToShape(poly);
         const geo = new THREE.ExtrudeGeometry(shape, { depth: 0.18, bevelEnabled: false });
@@ -491,7 +492,7 @@ export class HotelBuildingBuilder {
       } catch (e) {}
     }
 
-    for (const poly of (urbanNetwork.ciclorrutas || [])) {
+    for (const poly of (G ? [] : urbanNetwork.ciclorrutas || [])) {
       try {
         const shape = ptsToShape(poly);
         const geo = new THREE.ExtrudeGeometry(shape, { depth: 0.02, bevelEnabled: false });
@@ -503,7 +504,7 @@ export class HotelBuildingBuilder {
     }
 
     // 4. Photorealistic Road Surface Markings & Signage
-    this.buildRoadMarkings();
+    if (!G) this.buildRoadMarkings();
 
     // 5. Hotel La Fontana Central Courtyard & Traditional Multi-Tier Stone Fountain (Photos 1, 2, 3)
     this.buildCourtyard(andenMat, stoneMat);
@@ -520,7 +521,7 @@ export class HotelBuildingBuilder {
     // Andenes en adoquín rojo; plazoleta en adoquín de arcilla gris-café (fotos de sitio)
     sd.applySidewalkPaving();
     // Plazoleta continua hasta el andén (sin franjas de terreno vacío)
-    sd.buildCourtPavingPoly([[-24.0, 23.28], [54.72, 31.39], [55.3, 25.78], [60.0, 26.25], [60.0, -4.0], [-24.0, -4.0]], this.contextGroup);
+    sd.buildCourtPavingPoly(this.googleContext ? [[-24.0, 23.28], [50.0, 30.9], [50.0, -4.0], [-24.0, -4.0]] : [[-24.0, 23.28], [54.72, 31.39], [55.3, 25.78], [60.0, 26.25], [60.0, -4.0], [-24.0, -4.0]], this.contextGroup);
 
     // Fuente sobre jardinera hexagonal de ladrillo, frente a la escalinata
     sd.buildFountain(16, 6.2, this.contextGroup);
@@ -529,7 +530,7 @@ export class HotelBuildingBuilder {
     sd.buildSignMonolith(27.6, 0.9, -0.35, this.contextGroup);
 
     // Reja negra de lanzas con seto y faroles hacia la calle (portón vehicular abierto)
-    sd.buildFence([[-24.0, 23.28], [54.72, 31.39]], this.contextGroup, { gaps: [[23.5, 28.0, 32.5, 29.2]] });
+    sd.buildFence([[-24.0, 23.28], this.googleContext ? [50.0, 30.9] : [54.72, 31.39]], this.contextGroup, { gaps: [[23.5, 28.0, 32.5, 29.2]] });
 
     // Pabellón acristalado Plaza Café (extremo occidental de la plazoleta)
     sd.buildPlazaCafe(-21, -2.5, 11, 7, this.contextGroup);
@@ -784,6 +785,7 @@ export class HotelBuildingBuilder {
       const [tx, tz] = candidatePoints[i];
       if (isInsideRoadway(tx, tz)) continue;
       const explicitTree = courtyardTrees.some(([cx, cz]) => cx === tx && cz === tz);
+      if (this.googleContext && !explicitTree) continue;
       if (!explicitTree && tx >= -16 && tx <= 50 && tz >= -16 && tz <= 15) {
         const inCourtyard = (tx >= 6.5 && tx <= 25.5 && tz >= -5.8 && tz <= 9.8);
         if (!inCourtyard) continue;
@@ -896,7 +898,7 @@ export class HotelBuildingBuilder {
       // Tráfico de la Calle 127 × Cra 15 con semáforos y seguimiento vehicular (sin choques)
       let k = 0;
       const mix = ['sedan', 'suv', 'sedan', 'taxi', 'suv', 'sedan', 'taxi', 'sedan'];
-      this.traffic = new Traffic(ROAD_AXES, carGroup, () => makeCar(mix[k++ % mix.length], k));
+      if (!this.googleContext) this.traffic = new Traffic(ROAD_AXES, carGroup, () => makeCar(mix[k++ % mix.length], k));
     });
 
     this.contextGroup.add(carGroup);

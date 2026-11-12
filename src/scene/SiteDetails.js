@@ -99,6 +99,7 @@ export class SiteDetails {
   buildCourtPavingPoly(pts, group) {
     const mat = new THREE.MeshStandardMaterial({ roughness: 0.9, metalness: 0.0 });
     applyPBR(mat, SURFACES.HERRINGBONE, { metersPerTile: 2.2, tint: 0xffffff, normalScale: 1.25, rough: true, macro: { macroScale: 0.05, strength: 0.25 } });
+    mat.color.setScalar(1.75);   // el adoquín fotografiado es oscuro: se aclara para que empate con la foto aérea del contexto
     const shape = new THREE.Shape(pts.map(([x, z]) => new THREE.Vector2(x, -z)));
     const geo = new THREE.ShapeGeometry(shape);
     geo.rotateX(-Math.PI / 2);

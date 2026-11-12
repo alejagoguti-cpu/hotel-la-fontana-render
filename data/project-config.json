@@ -1,0 +1,34 @@
+{
+  "projectId": "HLF-BOG-2026",
+  "name": "Hotel Estelar La Fontana",
+  "subtitle": "Masterplan Interactivo · Remodelación Piso 2 & Contexto Urbano",
+  "location": {
+    "city": "Bogotá D.C., Colombia",
+    "locality": "Usaquén · Santa Bárbara / Unicentro",
+    "address": "Avenida Calle 127 # 15A-10 (Costado Calle 124 con Carrera 15)",
+    "lat": 4.704585254832645,
+    "lng": -74.04369633465852,
+    "elevationM": 2552.1
+  },
+  "revitSource": {
+    "document": "Hotel_la_fontana_contexto.rvt",
+    "revitVersion": "2026 (Build 26.5.0.55)",
+    "elementCount": 48296,
+    "piso2ElevationMm": 3000,
+    "floorToFloorMm": 3000
+  },
+  "wings": [
+    "Ala Recta Norte",
+    "Ala Diagonal",
+    "Sector Suites Fondo"
+  ],
+  "typologies": [
+    "Suite D",
+    "Suite C1",
+    "Suite Fondo A",
+    "Junior Suite C",
+    "Doble",
+    "Sencilla",
+    "Sencilla Especial"
+  ]
+}

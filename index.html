@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Hotel Estelar La Fontana · Remodelación Piso 2 · BACO STUDIO</title>
+    <meta name="description" content="Remodelación integral del Piso 2 del Hotel Estelar La Fontana (Bogotá). Visualización arquitectónica, 12 habitaciones y gemelo digital 3D por BACO STUDIO." />
+    <meta name="theme-color" content="#0d0c0b" />
+    <meta property="og:title" content="Hotel Estelar La Fontana · Remodelación Piso 2" />
+    <meta property="og:description" content="Visualización arquitectónica y gemelo digital 3D del Piso 2 · BACO STUDIO" />
+    <meta property="og:image" content="./assets/hf/aerial-1200.webp" />
+
+    <link rel="icon" type="image/png" href="./assets/branding/logo-baco.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./src/landing/landing.css" />
+  </head>
+  <body>
+    <a class="skip" href="#proyecto">Saltar al contenido</a>
+
+    <header class="nav" id="nav">
+      <a class="nav-brand" href="#top" aria-label="Inicio">
+        <img src="./assets/branding/logo-baco.png" alt="BACO STUDIO" height="26" />
+        <span class="nav-sep" aria-hidden="true"></span>
+        <span class="nav-project">Hotel La Fontana</span>
+      </a>
+      <nav class="nav-links" aria-label="Secciones">
+        <a href="#proyecto">Proyecto</a>
+        <a href="#contexto">Contexto</a>
+        <a href="#piso2">Piso 2</a>
+        <a href="#interiores">Interiores</a>
+        <a href="#proceso">Proceso</a>
+        <a href="#ubicacion">Ubicación</a>
+      </nav>
+      <a class="btn btn-solid nav-cta" href="./masterplan.html">Explorar en 3D</a>
+    </header>
+
+    <main id="top">
+      <!-- ───────────── HERO ───────────── -->
+      <section class="hero" aria-label="Presentación">
+        <div class="stage" id="stage">
+          <figure class="scene is-active" data-scene="contexto">
+            <img
+              src="./assets/hf/barrio-1200.webp"
+              srcset="./assets/hf/barrio-1200.webp 1200w, ./assets/hf/barrio.webp 2400w"
+              sizes="100vw" width="2400" height="1350" fetchpriority="high"
+              alt="El hotel en su contexto urbano: avenidas arboladas, edificios residenciales de Usaquén y los cerros orientales al fondo" />
+          </figure>
+          <figure class="scene" data-scene="aerea">
+            <img
+              src="./assets/hf/aerial-1200.webp"
+              srcset="./assets/hf/aerial-1200.webp 1200w, ./assets/hf/aerial.webp 2400w"
+              sizes="100vw" width="2400" height="1340" fetchpriority="low" loading="lazy"
+              alt="Vista aérea del Hotel Estelar La Fontana al anochecer: volúmenes de ladrillo, cubiertas de teja de barro, torre y plaza de acceso iluminada" />
+          </figure>
+          <figure class="scene" data-scene="acceso">
+            <img
+              src="./assets/hf/plaza-1200.webp"
+              srcset="./assets/hf/plaza-1200.webp 1200w, ./assets/hf/plaza.webp 2400w"
+              sizes="100vw" width="2400" height="1340" fetchpriority="low" loading="lazy"
+              alt="Plaza de acceso del hotel al atardecer, con la fuente, la marquesina de entrada y las fachadas de ladrillo" />
+          </figure>
+          <figure class="scene" data-scene="corte">
+            <img
+              src="./assets/hf/cut-1200.webp"
+              srcset="./assets/hf/cut-1200.webp 1200w, ./assets/hf/cut.webp 2400w"
+              sizes="100vw" width="2400" height="1340" fetchpriority="low" loading="lazy"
+              alt="Corte horizontal del Piso 2 visto desde arriba, con las habitaciones amobladas sobre la plaza de acceso" />
+          </figure>
+          <div class="stage-shade" aria-hidden="true"></div>
+        </div>
+
+        <div class="hero-body">
+          <p class="eyebrow">Bogotá D.C. · Usaquén · 2026</p>
+          <h1>Hotel Estelar<br />La Fontana</h1>
+          <p class="hero-lede">Remodelación integral del Piso 2: doce habitaciones rediseñadas dentro de un edificio de ladrillo y teja de barro que es referente del norte de la ciudad.</p>
+          <div class="hero-actions">
+            <a class="btn btn-solid" href="./masterplan.html">Explorar el modelo 3D</a>
+            <a class="btn btn-ghost" href="#piso2">Ver habitaciones</a>
+          </div>
+        </div>
+
+        <div class="hero-foot">
+          <div class="tabs" role="tablist" aria-label="Vistas del proyecto">
+            <button class="tab is-active" role="tab" aria-selected="true" data-go="contexto"><span>01</span>Contexto</button>
+            <button class="tab" role="tab" aria-selected="false" data-go="aerea"><span>02</span>Edificio</button>
+            <button class="tab" role="tab" aria-selected="false" data-go="acceso"><span>03</span>Acceso</button>
+            <button class="tab" role="tab" aria-selected="false" data-go="corte"><span>04</span>Piso 2</button>
+          </div>
+          <button class="pause" id="pause" type="button" aria-pressed="false" aria-label="Pausar la animación">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path class="i-pause" d="M8 5v14M16 5v14" /><path class="i-play" d="M8 5l11 7-11 7z" /></svg>
+          </button>
+        </div>
+      </section>
+
+      <!-- ───────────── PROYECTO ───────────── -->
+      <section class="section" id="proyecto">
+        <div class="wrap grid-2">
+          <div>
+            <p class="eyebrow">El proyecto</p>
+            <h2>Un piso completo, repensado habitación por habitación</h2>
+          </div>
+          <div class="prose">
+            <p>La intervención actualiza el segundo nivel del hotel sin tocar su carácter: se conserva la envolvente de ladrillo y la ventanería original, y se rediseñan por dentro las alas Recta Norte, Diagonal y el sector de Suites del fondo.</p>
+            <p>Cada habitación parte del modelo BIM del edificio: pisos vinílicos con veta hacia la ventana, paneles en nogal, papel de colgadura tejido, mesones en mármol y mobiliario a medida.</p>
+          </div>
+        </div>
+        <dl class="wrap stats">
+          <div><dt>Habitaciones</dt><dd>12</dd></div>
+          <div><dt>Tipologías</dt><dd>7</dd></div>
+          <div><dt>Alas intervenidas</dt><dd>3</dd></div>
+          <div><dt>Altitud</dt><dd>2 552 <small>msnm</small></dd></div>
+        </dl>
+      </section>
+
+      <!-- ───────────── CONTEXTO ───────────── -->
+      <section class="section section-flush" id="contexto">
+        <div class="wrap">
+          <p class="eyebrow">Contexto urbano</p>
+          <h2>Una manzana completa entre avenidas arboladas</h2>
+          <div class="context">
+            <figure class="g-item">
+              <img src="./assets/hf/barrio-1200.webp" srcset="./assets/hf/barrio-1200.webp 1200w, ./assets/hf/barrio.webp 2400w" sizes="(min-width: 900px) 50vw, 100vw" width="2400" height="1350" loading="lazy" alt="Vista aérea del barrio con el hotel en el centro, rodeado de edificios residenciales y separadores verdes" />
+              <figcaption><span>Escala de barrio</span>Usaquén · Santa Bárbara</figcaption>
+            </figure>
+            <figure class="g-item">
+              <img src="./assets/hf/entorno-1200.webp" srcset="./assets/hf/entorno-1200.webp 1200w, ./assets/hf/entorno.webp 2400w" sizes="(min-width: 900px) 50vw, 100vw" width="2400" height="1350" loading="lazy" alt="El hotel al anochecer con su plaza de acceso, el cerramiento vegetal y las vías que lo rodean" />
+              <figcaption><span>Escala de manzana</span>Plaza de acceso y vías perimetrales</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- ───────────── PISO 2 ───────────── -->
+      <section class="section section-dark" id="piso2">
+        <div class="wrap">
+          <p class="eyebrow">Piso 2 · Planta de habitaciones</p>
+          <h2>Elige una habitación</h2>
+          <div class="plan">
+            <div class="plan-view">
+              <div class="plan-canvas" id="plan-canvas">
+                <img src="./assets/hf/cut-1200.webp" srcset="./assets/hf/cut-1200.webp 1200w, ./assets/hf/cut.webp 2400w"
+                  sizes="(min-width: 1000px) 62vw, 100vw" width="2400" height="1340" loading="lazy"
+                  alt="Planta en corte del Piso 2 con las doce habitaciones" />
+                <!-- los marcadores se insertan desde landing.js -->
+              </div>
+              <p class="plan-hint">Desliza la planta para recorrerla · toca un número</p>
+            </div>
+            <aside class="plan-panel" id="plan-panel" aria-live="polite">
+              <div class="room-card" id="room-card"></div>
+              <ul class="room-list" id="room-list" aria-label="Habitaciones del Piso 2"></ul>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- ───────────── INTERIORES ───────────── -->
+      <section class="section" id="interiores">
+        <div class="wrap">
+          <p class="eyebrow">Interiores</p>
+          <h2>Materiales cálidos, luz indirecta</h2>
+          <div class="gallery">
+            <figure class="g-item g-wide">
+              <img src="./assets/hf/suite-1200.webp" srcset="./assets/hf/suite-1200.webp 1200w, ./assets/hf/suite.webp 2400w" sizes="(min-width: 900px) 60vw, 100vw" width="2400" height="1792" loading="lazy" alt="Suite D: cama king, panel de nogal, sofá curvo verde oliva y tapete circular de fibra" />
+              <figcaption><span>Suite D</span>Alcoba y estar</figcaption>
+            </figure>
+            <figure class="g-item">
+              <img src="./assets/hf/sala-1200.webp" width="1200" height="896" loading="lazy" alt="Sala de la Suite D con sofá curvo, poltronas en bouclé y mesas de mármol emperador" />
+              <figcaption><span>Suite D</span>Sala y comedor</figcaption>
+            </figure>
+            <figure class="g-item">
+              <img src="./assets/hf/doble-1200.webp" srcset="./assets/hf/doble-1200.webp 1200w, ./assets/hf/doble.webp 2400w" sizes="(min-width: 900px) 40vw, 100vw" width="2400" height="1792" loading="lazy" alt="Habitación doble con dos camas, cabecero continuo en nogal y luz de cornisa" />
+              <figcaption><span>Habitación doble</span>Cabeceros</figcaption>
+            </figure>
+            <figure class="g-item g-wide">
+              <img src="./assets/hf/bano-1200.webp" srcset="./assets/hf/bano-1200.webp 1200w, ./assets/hf/bano.webp 2400w" sizes="(min-width: 900px) 60vw, 100vw" width="2400" height="1792" loading="lazy" alt="Baño con mesón doble flotante en mármol y espejo retroiluminado" />
+              <figcaption><span>Suite D</span>Baño · mesón doble</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- ───────────── PROCESO ───────────── -->
+      <section class="section section-dark" id="proceso">
+        <div class="wrap">
+          <p class="eyebrow">Proceso</p>
+          <h2>Del modelo a la imagen</h2>
+          <p class="section-lede">Cada visualización sale de una vista del modelo del edificio. Arrastra el control para comparar la vista base con la imagen final.</p>
+
+          <div class="compare" id="compare">
+            <div class="compare-frame" id="compare-frame">
+              <img class="compare-img" id="cmp-after" src="./assets/hf/aerial-1200.webp" width="1200" height="670" loading="lazy" alt="Imagen final" />
+              <img class="compare-img compare-before" id="cmp-before" src="./assets/hf/aerial-base.webp" width="1200" height="675" loading="lazy" alt="Vista base del modelo" />
+              <span class="compare-tag tag-before">Modelo</span>
+              <span class="compare-tag tag-after">Visualización</span>
+              <span class="compare-line" aria-hidden="true"><i></i></span>
+              <label class="sr-only" for="cmp-range">Comparar vista del modelo con la visualización</label>
+              <input class="compare-range" id="cmp-range" type="range" min="0" max="100" value="50" step="0.5" />
+            </div>
+            <div class="compare-thumbs" role="group" aria-label="Elegir imagen a comparar">
+              <button type="button" data-k="barrio" data-r="16/9">Barrio</button>
+              <button type="button" data-k="entorno" data-r="16/9">Entorno</button>
+              <button class="is-active" type="button" data-k="aerial" data-r="16/9">Edificio</button>
+              <button type="button" data-k="plaza" data-r="16/9">Acceso</button>
+              <button type="button" data-k="cut" data-r="16/9">Piso 2</button>
+              <button type="button" data-k="suite" data-r="4/3">Suite</button>
+              <button type="button" data-k="sala" data-r="4/3">Sala</button>
+              <button type="button" data-k="doble" data-r="4/3">Doble</button>
+              <button type="button" data-k="bano" data-r="4/3">Baño</button>
+            </div>
+          </div>
+          <p class="note">Imágenes de visualización generadas a partir del modelo 3D del proyecto. Son ilustrativas: acabados, vegetación, entorno y detalles pueden variar frente al modelo y a la obra.</p>
+        </div>
+      </section>
+
+      <!-- ───────────── UBICACIÓN ───────────── -->
+      <section class="section" id="ubicacion">
+        <div class="wrap grid-2">
+          <div>
+            <p class="eyebrow">Ubicación</p>
+            <h2>Usaquén, frente a Unicentro</h2>
+            <dl class="facts">
+              <div><dt>Dirección</dt><dd>Av. Calle 127 # 15A-10, Bogotá D.C.</dd></div>
+              <div><dt>Sector</dt><dd>Santa Bárbara · Unicentro</dd></div>
+              <div><dt>Coordenadas</dt><dd>4.70459, −74.04370</dd></div>
+            </dl>
+            <div class="hero-actions">
+              <a class="btn btn-solid" href="./masterplan.html">Abrir gemelo digital</a>
+              <a class="btn btn-ghost btn-on-light" href="https://www.openstreetmap.org/?mlat=4.704585&mlon=-74.043696#map=17/4.704585/-74.043696" target="_blank" rel="noopener">Ver en el mapa</a>
+            </div>
+          </div>
+          <a class="cta-card" href="./masterplan.html">
+            <img src="./assets/hf/plaza-1200.webp" width="1200" height="670" loading="lazy" alt="" />
+            <span class="cta-card-body">
+              <span class="eyebrow">Gemelo digital</span>
+              <strong>Recorre el edificio y el Piso 2 en 3D</strong>
+              <span>Contexto urbano, corte interior, catálogo de mobiliario e inspector BIM.</span>
+            </span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap footer-in">
+        <img src="./assets/branding/logo-baco.png" alt="BACO STUDIO" height="24" loading="lazy" />
+        <p>Hotel Estelar La Fontana · Remodelación Piso 2 · Bogotá D.C.</p>
+        <nav aria-label="Enlaces">
+          <a href="./masterplan.html">Modelo 3D</a>
+          <a href="./catalogo.html">Catálogo de mobiliario</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script type="module" src="./src/landing/landing.js"></script>
+  </body>
+</html>

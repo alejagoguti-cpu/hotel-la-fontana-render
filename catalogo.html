@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catálogo de mobiliario · Hotel La Fontana</title>
+    <link rel="stylesheet" href="./src/catalog/catalog.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="cat-app">
+      <aside id="cat-side">
+        <div class="cat-brand">
+          <a href="./masterplan.html" class="cat-back">← Masterplan</a>
+          <h1>Catálogo de mobiliario</h1>
+          <p>Hotel IHG La Fontana · Matriz de amoblamiento V2 · modelo 3D vs referencia</p>
+        </div>
+        <div id="cat-tabs"></div>
+        <div id="cat-search"><input id="cat-q" type="search" placeholder="Buscar código o pieza…" /></div>
+        <div id="cat-list"></div>
+      </aside>
+      <main id="cat-main">
+        <header id="cat-head"></header>
+        <section id="cat-stage">
+          <figure id="cat-ref"><figcaption>Referencia de la matriz</figcaption><div id="cat-ref-img"></div></figure>
+          <div id="cat-view">
+            <figcaption>Modelo 3D <span class="hint">arrastra para girar · rueda para acercar</span></figcaption>
+            <div id="cat-canvas"></div>
+            <div id="cat-tools">
+              <button data-act="rotate" class="on">Giro automático</button>
+              <button data-act="front">Frente</button>
+              <button data-act="side">Lateral</button>
+              <button data-act="top">Planta</button>
+              <button data-act="wire">Malla</button>
+            </div>
+            <div id="cat-dims"></div>
+          </div>
+        </section>
+        <section id="cat-info"></section>
+      </main>
+    </div>
+    <script type="module" src="./src/catalog/catalog.js"></script>
+  </body>
+</html>

@@ -1,0 +1,5434 @@
+[
+  {
+    "id": "HAB-214",
+    "number": "214",
+    "code": "HLF-P2-214",
+    "title": "Habitación 214 · Suite D",
+    "subtitle": "Ala Recta Norte / Esquinera Occidental",
+    "wing": "Ala Recta Norte",
+    "typology": "Suite D",
+    "category": "Suite Ejecutiva",
+    "floor": 2,
+    "revitFloorId": "693045",
+    "bathLoops": [],
+    "locationType": "Esquinera Occidental · Vista Jardines Calle 124",
+    "reducedMobility": "NO",
+    "bedConfig": "1 Cama King (2000×2000 mm) + Sala Curva + Comedor 4 Puestos",
+    "status": "Disponible",
+    "finishes": {
+      "floorMain": "REF 01 · Piso Vinílico Madera 5mm (Veta hacia ventana)",
+      "floorBath": "REF 02 · Porcelanato Mos The Dream 30×30 Blanco + REF 28 Santorini Bone",
+      "walls": "REF 03 Papel Colgadura Tessera Vescom + REF 04 Panel Melamínico Sikuani",
+      "countertop": "REF 14 · Mesón Mármol Antik Silver Blue",
+      "rugs": "TA-01 Circular Tejido + TA-04 Sala Curva"
+    },
+    "sheetNumber": "A01 / INT-605A@605C",
+    "gallery": [
+      {
+        "title": "Render Alcoba Principal",
+        "src": "./assets/renders/suite_d_alcoba.png",
+        "type": "Render"
+      },
+      {
+        "title": "Render Alcoba y Estar",
+        "src": "./assets/renders/suite_d_alcoba_estar.png",
+        "type": "Render"
+      },
+      {
+        "title": "Render Sala Curva",
+        "src": "./assets/renders/suite_d_sala.png",
+        "type": "Render"
+      },
+      {
+        "title": "Render Comedor",
+        "src": "./assets/renders/suite_d_comedor.png",
+        "type": "Render"
+      },
+      {
+        "title": "Render Clóset y Panel TV",
+        "src": "./assets/renders/suite_d_closet_tv.png",
+        "type": "Render"
+      },
+      {
+        "title": "Render Baño Mesón Mármol",
+        "src": "./assets/renders/suite_d_bano_meson.png",
+        "type": "Render"
+      },
+      {
+        "title": "Render Baño Nicho Iluminado",
+        "src": "./assets/renders/suite_d_bano_nicho.png",
+        "type": "Render"
+      },
+      {
+        "title": "Axonométrico 3D Acabados",
+        "src": "./assets/axos/suite_d_3d_acabados.png",
+        "type": "Axonométrico"
+      },
+      {
+        "title": "Axonométrico 3D Mobiliario NE",
+        "src": "./assets/axos/suite_d_3d_ne.png",
+        "type": "Axonométrico"
+      },
+      {
+        "title": "Planta de Mobiliario",
+        "src": "./assets/plans/suite_d_planta_mobiliario.png",
+        "type": "Plano"
+      },
+      {
+        "title": "Planta de Pisos y Enchapes",
+        "src": "./assets/plans/suite_d_planta_pisos.png",
+        "type": "Plano"
+      },
+      {
+        "title": "Sección A-A'",
+        "src": "./assets/plans/suite_d_seccion_a.png",
+        "type": "Sección"
+      }
+    ],
+    "mainLoop": [
+      [
+        -12760,
+        11854
+      ],
+      [
+        -12104,
+        12510
+      ],
+      [
+        -11850,
+        12256
+      ],
+      [
+        -8032,
+        12256
+      ],
+      [
+        -8032,
+        11858
+      ],
+      [
+        -7442,
+        11858
+      ],
+      [
+        -7443,
+        10218
+      ],
+      [
+        -8032,
+        10218
+      ],
+      [
+        -8032,
+        10048
+      ],
+      [
+        -6677,
+        10048
+      ],
+      [
+        -6677,
+        10218
+      ],
+      [
+        -7282,
+        10218
+      ],
+      [
+        -7282,
+        12258
+      ],
+      [
+        -5602,
+        12268
+      ],
+      [
+        -5602,
+        10218
+      ],
+      [
+        -5782,
+        10218
+      ],
+      [
+        -5782,
+        10048
+      ],
+      [
+        -4234,
+        10048
+      ],
+      [
+        -4209,
+        3919
+      ],
+      [
+        -7877,
+        3919
+      ],
+      [
+        -7877,
+        5394
+      ],
+      [
+        -7465,
+        5394
+      ],
+      [
+        -7465,
+        7009
+      ],
+      [
+        -7877,
+        7009
+      ],
+      [
+        -7877,
+        8908
+      ],
+      [
+        -7365,
+        8908
+      ],
+      [
+        -7365,
+        9058
+      ],
+      [
+        -8047,
+        9058
+      ],
+      [
+        -8047,
+        6345
+      ],
+      [
+        -9990,
+        6345
+      ],
+      [
+        -13936,
+        10171
+      ],
+      [
+        -12507,
+        11600
+      ]
+    ],
+    "areaMainM2": 51.84,
+    "areaBathM2": 0,
+    "areaPrivateM2": 51.84,
+    "areaBuiltM2": 59.1,
+    "bounds": {
+      "minX": -13936,
+      "minY": 3919,
+      "maxX": -4209,
+      "maxY": 12510,
+      "centerX": -9072,
+      "centerY": 8215,
+      "widthMm": 9727,
+      "depthMm": 8591
+    },
+    "windows": [
+      {
+        "fo": [
+          0,
+          -1
+        ],
+        "w": 1480,
+        "id": 410398,
+        "t": 170,
+        "p": [
+          -5842,
+          3834
+        ]
+      }
+    ],
+    "revitFurnitureSummary": []
+  },
+  {
+    "id": "HAB-215",
+    "number": "215",
+    "code": "HLF-P2-215",
+    "title": "Habitación 215 · Doble Twin",
+    "subtitle": "Ala Recta Norte / Fachada Norte",
+    "wing": "Ala Recta Norte",
+    "typology": "Doble",
+    "category": "Habitación Doble",
+    "floor": 2,
+    "revitFloorId": "965137",
+    "bathLoops": [
+      [
+        [
+          -1927,
+          10818
+        ],
+        [
+          -1927,
+          10267.9
+        ],
+        [
+          -1933.8,
+          10245.7
+        ],
+        [
+          -1956.44,
+          10228.85
+        ],
+        [
+          -3759.3,
+          10228.85
+        ],
+        [
+          -3782.3,
+          10237
+        ],
+        [
+          -3797,
+          10268.1
+        ],
+        [
+          -3797,
+          12197.9
+        ],
+        [
+          -3788,
+          12223.3
+        ],
+        [
+          -3756.9,
+          12238
+        ],
+        [
+          -1967.1,
+          12238
+        ],
+        [
+          -1941.7,
+          12229
+        ],
+        [
+          -1927,
+          12198.1
+        ],
+        [
+          -1927,
+          11708
+        ],
+        [
+          -1912,
+          11676.7
+        ],
+        [
+          -1912,
+          10849.3
+        ]
+      ]
+    ],
+    "extraLoops": [
+      [
+        [
+          -1752,
+          11676.7
+        ],
+        [
+          -1736.9,
+          11708.21
+        ],
+        [
+          -1736.9,
+          12201.52
+        ],
+        [
+          -1730.2,
+          12220.3
+        ],
+        [
+          -1710.58,
+          12236.5
+        ],
+        [
+          -1577.13,
+          12236.5
+        ],
+        [
+          -1542.7,
+          12253
+        ],
+        [
+          -645.3,
+          12253
+        ],
+        [
+          -613.17,
+          12237.6
+        ],
+        [
+          -484.97,
+          12237.6
+        ],
+        [
+          -461.2,
+          12223.5
+        ],
+        [
+          -452,
+          12197.9
+        ],
+        [
+          -452,
+          11758
+        ],
+        [
+          -437,
+          11726.7
+        ],
+        [
+          -437,
+          10839.3
+        ],
+        [
+          -452,
+          10808
+        ],
+        [
+          -452,
+          10258.1
+        ],
+        [
+          -466.5,
+          10227.2
+        ],
+        [
+          -488.44,
+          10218.1
+        ],
+        [
+          -671.72,
+          10218.1
+        ],
+        [
+          -704.4,
+          10206.3
+        ],
+        [
+          -1702.28,
+          10206.3
+        ],
+        [
+          -1727.8,
+          10218.2
+        ],
+        [
+          -1737,
+          10243.8
+        ],
+        [
+          -1737,
+          10818
+        ],
+        [
+          -1752,
+          10849.3
+        ]
+      ]
+    ],
+    "locationType": "Medianera Norte · Vista Calle 124",
+    "reducedMobility": "NO",
+    "bedConfig": "2 Camas Dobles (1600×2000 mm) + Poltrona + Escritorio",
+    "status": "Disponible",
+    "finishes": {
+      "floorMain": "REF 01 · Piso Vinílico Madera 5mm",
+      "floorBath": "REF 02 · Porcelanato Mos The Dream 30×30",
+      "walls": "REF 03 Papel Colgadura Tessera + Cabecero Melamina Sikuani REF 08",
+      "countertop": "REF 14 · Mesón Mármol Antik Silver Blue",
+      "rugs": "TA-01 Tapete Circular"
+    },
+    "sheetNumber": "A02",
+    "gallery": [
+      {
+        "title": "Render Cabeceros Doble",
+        "src": "./assets/renders/doble_cabeceros.png",
+        "type": "Render"
+      },
+      {
+        "title": "Render Ventana y Poltrona",
+        "src": "./assets/renders/doble_ventana.png",
+        "type": "Render"
+      },
+      {
+        "title": "Render Baño Renovado",
+        "src": "./assets/renders/doble_bano.png",
+        "type": "Render"
+      },
+      {
+        "title": "Axonométrico Control 3D (965137)",
+        "src": "./assets/axos/doble_3d_965137.png",
+        "type": "Axonométrico"
+      },
+      {
+        "title": "Axonométrico Ala Recta 3D",
+        "src": "./assets/axos/p2_ala_recta_3d.png",
+        "type": "Axonométrico"
+      },
+      {
+        "title": "Isométrico Baño Tipo",
+        "src": "./assets/axos/bano_doble_iso.png",
+        "type": "Axonométrico"
+      }
+    ],
+    "mainLoop": [
+      [
+        -1741,
+        10046
+      ],
+      [
+        -1709,
+        10056
+      ],
+      [
+        -695,
+        10056
+      ],
+      [
+        -688,
+        10055
+      ],
+      [
+        -672,
+        10040
+      ],
+      [
+        -155,
+        10040
+      ],
+      [
+        -131,
+        10028
+      ],
+      [
+        -120,
+        10008
+      ],
+      [
+        -120,
+        7580
+      ],
+      [
+        -131,
+        7560
+      ],
+      [
+        -155,
+        7548
+      ],
+      [
+        -675,
+        7548
+      ],
+      [
+        -696,
+        7527
+      ],
+      [
+        -696,
+        3958
+      ],
+      [
+        -713,
+        3936
+      ],
+      [
+        -732,
+        3930
+      ],
+      [
+        -3708,
+        3930
+      ],
+      [
+        -3730,
+        3947
+      ],
+      [
+        -3736,
+        3966
+      ],
+      [
+        -3736,
+        9999
+      ],
+      [
+        -3719,
+        10021
+      ],
+      [
+        -3697,
+        10028
+      ],
+      [
+        -1757,
+        10028
+      ]
+    ],
+    "areaMainM2": 20,
+    "areaBathM2": 3.77,
+    "areaPrivateM2": 26.42,
+    "areaBuiltM2": 30.12,
+    "bounds": {
+      "minX": -3797,
+      "minY": 3930,
+      "maxX": -120,
+      "maxY": 12253,
+      "centerX": -1958,
+      "centerY": 8092,
+      "widthMm": 3677,
+      "depthMm": 8323
+    },
+    "windows": [
+      {
+        "fo": [
+          0,
+          -1
+        ],
+        "w": 1500,
+        "id": 410396,
+        "t": 170,
+        "p": [
+          -2107,
+          3834
+        ]
+      }
+    ],
+    "revitFurnitureSummary": [
+      {
+        "fo": [
+          -1,
+          0
+        ],
+        "fam": "Mesa - De coche",
+        "type": "HLF MESA DE NOCHE 450x450",
+        "id": 691133,
+        "p": [
+          -3474,
+          9760
+        ],
+        "bb": [
+          -3699,
+          9535,
+          -3249,
+          9985,
+          550
+        ]
+      }
+    ]
+  },
+  {
+    "id": "HAB-216",
+    "number": "216",
+    "code": "HLF-P2-216",
+    "title": "Habitación 216 · Sencilla King",
+    "subtitle": "Ala Recta Norte / Fachada Norte",
+    "wing": "Ala Recta Norte",
+    "typology": "Sencilla",
+    "category": "Habitación Sencilla King",
+    "floor": 2,
+    "revitFloorId": "965222",
+    "bathLoops": [
+      [
+        [
+          1148,
+          11665.7
+        ],
+        [
+          1163.1,
+          11697.21
+        ],
+        [
+          1163.1,
+          12201.56
+        ],
+        [
+          1172,
+          12223.3
+        ],
+        [
+          1192.56,
+          12237.15
+        ],
+        [
+          2915.3,
+          12237.15
+        ],
+        [
+          2938.3,
+          12229
+        ],
+        [
+          2950.5,
+          12203.19
+        ],
+        [
+          2950.5,
+          10275.16
+        ],
+        [
+          2939,
+          10242.7
+        ],
+        [
+          2907.9,
+          10228
+        ],
+        [
+          1203.1,
+          10228
+        ],
+        [
+          1177.7,
+          10237
+        ],
+        [
+          1163,
+          10268.1
+        ],
+        [
+          1163,
+          10818
+        ],
+        [
+          1148,
+          10849.3
+        ]
+      ]
+    ],
+    "extraLoops": [
+      [
+        [
+          -127,
+          11726.7
+        ],
+        [
+          -111.9,
+          11758.21
+        ],
+        [
+          -111.9,
+          12201.52
+        ],
+        [
+          -105.2,
+          12220.3
+        ],
+        [
+          -87.4,
+          12235
+        ],
+        [
+          -49,
+          12238
+        ],
+        [
+          -17.7,
+          12253
+        ],
+        [
+          879.7,
+          12253
+        ],
+        [
+          911,
+          12238
+        ],
+        [
+          948.2,
+          12235
+        ],
+        [
+          966.2,
+          12220.3
+        ],
+        [
+          973,
+          12197.9
+        ],
+        [
+          973,
+          11697
+        ],
+        [
+          988,
+          11665.7
+        ],
+        [
+          988,
+          10849.3
+        ],
+        [
+          972.9,
+          10817.79
+        ],
+        [
+          972.9,
+          10245.37
+        ],
+        [
+          955.3,
+          10215.8
+        ],
+        [
+          932.9,
+          10209
+        ],
+        [
+          147,
+          10209
+        ],
+        [
+          126.86,
+          10214.39
+        ],
+        [
+          113.15,
+          10228.1
+        ],
+        [
+          -75.63,
+          10228.1
+        ],
+        [
+          -105.2,
+          10245.7
+        ],
+        [
+          -112,
+          10268.1
+        ],
+        [
+          -112,
+          10808
+        ],
+        [
+          -127,
+          10839.3
+        ]
+      ]
+    ],
+    "locationType": "Medianera Norte · Vista Calle 124",
+    "reducedMobility": "NO",
+    "bedConfig": "1 Cama King (1800×2000 mm) + Sofá / Poltrona + Consola TV",
+    "status": "Disponible",
+    "finishes": {
+      "floorMain": "REF 01 · Piso Vinílico Madera 5mm",
+      "floorBath": "REF 02 · Porcelanato Mos The Dream 30×30",
+      "walls": "REF 03 Papel Colgadura Tessera + Cabecero Sikuani REF 08",
+      "countertop": "REF 14 · Mesón Mármol Antik Silver Blue",
+      "rugs": "TA-01 Tapete Circular"
+    },
+    "sheetNumber": "A03",
+    "gallery": [
+      {
+        "title": "Axonométrico Ala Recta 3D",
+        "src": "./assets/axos/p2_ala_recta_3d.png",
+        "type": "Axonométrico"
+      },
+      {
+        "title": "Render Ventana y Estar",
+        "src": "./assets/renders/doble_ventana.png",
+        "type": "Render"
+      },
+      {
+        "title": "Render Baño Tipo",
+        "src": "./assets/renders/doble_bano.png",
+        "type": "Render"
+      },
+      {
+        "title": "Planta Acotada Piso 2",
+        "src": "./assets/plans/p2_planta_acotada.png",
+        "type": "Plano"
+      }
+    ],
+    "mainLoop": [
+      [
+        -430,
+        5030
+      ],
+      [
+        -442,
+        5058
+      ],
+      [
+        -442,
+        7392
+      ],
+      [
+        -430,
+        7416
+      ],
+      [
+        -406,
+        7428
+      ],
+      [
+        113,
+        7428
+      ],
+      [
+        133,
+        7448
+      ],
+      [
+        133,
+        10019
+      ],
+      [
+        140,
+        10041
+      ],
+      [
+        173,
+        10059
+      ],
+      [
+        959,
+        10059
+      ],
+      [
+        979,
+        10054
+      ],
+      [
+        993,
+        10040
+      ],
+      [
+        2908,
+        10040
+      ],
+      [
+        2930,
+        10033
+      ],
+      [
+        2950,
+        9995
+      ],
+      [
+        2950,
+        3978
+      ],
+      [
+        2941,
+        3947
+      ],
+      [
+        2909,
+        3930
+      ],
+      [
+        162,
+        3930
+      ],
+      [
+        140,
+        3947
+      ],
+      [
+        133,
+        3969
+      ],
+      [
+        133,
+        4998
+      ],
+      [
+        113,
+        5018
+      ],
+      [
+        -402,
+        5018
+      ]
+    ],
+    "areaMainM2": 18.61,
+    "areaBathM2": 3.6,
+    "areaPrivateM2": 24.45,
+    "areaBuiltM2": 27.87,
+    "bounds": {
+      "minX": -442,
+      "minY": 3930,
+      "maxX": 2950.5,
+      "maxY": 12253,
+      "centerX": 1254,
+      "centerY": 8092,
+      "widthMm": 3393,
+      "depthMm": 8323
+    },
+    "windows": [
+      {
+        "fo": [
+          0,
+          -1
+        ],
+        "w": 1800,
+        "id": 410395,
+        "t": 170,
+        "p": [
+          1343,
+          3834
+        ]
+      }
+    ],
+    "revitFurnitureSummary": [
+      {
+        "fo": [
+          1,
+          0
+        ],
+        "fam": "Cama-Cuadro",
+        "type": "HLF CAMA 1800x2000",
+        "id": 691102,
+        "p": [
+          1897,
+          8059
+        ],
+        "bb": [
+          897,
+          7159,
+          2897,
+          8959,
+          483
+        ]
+      },
+      {
+        "fo": [
+          1,
+          0
+        ],
+        "fam": "Mesa - De coche",
+        "type": "HLF MESA DE NOCHE 450x450",
+        "id": 691127,
+        "p": [
+          2669,
+          9207
+        ],
+        "bb": [
+          2444,
+          8982,
+          2894,
+          9432,
+          550
+        ]
+      }
+    ]
+  },
+  {
+    "id": "HAB-217",
+    "number": "217",
+    "code": "HLF-P2-217",
+    "title": "Habitación 217 · Doble Twin",
+    "subtitle": "Ala Recta Norte / Fachada Norte",
+    "wing": "Ala Recta Norte",
+    "typology": "Doble",
+    "category": "Habitación Doble",
+    "floor": 2,
+    "revitFloorId": "965111",
+    "bathLoops": [
+      [
+        [
+          3285.5,
+          12203.94
+        ],
+        [
+          3294.8,
+          12226.4
+        ],
+        [
+          3323.1,
+          12238
+        ],
+        [
+          5032.9,
+          12238
+        ],
+        [
+          5061.4,
+          12226.2
+        ],
+        [
+          5073,
+          12197.9
+        ],
+        [
+          5073,
+          11708
+        ],
+        [
+          5088,
+          11676.7
+        ],
+        [
+          5088,
+          10849.3
+        ],
+        [
+          5073,
+          10818
+        ],
+        [
+          5073,
+          10268.1
+        ],
+        [
+          5061.2,
+          10239.6
+        ],
+        [
+          5032.9,
+          10228
+        ],
+        [
+          3328.1,
+          10228
+        ],
+        [
+          3299.6,
+          10239.8
+        ],
+        [
+          3285.5,
+          10274.2
+        ]
+      ]
+    ],
+    "extraLoops": [
+      [
+        [
+          5248,
+          11676.7
+        ],
+        [
+          5263.1,
+          11708.21
+        ],
+        [
+          5263.1,
+          12201.52
+        ],
+        [
+          5269.8,
+          12220.3
+        ],
+        [
+          5289.42,
+          12236.5
+        ],
+        [
+          5427.87,
+          12236.5
+        ],
+        [
+          5462.3,
+          12253
+        ],
+        [
+          6359.7,
+          12253
+        ],
+        [
+          6391.83,
+          12237.6
+        ],
+        [
+          6526.03,
+          12237.6
+        ],
+        [
+          6549.8,
+          12223.5
+        ],
+        [
+          6559,
+          12197.9
+        ],
+        [
+          6559,
+          11758
+        ],
+        [
+          6576,
+          11725.2
+        ],
+        [
+          6576,
+          10840.8
+        ],
+        [
+          6559,
+          10807.9
+        ],
+        [
+          6559,
+          10258.1
+        ],
+        [
+          6544.5,
+          10227.2
+        ],
+        [
+          6522.56,
+          10218.1
+        ],
+        [
+          6354.28,
+          10218.1
+        ],
+        [
+          6328.7,
+          10209
+        ],
+        [
+          5303.1,
+          10209
+        ],
+        [
+          5272.2,
+          10223.5
+        ],
+        [
+          5263,
+          10249.1
+        ],
+        [
+          5263,
+          10818
+        ],
+        [
+          5248,
+          10849.3
+        ]
+      ]
+    ],
+    "locationType": "Medianera Norte · Vista Calle 124",
+    "reducedMobility": "NO",
+    "bedConfig": "2 Camas Dobles (1600×2000 mm) + Poltrona + Consola TV",
+    "status": "Disponible",
+    "finishes": {
+      "floorMain": "REF 01 · Piso Vinílico Madera 5mm",
+      "floorBath": "REF 02 · Porcelanato Mos The Dream 30×30",
+      "walls": "REF 03 Papel Colgadura Tessera + Cabecero Sikuani REF 08",
+      "countertop": "REF 14 · Mesón Mármol Antik Silver Blue",
+      "rugs": "TA-01 Tapete Circular"
+    },
+    "sheetNumber": "A04",
+    "gallery": [
+      {
+        "title": "Render Cabeceros Doble",
+        "src": "./assets/renders/doble_cabeceros.png",
+        "type": "Render"
+      },
+      {
+        "title": "Render Ventana Fachada",
+        "src": "./assets/renders/doble_ventana.png",
+        "type": "Render"
+      },
+      {
+        "title": "Axonométrico Ala Recta 3D",
+        "src": "./assets/axos/p2_ala_recta_3d.png",
+        "type": "Axonométrico"
+      },
+      {
+        "title": "Isométrico Baño Tipo",
+        "src": "./assets/axos/bano_doble_iso.png",
+        "type": "Axonométrico"
+      }
+    ],
+    "mainLoop": [
+      [
+        3288,
+        10000
+      ],
+      [
+        3300,
+        10028
+      ],
+      [
+        3328,
+        10040
+      ],
+      [
+        5243,
+        10040
+      ],
+      [
+        5257,
+        10054
+      ],
+      [
+        5277,
+        10059
+      ],
+      [
+        6320,
+        10059
+      ],
+      [
+        6340,
+        10054
+      ],
+      [
+        6354,
+        10040
+      ],
+      [
+        6883,
+        10040
+      ],
+      [
+        6911,
+        10028
+      ],
+      [
+        6923,
+        10001
+      ],
+      [
+        6923,
+        7581
+      ],
+      [
+        6911,
+        7560
+      ],
+      [
+        6887,
+        7548
+      ],
+      [
+        6351,
+        7548
+      ],
+      [
+        6331,
+        7528
+      ],
+      [
+        6331,
+        3969
+      ],
+      [
+        6319,
+        3941
+      ],
+      [
+        6291,
+        3929
+      ],
+      [
+        3328,
+        3929
+      ],
+      [
+        3303,
+        3938
+      ],
+      [
+        3288,
+        3969
+      ]
+    ],
+    "areaMainM2": 20.09,
+    "areaBathM2": 3.6,
+    "areaPrivateM2": 26.36,
+    "areaBuiltM2": 30.05,
+    "bounds": {
+      "minX": 3285.5,
+      "minY": 3929,
+      "maxX": 6923,
+      "maxY": 12253,
+      "centerX": 5104,
+      "centerY": 8091,
+      "widthMm": 3638,
+      "depthMm": 8324
+    },
+    "windows": [
+      {
+        "fo": [
+          0,
+          -1
+        ],
+        "w": 1540,
+        "id": 410394,
+        "t": 170,
+        "p": [
+          4899,
+          3834
+        ]
+      }
+    ],
+    "revitFurnitureSummary": [
+      {
+        "fo": [
+          -1,
+          0
+        ],
+        "fam": "Cama-Cuadro",
+        "type": "HLF CAMA 1600x2000",
+        "id": 691112,
+        "p": [
+          4338,
+          6460
+        ],
+        "bb": [
+          3338,
+          5660,
+          5338,
+          7260,
+          483
+        ]
+      },
+      {
+        "fo": [
+          -1,
+          0
+        ],
+        "fam": "Cama-Cuadro",
+        "type": "HLF CAMA 1600x2000",
+        "id": 691114,
+        "p": [
+          4338,
+          8660
+        ],
+        "bb": [
+          3338,
+          7860,
+          5338,
+          9460,
+          483
+        ]
+      },
+      {
+        "fo": [
+          -1,
+          0
+        ],
+        "fam": "Mesa - De coche",
+        "type": "HLF MESA DE NOCHE 450x450",
+        "id": 691130,
+        "p": [
+          3568,
+          9760
+        ],
+        "bb": [
+          3343,
+          9535,
+          3793,
+          9985,
+          550
+        ]
+      },
+      {
+        "fo": [
+          -1,
+          0
+        ],
+        "fam": "Mesa - De coche",
+        "type": "HLF MESA DE NOCHE 450x450",
+        "id": 691132,
+        "p": [
+          3568,
+          7560
+        ],
+        "bb": [
+          3343,
+          7335,
+          3793,
+          7785,
+          550
+        ]
+      }
+    ]
+  },
+  {
+    "id": "HAB-218",
+    "number": "218",
+    "code": "HLF-P2-218",
+    "title": "Habitación 218 · Sencilla King",
+    "subtitle": "Ala Recta Norte / Remate Oriental",
+    "wing": "Ala Recta Norte",
+    "typology": "Sencilla",
+    "category": "Habitación Sencilla King",
+    "floor": 2,
+    "revitFloorId": "965163",
+    "bathLoops": [
+      [
+        [
+          8348,
+          11676.7
+        ],
+        [
+          8363.1,
+          11708.21
+        ],
+        [
+          8363.1,
+          12201.56
+        ],
+        [
+          8372,
+          12223.3
+        ],
+        [
+          8392.56,
+          12237.15
+        ],
+        [
+          10115.3,
+          12237.15
+        ],
+        [
+          10138.3,
+          12229
+        ],
+        [
+          10150.5,
+          12203.19
+        ],
+        [
+          10150.5,
+          10275.16
+        ],
+        [
+          10139,
+          10242.7
+        ],
+        [
+          10107.9,
+          10228
+        ],
+        [
+          8403.1,
+          10228
+        ],
+        [
+          8377.7,
+          10237
+        ],
+        [
+          8363,
+          10268.1
+        ],
+        [
+          8363,
+          10818
+        ],
+        [
+          8348,
+          10849.3
+        ]
+      ]
+    ],
+    "extraLoops": [
+      [
+        [
+          6846,
+          11725.2
+        ],
+        [
+          6863.1,
+          11758.29
+        ],
+        [
+          6863.1,
+          12201.52
+        ],
+        [
+          6869.8,
+          12220.3
+        ],
+        [
+          6889.64,
+          12236.5
+        ],
+        [
+          7034.87,
+          12236.5
+        ],
+        [
+          7069.3,
+          12253
+        ],
+        [
+          7966.7,
+          12253
+        ],
+        [
+          7998.21,
+          12237.9
+        ],
+        [
+          8136.61,
+          12237.9
+        ],
+        [
+          8163.8,
+          12223.5
+        ],
+        [
+          8173,
+          12197.9
+        ],
+        [
+          8173,
+          11708
+        ],
+        [
+          8188,
+          11676.7
+        ],
+        [
+          8188,
+          10849.3
+        ],
+        [
+          8173,
+          10818
+        ],
+        [
+          8173,
+          10249.1
+        ],
+        [
+          8158.5,
+          10218.2
+        ],
+        [
+          8132.9,
+          10209
+        ],
+        [
+          7127,
+          10209
+        ],
+        [
+          7106.86,
+          10214.39
+        ],
+        [
+          7093.15,
+          10228.1
+        ],
+        [
+          6899.39,
+          10228.1
+        ],
+        [
+          6872.2,
+          10242.5
+        ],
+        [
+          6863,
+          10268.1
+        ],
+        [
+          6863,
+          10807.9
+        ],
+        [
+          6846,
+          10840.8
+        ]
+      ]
+    ],
+    "locationType": "Esquinera Interior Norte · Vista Jardín Central",
+    "reducedMobility": "NO",
+    "bedConfig": "1 Cama King (1800×2000 mm) + 2 Mesas de Noche + Poltrona",
+    "status": "Disponible",
+    "finishes": {
+      "floorMain": "REF 01 · Piso Vinílico Madera 5mm",
+      "floorBath": "REF 02 · Porcelanato Mos The Dream 30×30",
+      "walls": "REF 03 Papel Colgadura Tessera + Cabecero Sikuani REF 08",
+      "countertop": "REF 14 · Mesón Mármol Antik Silver Blue",
+      "rugs": "TA-01 Tapete Circular"
+    },
+    "sheetNumber": "A05",
+    "gallery": [
+      {
+        "title": "Axonométrico Ala Recta 3D",
+        "src": "./assets/axos/p2_ala_recta_3d.png",
+        "type": "Axonométrico"
+      },
+      {
+        "title": "Render Ventana y Estar",
+        "src": "./assets/renders/doble_ventana.png",
+        "type": "Render"
+      },
+      {
+        "title": "Render Baño Renovado",
+        "src": "./assets/renders/doble_bano.png",
+        "type": "Render"
+      },
+      {
+        "title": "Planta de Acabados Piso 2",
+        "src": "./assets/plans/p2_planta_acabados.png",
+        "type": "Plano"
+      }
+    ],
+    "mainLoop": [
+      [
+        7113,
+        7448
+      ],
+      [
+        7113,
+        10019
+      ],
+      [
+        7127,
+        10050
+      ],
+      [
+        7153,
+        10059
+      ],
+      [
+        8159,
+        10059
+      ],
+      [
+        8179,
+        10054
+      ],
+      [
+        8193,
+        10040
+      ],
+      [
+        10108,
+        10040
+      ],
+      [
+        10139,
+        10025
+      ],
+      [
+        10150,
+        9993
+      ],
+      [
+        10150,
+        3974
+      ],
+      [
+        10134,
+        3938
+      ],
+      [
+        10108,
+        3929
+      ],
+      [
+        7199,
+        3929
+      ],
+      [
+        7168,
+        3944
+      ],
+      [
+        7159,
+        3969
+      ],
+      [
+        7159,
+        4998
+      ],
+      [
+        7139,
+        5018
+      ],
+      [
+        6620,
+        5018
+      ],
+      [
+        6596,
+        5030
+      ],
+      [
+        6584,
+        5057
+      ],
+      [
+        6584,
+        7395
+      ],
+      [
+        6596,
+        7416
+      ],
+      [
+        6620,
+        7428
+      ],
+      [
+        7093,
+        7428
+      ]
+    ],
+    "areaMainM2": 19.8,
+    "areaBathM2": 3.6,
+    "areaPrivateM2": 26.1,
+    "areaBuiltM2": 29.75,
+    "bounds": {
+      "minX": 6584,
+      "minY": 3929,
+      "maxX": 10150.5,
+      "maxY": 12253,
+      "centerX": 8367,
+      "centerY": 8091,
+      "widthMm": 3567,
+      "depthMm": 8324
+    },
+    "windows": [
+      {
+        "fo": [
+          0,
+          -1
+        ],
+        "w": 1800,
+        "id": 410393,
+        "t": 170,
+        "p": [
+          8543,
+          3834
+        ]
+      }
+    ],
+    "revitFurnitureSummary": [
+      {
+        "fo": [
+          1,
+          0
+        ],
+        "fam": "Cama-Cuadro",
+        "type": "HLF CAMA 1800x2000",
+        "id": 691101,
+        "p": [
+          9097,
+          8059
+        ],
+        "bb": [
+          8097,
+          7159,
+          10097,
+          8959,
+          483
+        ]
+      },
+      {
+        "fo": [
+          1,
+          0
+        ],
+        "fam": "Mesa - De coche",
+        "type": "HLF MESA DE NOCHE 450x450",
+        "id": 691125,
+        "p": [
+          9869,
+          6912
+        ],
+        "bb": [
+          9644,
+          6687,
+          10094,
+          7137,
+          550
+        ]
+      },
+      {
+        "fo": [
+          1,
+          0
+        ],
+        "fam": "Mesa - De coche",
+        "type": "HLF MESA DE NOCHE 450x450",
+        "id": 691128,
+        "p": [
+          9869,
+          9207
+        ],
+        "bb": [
+          9644,
+          8982,
+          10094,
+          9432,
+          550
+        ]
+      }
+    ]
+  },
+  {
+    "id": "HAB-219",
+    "number": "219",
+    "code": "HLF-P2-219",
+    "title": "Habitación 219 · Doble Diagonal",
+    "subtitle": "Ala Diagonal / Sector Nororiente",
+    "wing": "Ala Diagonal",
+    "typology": "Doble",
+    "category": "Habitación Doble",
+    "floor": 2,
+    "revitFloorId": "965191",
+    "bathLoops": [
+      [
+        [
+          31116.7,
+          9343
+        ],
+        [
+          31143.74,
+          9331.86
+        ],
+        [
+          32126.05,
+          8349.55
+        ],
+        [
+          32137.3,
+          8312.3
+        ],
+        [
+          32126.91,
+          8292.76
+        ],
+        [
+          31808.35,
+          7974.2
+        ],
+        [
+          31796.61,
+          7941.31
+        ],
+        [
+          31212.01,
+          7356.71
+        ],
+        [
+          31178.67,
+          7345.02
+        ],
+        [
+          30758.7,
+          6925.05
+        ],
+        [
+          30725.3,
+          6916.6
+        ],
+        [
+          30705.56,
+          6927.14
+        ],
+        [
+          29519.67,
+          8113.03
+        ],
+        [
+          29508.6,
+          8149.6
+        ],
+        [
+          29518.22,
+          8167.63
+        ],
+        [
+          30685.32,
+          9334.72
+        ],
+        [
+          30710.6,
+          9343
+        ]
+      ]
+    ],
+    "extraLoops": [
+      [
+        [
+          31310.79,
+          7211.34
+        ],
+        [
+          31324.58,
+          7242.93
+        ],
+        [
+          31909.86,
+          7828.21
+        ],
+        [
+          31943.52,
+          7840.77
+        ],
+        [
+          32259.93,
+          8157.18
+        ],
+        [
+          32288.9,
+          8169.2
+        ],
+        [
+          32314.63,
+          8160.02
+        ],
+        [
+          32448.67,
+          8025.98
+        ],
+        [
+          32480.98,
+          8014.62
+        ],
+        [
+          33116.07,
+          7379.53
+        ],
+        [
+          33128.21,
+          7346.04
+        ],
+        [
+          33224.89,
+          7249.36
+        ],
+        [
+          33234.3,
+          7223.2
+        ],
+        [
+          33222.56,
+          7194.81
+        ],
+        [
+          32904.93,
+          6877.18
+        ],
+        [
+          32893.46,
+          6847.96
+        ],
+        [
+          32262.58,
+          6217.08
+        ],
+        [
+          32231.43,
+          6204.18
+        ],
+        [
+          31886.17,
+          5858.92
+        ],
+        [
+          31857.2,
+          5846.9
+        ],
+        [
+          31829.57,
+          5858.28
+        ],
+        [
+          31578.77,
+          6109.08
+        ],
+        [
+          31556.8,
+          6108.3
+        ],
+        [
+          31539.5,
+          6117.6
+        ],
+        [
+          30872.45,
+          6739.23
+        ],
+        [
+          30872.45,
+          6763.22
+        ],
+        [
+          30886.49,
+          6787.04
+        ]
+      ]
+    ],
+    "locationType": "Ala Diagonal · Vista Plazoleta & Jardín Interior",
+    "reducedMobility": "NO",
+    "bedConfig": "2 Camas Dobles (1600×2000 mm) + Poltrona Club Chair + Consola",
+    "status": "Disponible",
+    "finishes": {
+      "floorMain": "REF 01 · Piso Vinílico Madera 5mm (Veta 45° hacia ventana)",
+      "floorBath": "REF 02 · Porcelanato Mos The Dream 30×30",
+      "walls": "REF 03 Papel Colgadura Tessera + Cabecero Sikuani REF 08",
+      "countertop": "REF 14 · Mesón Mármol Antik Silver Blue",
+      "rugs": "TA-01 Tapete Circular"
+    },
+    "sheetNumber": "A06",
+    "gallery": [
+      {
+        "title": "Axonométrico Control Doble (965191)",
+        "src": "./assets/axos/doble_3d_965191.png",
+        "type": "Axonométrico"
+      },
+      {
+        "title": "Axonométrico Ala Diagonal 3D",
+        "src": "./assets/axos/p2_ala_diagonal_3d.png",
+        "type": "Axonométrico"
+      },
+      {
+        "title": "Render Cabeceros Doble",
+        "src": "./assets/renders/doble_cabeceros.png",
+        "type": "Render"
+      },
+      {
+        "title": "Render Baño Renovado",
+        "src": "./assets/renders/doble_bano.png",
+        "type": "Render"
+      }
+    ],
+    "mainLoop": [
+      [
+        26726,
+        5382
+      ],
+      [
+        26734,
+        5405
+      ],
+      [
+        29318,
+        7990
+      ],
+      [
+        29344,
+        8002
+      ],
+      [
+        29376,
+        7991
+      ],
+      [
+        30720,
+        6646
+      ],
+      [
+        30740,
+        6648
+      ],
+      [
+        30771,
+        6636
+      ],
+      [
+        31439,
+        6020
+      ],
+      [
+        31450,
+        6004
+      ],
+      [
+        31451,
+        5982
+      ],
+      [
+        31833,
+        5599
+      ],
+      [
+        31844,
+        5579
+      ],
+      [
+        31834,
+        5545
+      ],
+      [
+        30175,
+        3886
+      ],
+      [
+        30151,
+        3879
+      ],
+      [
+        30125,
+        3888
+      ],
+      [
+        29741,
+        4272
+      ],
+      [
+        29711,
+        4272
+      ],
+      [
+        27107,
+        1668
+      ],
+      [
+        27081,
+        1656
+      ],
+      [
+        27050,
+        1667
+      ],
+      [
+        25051,
+        3666
+      ],
+      [
+        25039,
+        3692
+      ],
+      [
+        25050,
+        3723
+      ],
+      [
+        26180,
+        4853
+      ],
+      [
+        26205,
+        4861
+      ],
+      [
+        26726,
+        4861
+      ]
+    ],
+    "areaMainM2": 19.13,
+    "areaBathM2": 3.49,
+    "areaPrivateM2": 25.38,
+    "areaBuiltM2": 28.93,
+    "bounds": {
+      "minX": 25039,
+      "minY": 1656,
+      "maxX": 33234.3,
+      "maxY": 9343,
+      "centerX": 29137,
+      "centerY": 5500,
+      "widthMm": 8195,
+      "depthMm": 7687
+    },
+    "windows": [
+      {
+        "fo": [
+          -0.707,
+          -0.707
+        ],
+        "w": 1670,
+        "id": 410391,
+        "t": 170,
+        "p": [
+          26079,
+          2503
+        ]
+      }
+    ],
+    "revitFurnitureSummary": [
+      {
+        "fo": [
+          -0.707,
+          0.707
+        ],
+        "fam": "Cama-Cuadro",
+        "type": "HLF CAMA 1600x2000",
+        "id": 691108,
+        "p": [
+          29110,
+          6296
+        ],
+        "bb": [
+          27837,
+          5023,
+          30383,
+          7569,
+          483
+        ]
+      },
+      {
+        "fo": [
+          -0.707,
+          0.707
+        ],
+        "fam": "Cama-Cuadro",
+        "type": "HLF CAMA 1600x2000",
+        "id": 691109,
+        "p": [
+          27554,
+          4741
+        ],
+        "bb": [
+          26281,
+          3468,
+          28827,
+          6014,
+          483
+        ]
+      },
+      {
+        "fo": [
+          -0.707,
+          0.707
+        ],
+        "fam": "Mesa - De coche",
+        "type": "HLF MESA DE NOCHE 450x450",
+        "id": 691117,
+        "p": [
+          27788,
+          6064
+        ],
+        "bb": [
+          27470,
+          5746,
+          28106,
+          6382,
+          550
+        ]
+      },
+      {
+        "fo": [
+          -0.707,
+          0.707
+        ],
+        "fam": "Mesa - De coche",
+        "type": "HLF MESA DE NOCHE 450x450",
+        "id": 691118,
+        "p": [
+          29344,
+          7619
+        ],
+        "bb": [
+          29026,
+          7301,
+          29662,
+          7937,
+          550
+        ]
+      },
+      {
+        "fo": [
+          0,
+          1
+        ],
+        "fam": "Club_Chair_10897",
+        "type": "Club_Chair_10897",
+        "id": 691142,
+        "p": [
+          26635,
+          3569
+        ],
+        "bb": [
+          26241,
+          2731,
+          27029,
+          3569,
+          806
+        ]
+      }
+    ]
+  },
+  {
+    "id": "HAB-220",
+    "number": "220",
+    "code": "HLF-P2-220",
+    "title": "Habitación 220 · Sencilla King Diagonal",
+    "subtitle": "Ala Diagonal / Centro",
+    "wing": "Ala Diagonal",
+    "typology": "Sencilla",
+    "category": "Habitación Sencilla King",
+    "floor": 2,
+    "revitFloorId": "965017",
+    "bathLoops": [
+      [
+        [
+          33521.01,
+          5000.86
+        ],
+        [
+          33533.37,
+          5032.67
+        ],
+        [
+          34117.99,
+          5617.29
+        ],
+        [
+          34151.33,
+          5628.98
+        ],
+        [
+          34472.3,
+          5949.95
+        ],
+        [
+          34505.9,
+          5958.4
+        ],
+        [
+          34524.35,
+          5948.45
+        ],
+        [
+          35532.81,
+          4939.99
+        ],
+        [
+          35539.25,
+          4918.77
+        ],
+        [
+          35539.25,
+          4496.45
+        ],
+        [
+          34358.49,
+          3315.69
+        ],
+        [
+          34349.1,
+          3310.1
+        ],
+        [
+          34325.7,
+          3310.1
+        ],
+        [
+          33095.86,
+          4539.94
+        ],
+        [
+          33093.6,
+          4562.9
+        ],
+        [
+          33106.08,
+          4585.93
+        ]
+      ]
+    ],
+    "locationType": "Ala Diagonal Central · Vista Jardín Interior",
+    "reducedMobility": "NO",
+    "bedConfig": "1 Cama King (1800×2000 mm) + Poltrona Club Chair + Escritorio",
+    "status": "Disponible",
+    "finishes": {
+      "floorMain": "REF 01 · Piso Vinílico Madera 5mm (Veta 45°)",
+      "floorBath": "REF 02 · Porcelanato Mos The Dream 30×30",
+      "walls": "REF 03 Papel Colgadura Tessera + Cabecero Sikuani REF 08",
+      "countertop": "REF 14 · Mesón Mármol Antik Silver Blue",
+      "rugs": "TA-01 Tapete Circular (3.80 m²)"
+    },
+    "sheetNumber": "A07",
+    "gallery": [
+      {
+        "title": "Axonométrico Ala Diagonal 3D",
+        "src": "./assets/axos/p2_ala_diagonal_3d.png",
+        "type": "Axonométrico"
+      },
+      {
+        "title": "Render Ventana Fachada",
+        "src": "./assets/renders/fachada_detalle.png",
+        "type": "Render"
+      },
+      {
+        "title": "Render Corredor y Portales",
+        "src": "./assets/renders/hall_corredor.png",
+        "type": "Render"
+      },
+      {
+        "title": "Planta de Mobiliario Piso 2",
+        "src": "./assets/plans/p2_planta_mobiliario.png",
+        "type": "Plano"
+      }
+    ],
+    "mainLoop": [
+      [
+        28449,
+        1930
+      ],
+      [
+        28073,
+        2305
+      ],
+      [
+        28064,
+        2327
+      ],
+      [
+        28069,
+        2351
+      ],
+      [
+        29725,
+        4007
+      ],
+      [
+        29752,
+        4018
+      ],
+      [
+        29778,
+        4009
+      ],
+      [
+        30158,
+        3629
+      ],
+      [
+        30187,
+        3629
+      ],
+      [
+        32499,
+        5940
+      ],
+      [
+        32509,
+        5969
+      ],
+      [
+        33139,
+        6599
+      ],
+      [
+        33172,
+        6612
+      ],
+      [
+        33493,
+        6933
+      ],
+      [
+        33513,
+        6940
+      ],
+      [
+        33538,
+        6935
+      ],
+      [
+        33590,
+        6883
+      ],
+      [
+        33624,
+        6870
+      ],
+      [
+        34259,
+        6235
+      ],
+      [
+        34271,
+        6201
+      ],
+      [
+        34340,
+        6133
+      ],
+      [
+        34347,
+        6106
+      ],
+      [
+        34338,
+        6084
+      ],
+      [
+        34017,
+        5763
+      ],
+      [
+        34006,
+        5731
+      ],
+      [
+        33420,
+        5146
+      ],
+      [
+        33386,
+        5133
+      ],
+      [
+        32823,
+        4570
+      ],
+      [
+        32823,
+        4541
+      ],
+      [
+        34176,
+        3188
+      ],
+      [
+        34188,
+        3163
+      ],
+      [
+        34182,
+        3137
+      ],
+      [
+        31596,
+        552
+      ],
+      [
+        31569,
+        542
+      ],
+      [
+        31048,
+        542
+      ],
+      [
+        31048,
+        22
+      ],
+      [
+        31041,
+        0
+      ],
+      [
+        29899,
+        -1142
+      ],
+      [
+        29874,
+        -1147
+      ],
+      [
+        29854,
+        -1137
+      ],
+      [
+        27654,
+        1062
+      ],
+      [
+        27649,
+        1088
+      ],
+      [
+        27661,
+        1112
+      ],
+      [
+        28449,
+        1900
+      ]
+    ],
+    "areaMainM2": 23.36,
+    "areaBathM2": 3.54,
+    "areaPrivateM2": 26.9,
+    "areaBuiltM2": 30.67,
+    "bounds": {
+      "minX": 27649,
+      "minY": -1147,
+      "maxX": 35539.25,
+      "maxY": 6940,
+      "centerX": 31594,
+      "centerY": 2897,
+      "widthMm": 7890,
+      "depthMm": 8087
+    },
+    "windows": [
+      {
+        "fo": [
+          -0.707,
+          -0.707
+        ],
+        "w": 1940,
+        "id": 410388,
+        "t": 170,
+        "p": [
+          28628,
+          -47
+        ]
+      }
+    ],
+    "revitFurnitureSummary": [
+      {
+        "fo": [
+          0.707,
+          -0.707
+        ],
+        "fam": "Cama-Cuadro",
+        "type": "HLF CAMA 1800x2000",
+        "id": 691100,
+        "p": [
+          32056,
+          2498
+        ],
+        "bb": [
+          30712,
+          1154,
+          33400,
+          3842,
+          483
+        ]
+      },
+      {
+        "fo": [
+          -0.707,
+          0.707
+        ],
+        "fam": "Cama-Cuadro",
+        "type": "HLF CAMA 1600x2000",
+        "id": 691107,
+        "p": [
+          32650,
+          -359
+        ],
+        "bb": [
+          31377,
+          -1632,
+          33923,
+          914,
+          483
+        ]
+      },
+      {
+        "fo": [
+          -0.707,
+          0.707
+        ],
+        "fam": "Cama-Cuadro",
+        "type": "HLF CAMA 1600x2000",
+        "id": 691108,
+        "p": [
+          29110,
+          6296
+        ],
+        "bb": [
+          27837,
+          5023,
+          30383,
+          7569,
+          483
+        ]
+      },
+      {
+        "fo": [
+          -0.707,
+          0.707
+        ],
+        "fam": "Cama-Cuadro",
+        "type": "HLF CAMA 1600x2000",
+        "id": 691110,
+        "p": [
+          34207,
+          1196
+        ],
+        "bb": [
+          32934,
+          -77,
+          35480,
+          2469,
+          483
+        ]
+      },
+      {
+        "fo": [
+          -0.707,
+          0.707
+        ],
+        "fam": "Mesa - De coche",
+        "type": "HLF MESA DE NOCHE 450x450",
+        "id": 691117,
+        "p": [
+          27788,
+          6064
+        ],
+        "bb": [
+          27470,
+          5746,
+          28106,
+          6382,
+          550
+        ]
+      },
+      {
+        "fo": [
+          0.707,
+          -0.707
+        ],
+        "fam": "Mesa - De coche",
+        "type": "HLF MESA DE NOCHE 450x450",
+        "id": 691120,
+        "p": [
+          33413,
+          2763
+        ],
+        "bb": [
+          33095,
+          2445,
+          33731,
+          3081,
+          550
+        ]
+      },
+      {
+        "fo": [
+          -0.707,
+          0.707
+        ],
+        "fam": "Mesa - De coche",
+        "type": "HLF MESA DE NOCHE 450x450",
+        "id": 691121,
+        "p": [
+          32884,
+          963
+        ],
+        "bb": [
+          32566,
+          645,
+          33202,
+          1281,
+          550
+        ]
+      },
+      {
+        "fo": [
+          0.707,
+          -0.707
+        ],
+        "fam": "Mesa - De coche",
+        "type": "HLF MESA DE NOCHE 450x450",
+        "id": 691134,
+        "p": [
+          31790,
+          1141
+        ],
+        "bb": [
+          31472,
+          823,
+          32108,
+          1459,
+          550
+        ]
+      },
+      {
+        "fo": [
+          0,
+          1
+        ],
+        "fam": "Club_Chair_10897",
+        "type": "Club_Chair_10897",
+        "id": 691140,
+        "p": [
+          28468,
+          1620
+        ],
+        "bb": [
+          28074,
+          782,
+          28862,
+          1620,
+          806
+        ]
+      }
+    ]
+  },
+  {
+    "id": "HAB-221",
+    "number": "221",
+    "code": "HLF-P2-221",
+    "title": "Habitación 221 · Doble Diagonal Sur",
+    "subtitle": "Ala Diagonal / Sector Suroriente",
+    "wing": "Ala Diagonal",
+    "typology": "Doble",
+    "category": "Habitación Doble",
+    "floor": 2,
+    "revitFloorId": "965064",
+    "bathLoops": [
+      [
+        [
+          36201.9,
+          4253
+        ],
+        [
+          36229.63,
+          4241.52
+        ],
+        [
+          37233.15,
+          3238
+        ],
+        [
+          37244.9,
+          3205
+        ],
+        [
+          37233.67,
+          3181.57
+        ],
+        [
+          36915.58,
+          2863.48
+        ],
+        [
+          36914.8,
+          2842.1
+        ],
+        [
+          36904.5,
+          2824.6
+        ],
+        [
+          36324.4,
+          2244.5
+        ],
+        [
+          36305.46,
+          2233.9
+        ],
+        [
+          36285.65,
+          2233.9
+        ],
+        [
+          35868.37,
+          1816.62
+        ],
+        [
+          35832.3,
+          1805.6
+        ],
+        [
+          35812.67,
+          1816.08
+        ],
+        [
+          34606.75,
+          3022
+        ],
+        [
+          34595,
+          3055
+        ],
+        [
+          34606.27,
+          3078.72
+        ],
+        [
+          35772.73,
+          4245.18
+        ],
+        [
+          35796.6,
+          4253
+        ]
+      ]
+    ],
+    "extraLoops": [
+      [
+        [
+          36419.85,
+          2099.9
+        ],
+        [
+          36419.85,
+          2119.37
+        ],
+        [
+          36430.5,
+          2138.4
+        ],
+        [
+          37010.6,
+          2718.5
+        ],
+        [
+          37026.5,
+          2728.2
+        ],
+        [
+          37050.28,
+          2729.53
+        ],
+        [
+          37366.85,
+          3046.1
+        ],
+        [
+          37392,
+          3058
+        ],
+        [
+          37419.03,
+          3051.22
+        ],
+        [
+          37513.05,
+          2957.2
+        ],
+        [
+          37546.16,
+          2945.59
+        ],
+        [
+          38128.98,
+          2362.77
+        ],
+        [
+          38140.9,
+          2337.69
+        ],
+        [
+          38140.9,
+          2006.82
+        ],
+        [
+          38132.14,
+          1982.09
+        ],
+        [
+          36917.77,
+          767.72
+        ],
+        [
+          36893,
+          756
+        ],
+        [
+          36863.28,
+          765.07
+        ],
+        [
+          36741.31,
+          887.04
+        ],
+        [
+          36708.16,
+          896.74
+        ],
+        [
+          35979,
+          1625.9
+        ],
+        [
+          35979,
+          1652
+        ],
+        [
+          35989.52,
+          1669.57
+        ]
+      ]
+    ],
+    "locationType": "Ala Diagonal Sur · Vista Jardín Interior",
+    "reducedMobility": "NO",
+    "bedConfig": "2 Camas Dobles (1600×2000 mm) + Poltrona Club Chair + Tapete TA-02",
+    "status": "Disponible",
+    "finishes": {
+      "floorMain": "REF 01 · Piso Vinílico Madera 5mm (Veta 45°)",
+      "floorBath": "REF 02 · Porcelanato Mos The Dream 30×30",
+      "walls": "REF 03 Papel Colgadura Tessera + Cabecero Sikuani REF 08",
+      "countertop": "REF 14 · Mesón Mármol Antik Silver Blue",
+      "rugs": "TA-02 Tapete Rectangular (8.74 m²) + TA-01"
+    },
+    "sheetNumber": "A08",
+    "gallery": [
+      {
+        "title": "Axonométrico Ala Diagonal 3D",
+        "src": "./assets/axos/p2_ala_diagonal_3d.png",
+        "type": "Axonométrico"
+      },
+      {
+        "title": "Render Cabeceros Doble",
+        "src": "./assets/renders/doble_cabeceros.png",
+        "type": "Render"
+      },
+      {
+        "title": "Render Baño Tipo",
+        "src": "./assets/renders/doble_bano.png",
+        "type": "Render"
+      },
+      {
+        "title": "Verificación Veta de Pisos 3D",
+        "src": "./assets/axos/veta_pisos_general.png",
+        "type": "Axonométrico"
+      }
+    ],
+    "mainLoop": [
+      [
+        30143,
+        -1428
+      ],
+      [
+        30135,
+        -1405
+      ],
+      [
+        30144,
+        -1380
+      ],
+      [
+        31280,
+        -244
+      ],
+      [
+        31304,
+        -236
+      ],
+      [
+        31826,
+        -236
+      ],
+      [
+        31826,
+        285
+      ],
+      [
+        31832,
+        304
+      ],
+      [
+        34426,
+        2898
+      ],
+      [
+        34453,
+        2900
+      ],
+      [
+        34472,
+        2890
+      ],
+      [
+        35827,
+        1535
+      ],
+      [
+        35849,
+        1534
+      ],
+      [
+        35863,
+        1525
+      ],
+      [
+        36597,
+        791
+      ],
+      [
+        36610,
+        748
+      ],
+      [
+        36999,
+        359
+      ],
+      [
+        37000,
+        335
+      ],
+      [
+        36991,
+        317
+      ],
+      [
+        35340,
+        -1334
+      ],
+      [
+        35313,
+        -1343
+      ],
+      [
+        35287,
+        -1334
+      ],
+      [
+        34903,
+        -950
+      ],
+      [
+        34874,
+        -950
+      ],
+      [
+        33776,
+        -2048
+      ],
+      [
+        33751,
+        -2060
+      ],
+      [
+        33647,
+        -2060
+      ],
+      [
+        33647,
+        -2164
+      ],
+      [
+        33640,
+        -2183
+      ],
+      [
+        33422,
+        -2401
+      ],
+      [
+        33422,
+        -2431
+      ],
+      [
+        33644,
+        -2654
+      ],
+      [
+        33644,
+        -2840
+      ],
+      [
+        33748,
+        -2840
+      ],
+      [
+        33771,
+        -2863
+      ],
+      [
+        33771,
+        -2894
+      ],
+      [
+        32841,
+        -3824
+      ],
+      [
+        32818,
+        -3826
+      ],
+      [
+        32798,
+        -3815
+      ],
+      [
+        32368,
+        -3386
+      ],
+      [
+        32339,
+        -3386
+      ],
+      [
+        32241,
+        -3483
+      ],
+      [
+        32217,
+        -3488
+      ],
+      [
+        32193,
+        -3478
+      ]
+    ],
+    "areaMainM2": 20.71,
+    "areaBathM2": 3.56,
+    "areaPrivateM2": 26.88,
+    "areaBuiltM2": 30.64,
+    "bounds": {
+      "minX": 30135,
+      "minY": -3826,
+      "maxX": 38140.9,
+      "maxY": 4253,
+      "centerX": 34138,
+      "centerY": 214,
+      "widthMm": 8006,
+      "depthMm": 8079
+    },
+    "windows": [],
+    "revitFurnitureSummary": [
+      {
+        "fo": [
+          0.707,
+          -0.707
+        ],
+        "fam": "Cama-Cuadro",
+        "type": "HLF CAMA 1800x2000",
+        "id": 691100,
+        "p": [
+          32056,
+          2498
+        ],
+        "bb": [
+          30712,
+          1154,
+          33400,
+          3842,
+          483
+        ]
+      },
+      {
+        "fo": [
+          -0.707,
+          0.707
+        ],
+        "fam": "Cama-Cuadro",
+        "type": "HLF CAMA 1600x2000",
+        "id": 691107,
+        "p": [
+          32650,
+          -359
+        ],
+        "bb": [
+          31377,
+          -1632,
+          33923,
+          914,
+          483
+        ]
+      },
+      {
+        "fo": [
+          -0.707,
+          0.707
+        ],
+        "fam": "Cama-Cuadro",
+        "type": "HLF CAMA 1600x2000",
+        "id": 691110,
+        "p": [
+          34207,
+          1196
+        ],
+        "bb": [
+          32934,
+          -77,
+          35480,
+          2469,
+          483
+        ]
+      },
+      {
+        "fo": [
+          0.707,
+          -0.707
+        ],
+        "fam": "Mesa - De coche",
+        "type": "HLF MESA DE NOCHE 450x450",
+        "id": 691120,
+        "p": [
+          33413,
+          2763
+        ],
+        "bb": [
+          33095,
+          2445,
+          33731,
+          3081,
+          550
+        ]
+      },
+      {
+        "fo": [
+          -0.707,
+          0.707
+        ],
+        "fam": "Mesa - De coche",
+        "type": "HLF MESA DE NOCHE 450x450",
+        "id": 691121,
+        "p": [
+          32884,
+          963
+        ],
+        "bb": [
+          32566,
+          645,
+          33202,
+          1281,
+          550
+        ]
+      },
+      {
+        "fo": [
+          -0.707,
+          0.707
+        ],
+        "fam": "Mesa - De coche",
+        "type": "HLF MESA DE NOCHE 450x450",
+        "id": 691122,
+        "p": [
+          34440,
+          2518
+        ],
+        "bb": [
+          34122,
+          2200,
+          34758,
+          2836,
+          550
+        ]
+      },
+      {
+        "fo": [
+          0.707,
+          -0.707
+        ],
+        "fam": "Mesa - De coche",
+        "type": "HLF MESA DE NOCHE 450x450",
+        "id": 691134,
+        "p": [
+          31790,
+          1141
+        ],
+        "bb": [
+          31472,
+          823,
+          32108,
+          1459,
+          550
+        ]
+      },
+      {
+        "fo": [
+          0,
+          1
+        ],
+        "fam": "Club_Chair_10897",
+        "type": "Club_Chair_10897",
+        "id": 691141,
+        "p": [
+          31732,
+          -1532
+        ],
+        "bb": [
+          31338,
+          -2370,
+          32126,
+          -1532,
+          806
+        ]
+      }
+    ]
+  },
+  {
+    "id": "HAB-222",
+    "number": "222",
+    "code": "HLF-P2-222",
+    "title": "Habitación 222 · Suite Fondo A",
+    "subtitle": "Sector Fondo / Esquinera Oriental",
+    "wing": "Sector Suites Fondo",
+    "typology": "Suite Fondo A",
+    "category": "Suite Ejecutiva",
+    "floor": 2,
+    "revitFloorId": "964810",
+    "bathLoops": [
+      [
+        [
+          39481.75,
+          -2652.1
+        ],
+        [
+          39503.5,
+          -2652.1
+        ],
+        [
+          39520.03,
+          -2661.68
+        ],
+        [
+          40177.96,
+          -3319.61
+        ],
+        [
+          40188.8,
+          -3338.1
+        ],
+        [
+          40189.58,
+          -3359.43
+        ],
+        [
+          40542.55,
+          -3712.4
+        ],
+        [
+          40553.9,
+          -3743.9
+        ],
+        [
+          40542.4,
+          -3768.3
+        ],
+        [
+          39382.3,
+          -4928.4
+        ],
+        [
+          39350.2,
+          -4940
+        ],
+        [
+          39324.85,
+          -4928.1
+        ],
+        [
+          37830.35,
+          -3433.6
+        ],
+        [
+          37819.1,
+          -3402.2
+        ],
+        [
+          37828.74,
+          -3381.66
+        ],
+        [
+          39001.13,
+          -2209.27
+        ],
+        [
+          39023,
+          -2206
+        ],
+        [
+          39044.76,
+          -2215.11
+        ]
+      ],
+      [
+        [
+          40654.15,
+          -1480.8
+        ],
+        [
+          40205.11,
+          -1031.76
+        ],
+        [
+          40196.1,
+          -1010
+        ],
+        [
+          40199.95,
+          -990.5
+        ],
+        [
+          41545.75,
+          355.3
+        ],
+        [
+          41571.4,
+          355.3
+        ],
+        [
+          41584.94,
+          347.16
+        ],
+        [
+          41969.85,
+          -37.75
+        ],
+        [
+          42002.65,
+          -37.75
+        ],
+        [
+          42795.13,
+          -830.23
+        ],
+        [
+          42796.6,
+          -871.1
+        ],
+        [
+          42794.2,
+          -875.5
+        ],
+        [
+          41439.57,
+          -2230.13
+        ],
+        [
+          41405.9,
+          -2228.5
+        ],
+        [
+          41361.1,
+          -2187.9
+        ],
+        [
+          41339.7,
+          -2188.9
+        ],
+        [
+          41323.35,
+          -2179.8
+        ],
+        [
+          40666.29,
+          -1522.74
+        ],
+        [
+          40654.15,
+          -1501.91
+        ]
+      ]
+    ],
+    "extraLoops": [
+      [
+        [
+          42096.8,
+          90.45
+        ],
+        [
+          41523.64,
+          663.61
+        ],
+        [
+          41511.9,
+          692.1
+        ],
+        [
+          41523.28,
+          719.53
+        ],
+        [
+          42071.93,
+          1268.18
+        ],
+        [
+          42101.1,
+          1280.2
+        ],
+        [
+          42129.31,
+          1268.44
+        ],
+        [
+          43500.28,
+          -102.53
+        ],
+        [
+          43511.3,
+          -138.7
+        ],
+        [
+          43502.03,
+          -155.82
+        ],
+        [
+          42906.65,
+          -751.2
+        ],
+        [
+          42871.2,
+          -763.3
+        ],
+        [
+          42846.7,
+          -750.7
+        ],
+        [
+          42105.9,
+          50.9
+        ],
+        [
+          42096.8,
+          67.74
+        ]
+      ],
+      [
+        [
+          42844.67,
+          -986.03
+        ],
+        [
+          42875.7,
+          -973.4
+        ],
+        [
+          42899.23,
+          -983.33
+        ],
+        [
+          43398.82,
+          -1482.92
+        ],
+        [
+          43412.6,
+          -1509.2
+        ],
+        [
+          43410.07,
+          -1534.53
+        ],
+        [
+          42083.79,
+          -2860.81
+        ],
+        [
+          42067.7,
+          -2869.4
+        ],
+        [
+          42042.27,
+          -2866.87
+        ],
+        [
+          41524.99,
+          -2349.59
+        ],
+        [
+          41516.5,
+          -2333.7
+        ],
+        [
+          41518.64,
+          -2312.06
+        ]
+      ]
+    ],
+    "locationType": "Esquinera Oriental · Doble Fachada con 3 Ventanas",
+    "reducedMobility": "NO",
+    "bedConfig": "1 Cama King (2000×2000 mm) + Sala Independiente + Comedor + Doble Zona Húmeda",
+    "status": "Disponible",
+    "finishes": {
+      "floorMain": "REF 01 · Piso Vinílico Madera 5mm (43.59 m²)",
+      "floorBath": "REF 02 · Porcelanato Mos The Dream 30×30 (7.26 m²)",
+      "walls": "REF 03 Papel Colgadura Tessera + Enchape E-4 Pintura Sobre Las Nubes",
+      "countertop": "REF 14 · Mesón Mármol Antik Silver Blue",
+      "rugs": "TA-01 + TA-02 Sala y Alcoba"
+    },
+    "sheetNumber": "A09",
+    "gallery": [
+      {
+        "title": "Axonométrico Control Suite A (43.6 m²)",
+        "src": "./assets/axos/suite_fondo_a_43m2.png",
+        "type": "Axonométrico"
+      },
+      {
+        "title": "Render Sala Ejecutiva",
+        "src": "./assets/renders/suite_d_sala.png",
+        "type": "Render"
+      },
+      {
+        "title": "Render Comedor Suite",
+        "src": "./assets/renders/suite_d_comedor.png",
+        "type": "Render"
+      },
+      {
+        "title": "Planta General Acotada Piso 2",
+        "src": "./assets/plans/p2_planta_acotada.png",
+        "type": "Plano"
+      }
+    ],
+    "mainLoop": [
+      [
+        39934,
+        -1241
+      ],
+      [
+        39952,
+        -1237
+      ],
+      [
+        40022,
+        -1167
+      ],
+      [
+        40060,
+        -1165
+      ],
+      [
+        40513,
+        -1617
+      ],
+      [
+        40540,
+        -1617
+      ],
+      [
+        40557,
+        -1628
+      ],
+      [
+        41214,
+        -2283
+      ],
+      [
+        41224,
+        -2302
+      ],
+      [
+        41224,
+        -2326
+      ],
+      [
+        42042,
+        -3145
+      ],
+      [
+        42071,
+        -3145
+      ],
+      [
+        43683,
+        -1533
+      ],
+      [
+        43683,
+        -1489
+      ],
+      [
+        44132,
+        -1039
+      ],
+      [
+        44181,
+        -1013
+      ],
+      [
+        44203,
+        -1013
+      ],
+      [
+        44390,
+        -827
+      ],
+      [
+        44429,
+        -819
+      ],
+      [
+        47195,
+        -3584
+      ],
+      [
+        47202,
+        -3605
+      ],
+      [
+        47202,
+        -4054
+      ],
+      [
+        47651,
+        -4054
+      ],
+      [
+        47674,
+        -4061
+      ],
+      [
+        48702,
+        -5089
+      ],
+      [
+        48712,
+        -5108
+      ],
+      [
+        48711,
+        -5135
+      ],
+      [
+        47122,
+        -6730
+      ],
+      [
+        47091,
+        -6742
+      ],
+      [
+        47068,
+        -6733
+      ],
+      [
+        46240,
+        -5905
+      ],
+      [
+        46244,
+        -5871
+      ],
+      [
+        46272,
+        -5850
+      ],
+      [
+        46508,
+        -5850
+      ],
+      [
+        46508,
+        -5322
+      ],
+      [
+        46523,
+        -5285
+      ],
+      [
+        46508,
+        -5250
+      ],
+      [
+        46508,
+        -5072
+      ],
+      [
+        46330,
+        -5072
+      ],
+      [
+        46297,
+        -5057
+      ],
+      [
+        46258,
+        -5072
+      ],
+      [
+        45730,
+        -5072
+      ],
+      [
+        45730,
+        -5600
+      ],
+      [
+        45715,
+        -5637
+      ],
+      [
+        45730,
+        -5672
+      ],
+      [
+        45730,
+        -5850
+      ],
+      [
+        45901,
+        -5850
+      ],
+      [
+        45924,
+        -5860
+      ],
+      [
+        46981,
+        -6918
+      ],
+      [
+        46992,
+        -6938
+      ],
+      [
+        46991,
+        -6962
+      ],
+      [
+        44210,
+        -9743
+      ],
+      [
+        44181,
+        -9758
+      ],
+      [
+        44158,
+        -9757
+      ],
+      [
+        39476,
+        -5075
+      ],
+      [
+        39470,
+        -5052
+      ],
+      [
+        39481,
+        -5029
+      ],
+      [
+        40647,
+        -3863
+      ],
+      [
+        40674,
+        -3856
+      ],
+      [
+        40696,
+        -3865
+      ],
+      [
+        41009,
+        -4178
+      ],
+      [
+        41038,
+        -4178
+      ],
+      [
+        41150,
+        -4066
+      ],
+      [
+        41150,
+        -4038
+      ],
+      [
+        40330,
+        -3218
+      ],
+      [
+        40311,
+        -3218
+      ],
+      [
+        40293,
+        -3208
+      ],
+      [
+        39634,
+        -2550
+      ],
+      [
+        39623,
+        -2531
+      ],
+      [
+        39623,
+        -2511
+      ],
+      [
+        39178,
+        -2066
+      ],
+      [
+        39167,
+        -2045
+      ],
+      [
+        39174,
+        -2001
+      ]
+    ],
+    "areaMainM2": 43.59,
+    "areaBathM2": 7.26,
+    "areaPrivateM2": 54.15,
+    "areaBuiltM2": 61.73,
+    "bounds": {
+      "minX": 37819.1,
+      "minY": -9758,
+      "maxX": 48712,
+      "maxY": 1280.2,
+      "centerX": 43266,
+      "centerY": -4239,
+      "widthMm": 10893,
+      "depthMm": 11038
+    },
+    "windows": [
+      {
+        "fo": [
+          0.706,
+          -0.708
+        ],
+        "w": 600,
+        "id": 410359,
+        "t": 351,
+        "p": [
+          48093,
+          -6036
+        ]
+      },
+      {
+        "fo": [
+          0.706,
+          -0.708
+        ],
+        "w": 1340,
+        "id": 410361,
+        "t": 280,
+        "p": [
+          46468,
+          -7710
+        ]
+      },
+      {
+        "fo": [
+          0.706,
+          -0.708
+        ],
+        "w": 1320,
+        "id": 410364,
+        "t": 280,
+        "p": [
+          45060,
+          -9115
+        ]
+      }
+    ],
+    "revitFurnitureSummary": [
+      {
+        "fo": [
+          0.707,
+          -0.707
+        ],
+        "fam": "Mesa - De coche",
+        "type": "HLF MESA DE NOCHE 450x450",
+        "id": 691123,
+        "p": [
+          44696,
+          -8510
+        ],
+        "bb": [
+          44378,
+          -8828,
+          45014,
+          -8192,
+          550
+        ]
+      }
+    ]
+  },
+  {
+    "id": "HAB-223",
+    "number": "223",
+    "code": "HLF-P2-223",
+    "title": "Habitación 223 · Junior Suite C",
+    "subtitle": "Sector Fondo / Interior Occidental",
+    "wing": "Sector Suites Fondo",
+    "typology": "Junior Suite C",
+    "category": "Junior Suite",
+    "floor": 2,
+    "revitFloorId": "964886",
+    "bathLoops": [
+      [
+        [
+          34806.15,
+          -5277.9
+        ],
+        [
+          34806.15,
+          -5255.56
+        ],
+        [
+          34817.12,
+          -5236.63
+        ],
+        [
+          35402.07,
+          -4651.68
+        ],
+        [
+          35418.34,
+          -4642.25
+        ],
+        [
+          35443.15,
+          -4642.25
+        ],
+        [
+          35761.2,
+          -4324.2
+        ],
+        [
+          35792.1,
+          -4313.1
+        ],
+        [
+          35810.8,
+          -4321.95
+        ],
+        [
+          36385.89,
+          -4897.04
+        ],
+        [
+          36377.96,
+          -4937.19
+        ],
+        [
+          36051.2,
+          -5263.95
+        ],
+        [
+          36051.2,
+          -5293.4
+        ],
+        [
+          36163.9,
+          -5406.1
+        ],
+        [
+          36192.25,
+          -5406.1
+        ],
+        [
+          36519.31,
+          -5079.04
+        ],
+        [
+          36559.33,
+          -5071.03
+        ],
+        [
+          37023.81,
+          -5535.51
+        ],
+        [
+          37033.5,
+          -5562.5
+        ],
+        [
+          37021.9,
+          -5586.8
+        ],
+        [
+          35629.3,
+          -6979.4
+        ],
+        [
+          35597,
+          -6991
+        ],
+        [
+          35575.83,
+          -6980.98
+        ],
+        [
+          34359.08,
+          -5764.23
+        ],
+        [
+          34356.6,
+          -5739.3
+        ],
+        [
+          34367.19,
+          -5716.86
+        ]
+      ]
+    ],
+    "locationType": "Fachada Occidental · 2 Ventanas hacia Jardín",
+    "reducedMobility": "NO",
+    "bedConfig": "1 Cama King (1800×2000 mm) + Zona de Estar Circular + Escritorio",
+    "status": "Disponible",
+    "finishes": {
+      "floorMain": "REF 01 · Piso Vinílico Madera 5mm (26.29 m²)",
+      "floorBath": "REF 02 · Porcelanato Mos The Dream 30×30 (3.57 m²) + REF 28 Santorini Bone",
+      "walls": "REF 03 Papel Colgadura Tessera + Enchape E-1 / E-4",
+      "countertop": "REF 14 · Mesón Mármol Antik Silver Blue",
+      "rugs": "TA-01 Tapete Circular (2.39 m²)"
+    },
+    "sheetNumber": "A10",
+    "gallery": [
+      {
+        "title": "Axonométrico Control Suite C (26.3 m²)",
+        "src": "./assets/axos/suite_fondo_c_26m2.png",
+        "type": "Axonométrico"
+      },
+      {
+        "title": "Render Alcoba y Estar",
+        "src": "./assets/renders/suite_d_alcoba_estar.png",
+        "type": "Render"
+      },
+      {
+        "title": "Planta de Acabados Piso 2",
+        "src": "./assets/plans/p2_planta_acabados.png",
+        "type": "Plano"
+      }
+    ],
+    "mainLoop": [
+      [
+        28895,
+        -5070
+      ],
+      [
+        31147,
+        -2818
+      ],
+      [
+        31170,
+        -2807
+      ],
+      [
+        31204,
+        -2819
+      ],
+      [
+        33058,
+        -4673
+      ],
+      [
+        33087,
+        -4673
+      ],
+      [
+        33357,
+        -4403
+      ],
+      [
+        33357,
+        -4375
+      ],
+      [
+        32986,
+        -4004
+      ],
+      [
+        32977,
+        -3982
+      ],
+      [
+        32982,
+        -3957
+      ],
+      [
+        33965,
+        -2974
+      ],
+      [
+        33983,
+        -2965
+      ],
+      [
+        34020,
+        -2976
+      ],
+      [
+        34387,
+        -3343
+      ],
+      [
+        34416,
+        -3343
+      ],
+      [
+        34586,
+        -3173
+      ],
+      [
+        34606,
+        -3162
+      ],
+      [
+        34641,
+        -3171
+      ],
+      [
+        35591,
+        -4120
+      ],
+      [
+        35602,
+        -4144
+      ],
+      [
+        35590,
+        -4177
+      ],
+      [
+        35285,
+        -4483
+      ],
+      [
+        35285,
+        -4506
+      ],
+      [
+        35274,
+        -4526
+      ],
+      [
+        34688,
+        -5112
+      ],
+      [
+        34669,
+        -5122
+      ],
+      [
+        34648,
+        -5121
+      ],
+      [
+        34054,
+        -5715
+      ],
+      [
+        34054,
+        -5743
+      ],
+      [
+        34475,
+        -6164
+      ],
+      [
+        34484,
+        -6189
+      ],
+      [
+        34464,
+        -6255
+      ],
+      [
+        33497,
+        -7222
+      ],
+      [
+        33073,
+        -6798
+      ],
+      [
+        32769,
+        -7101
+      ],
+      [
+        33194,
+        -7526
+      ],
+      [
+        32289,
+        -8430
+      ],
+      [
+        31870,
+        -8010
+      ],
+      [
+        31012,
+        -8868
+      ],
+      [
+        30924,
+        -9197
+      ],
+      [
+        28884,
+        -9197
+      ],
+      [
+        28884,
+        -5098
+      ]
+    ],
+    "areaMainM2": 26.29,
+    "areaBathM2": 3.57,
+    "areaPrivateM2": 29.85,
+    "areaBuiltM2": 34.03,
+    "bounds": {
+      "minX": 28884,
+      "minY": -9197,
+      "maxX": 37033.5,
+      "maxY": -2807,
+      "centerX": 32959,
+      "centerY": -6002,
+      "widthMm": 8150,
+      "depthMm": 6390
+    },
+    "windows": [
+      {
+        "fo": [
+          -1,
+          0
+        ],
+        "w": 1340,
+        "id": 410381,
+        "t": 170,
+        "p": [
+          28788,
+          -8083
+        ]
+      },
+      {
+        "fo": [
+          -1,
+          0
+        ],
+        "w": 1450,
+        "id": 410383,
+        "t": 170,
+        "p": [
+          28788,
+          -6183
+        ]
+      }
+    ],
+    "revitFurnitureSummary": []
+  },
+  {
+    "id": "HAB-224",
+    "number": "224",
+    "code": "HLF-P2-224",
+    "title": "Habitación 224 · Suite C1 (Mock-Up)",
+    "subtitle": "Sector Fondo / Esquinera Suroccidental",
+    "wing": "Sector Suites Fondo",
+    "typology": "Suite C1",
+    "category": "Suite Ejecutiva",
+    "floor": 2,
+    "revitFloorId": "692786",
+    "bathLoops": [
+      [
+        [
+          37384,
+          -5441
+        ],
+        [
+          38657,
+          -6713
+        ],
+        [
+          37362,
+          -8008
+        ],
+        [
+          36089,
+          -6736
+        ]
+      ],
+      [
+        [
+          36727,
+          -8643
+        ],
+        [
+          35450,
+          -7366
+        ],
+        [
+          36085,
+          -6731
+        ],
+        [
+          37362,
+          -8008
+        ]
+      ]
+    ],
+    "locationType": "Esquinera Suroccidental · 8 Ventanas Panorámicas",
+    "reducedMobility": "NO",
+    "bedConfig": "1 Cama King (2000×2000 mm) + Sala Esquinera + Comedor + Baño Mock-Up INT-618",
+    "status": "Disponible",
+    "finishes": {
+      "floorMain": "REF 01 · Piso Vinílico Madera 5mm (43.50 m²)",
+      "floorBath": "REF 02 · Mos The Dream 30×30 (3.30 m²) + REF 28 Santorini Bone (1.62 m²)",
+      "walls": "REF 03 Tessera + REF 04 Panel Melamínico Sikuani + REF 07 Lismore Vescom",
+      "countertop": "REF 14 · Mesón Mármol Antik Silver Blue + División Vidrio Templado 10mm",
+      "rugs": "TA-01 + TA-02"
+    },
+    "sheetNumber": "INT-608A@608C / INT-618",
+    "gallery": [
+      {
+        "title": "Axonométrico Suite C1 Acabados",
+        "src": "./assets/axos/suite_c1_3d_acabados.png",
+        "type": "Axonométrico"
+      },
+      {
+        "title": "Axonométrico Control Suite B/C1 (43.5 m²)",
+        "src": "./assets/axos/suite_fondo_b_43m2.png",
+        "type": "Axonométrico"
+      },
+      {
+        "title": "Axonométrico 3D Baño Suite C1",
+        "src": "./assets/axos/suite_c1_bano_3d.png",
+        "type": "Axonométrico"
+      },
+      {
+        "title": "Detalle Mobiliario Ducha Suite C1",
+        "src": "./assets/axos/suite_c1_bano_ducha.png",
+        "type": "Axonométrico"
+      },
+      {
+        "title": "Detalle Mesón Baño Suite C1",
+        "src": "./assets/axos/suite_c1_bano_meson.png",
+        "type": "Axonométrico"
+      },
+      {
+        "title": "Planta de Pisos y Enchapes Suite C1",
+        "src": "./assets/plans/suite_c1_planta_pisos.png",
+        "type": "Plano"
+      },
+      {
+        "title": "Planta de Cielo Raso Suite C1",
+        "src": "./assets/plans/suite_c1_planta_cielos.png",
+        "type": "Plano"
+      },
+      {
+        "title": "Sección A-A' Suite C1",
+        "src": "./assets/plans/suite_c1_seccion_a.png",
+        "type": "Sección"
+      },
+      {
+        "title": "Sección B-B' Suite C1",
+        "src": "./assets/plans/suite_c1_seccion_b.png",
+        "type": "Sección"
+      }
+    ],
+    "mainLoop": [
+      [
+        37957,
+        -9396
+      ],
+      [
+        34842,
+        -12459
+      ],
+      [
+        34560,
+        -15190
+      ],
+      [
+        32855,
+        -15191
+      ],
+      [
+        28860,
+        -11004
+      ],
+      [
+        28860,
+        -9294
+      ],
+      [
+        31677,
+        -9294
+      ],
+      [
+        34422,
+        -6550
+      ],
+      [
+        36736,
+        -8863
+      ],
+      [
+        37569,
+        -8030
+      ],
+      [
+        37456,
+        -7916
+      ],
+      [
+        38093,
+        -7280
+      ],
+      [
+        38204,
+        -7392
+      ],
+      [
+        38538,
+        -7056
+      ],
+      [
+        39842,
+        -8360
+      ],
+      [
+        38382,
+        -9821
+      ]
+    ],
+    "areaMainM2": 43.5,
+    "areaBathM2": 4.92,
+    "areaPrivateM2": 48.42,
+    "areaBuiltM2": 55.2,
+    "bounds": {
+      "minX": 28860,
+      "minY": -15191,
+      "maxX": 39842,
+      "maxY": -5441,
+      "centerX": 34351,
+      "centerY": -10316,
+      "widthMm": 10982,
+      "depthMm": 9750
+    },
+    "windows": [
+      {
+        "fo": [
+          0,
+          -1
+        ],
+        "w": 1350,
+        "id": 410370,
+        "t": 170,
+        "p": [
+          37846,
+          -15290
+        ]
+      },
+      {
+        "fo": [
+          0,
+          -1
+        ],
+        "w": 1340,
+        "id": 410372,
+        "t": 170,
+        "p": [
+          35834,
+          -15290
+        ]
+      },
+      {
+        "fo": [
+          -0.723,
+          -0.69
+        ],
+        "w": 1360,
+        "id": 410374,
+        "t": 140,
+        "p": [
+          32251,
+          -14552
+        ]
+      },
+      {
+        "fo": [
+          -0.723,
+          -0.69
+        ],
+        "w": 1370,
+        "id": 410376,
+        "t": 140,
+        "p": [
+          30863,
+          -13097
+        ]
+      },
+      {
+        "fo": [
+          -0.723,
+          -0.69
+        ],
+        "w": 1330,
+        "id": 410378,
+        "t": 140,
+        "p": [
+          29476,
+          -11644
+        ]
+      },
+      {
+        "fo": [
+          -1,
+          0
+        ],
+        "w": 1360,
+        "id": 410380,
+        "t": 170,
+        "p": [
+          28789,
+          -10108
+        ]
+      },
+      {
+        "fo": [
+          -1,
+          0
+        ],
+        "w": 1340,
+        "id": 410381,
+        "t": 170,
+        "p": [
+          28788,
+          -8083
+        ]
+      },
+      {
+        "fo": [
+          -1,
+          0
+        ],
+        "w": 1450,
+        "id": 410383,
+        "t": 170,
+        "p": [
+          28788,
+          -6183
+        ]
+      }
+    ],
+    "revitFurnitureSummary": [
+      {
+        "fo": [
+          0.707,
+          -0.707
+        ],
+        "fam": "Cama-Cuadro",
+        "type": "HLF CAMA 1800x2000",
+        "id": 691104,
+        "p": [
+          39069,
+          -13289
+        ],
+        "bb": [
+          37725,
+          -14633,
+          40413,
+          -11945,
+          483
+        ]
+      },
+      {
+        "fo": [
+          0.707,
+          -0.707
+        ],
+        "fam": "Mesa - De coche",
+        "type": "HLF MESA DE NOCHE 450x450",
+        "id": 691119,
+        "p": [
+          38823,
+          -14667
+        ],
+        "bb": [
+          38505,
+          -14985,
+          39141,
+          -14349,
+          550
+        ]
+      },
+      {
+        "fo": [
+          0,
+          1
+        ],
+        "fam": "Club_Chair_10897",
+        "type": "Club_Chair_10897",
+        "id": 691143,
+        "p": [
+          30315,
+          -9285
+        ],
+        "bb": [
+          29921,
+          -10123,
+          30709,
+          -9285,
+          806
+        ]
+      },
+      {
+        "fo": [
+          0,
+          1
+        ],
+        "fam": "Club_Chair_10897",
+        "type": "Club_Chair_10897",
+        "id": 691145,
+        "p": [
+          36854,
+          -11252
+        ],
+        "bb": [
+          36460,
+          -12090,
+          37248,
+          -11252,
+          806
+        ]
+      }
+    ]
+  },
+  {
+    "id": "HAB-225",
+    "number": "225",
+    "code": "HLF-P2-225",
+    "title": "Habitación 225 · Sencilla Especial Sur",
+    "subtitle": "Sector Fondo / Fachada Sur",
+    "wing": "Sector Suites Fondo",
+    "typology": "Sencilla Especial",
+    "category": "Habitación Sencilla King",
+    "floor": 2,
+    "revitFloorId": "964953",
+    "bathLoops": [
+      [
+        [
+          39983.96,
+          -10228.99
+        ],
+        [
+          39984.8,
+          -10205.5
+        ],
+        [
+          39993.8,
+          -10190.75
+        ],
+        [
+          40580.67,
+          -9603.88
+        ],
+        [
+          40621.92,
+          -9591.88
+        ],
+        [
+          41037.62,
+          -9176.18
+        ],
+        [
+          41079.32,
+          -9167.82
+        ],
+        [
+          41567.63,
+          -9656.13
+        ],
+        [
+          41574.6,
+          -9669.3
+        ],
+        [
+          41568.8,
+          -9699.1
+        ],
+        [
+          41542.5,
+          -9716.6
+        ],
+        [
+          41308,
+          -9716.6
+        ],
+        [
+          41308,
+          -10245.4
+        ],
+        [
+          41293,
+          -10282
+        ],
+        [
+          41307.9,
+          -10317.24
+        ],
+        [
+          41307.9,
+          -10495.1
+        ],
+        [
+          41484.78,
+          -10495.1
+        ],
+        [
+          41518,
+          -10510
+        ],
+        [
+          41556.6,
+          -10495
+        ],
+        [
+          42086.4,
+          -10495
+        ],
+        [
+          42086.4,
+          -10260.14
+        ],
+        [
+          42107,
+          -10232.1
+        ],
+        [
+          42140.88,
+          -10228.68
+        ],
+        [
+          42947,
+          -11034.8
+        ],
+        [
+          42953.9,
+          -11047.6
+        ],
+        [
+          42952.72,
+          -11070.58
+        ],
+        [
+          41289.02,
+          -12734.28
+        ],
+        [
+          41276,
+          -12741.3
+        ],
+        [
+          41257.24,
+          -12740.34
+        ],
+        [
+          40299.52,
+          -11782.62
+        ],
+        [
+          40295.5,
+          -11755.4
+        ],
+        [
+          40306.04,
+          -11735.76
+        ],
+        [
+          40899.1,
+          -11142.7
+        ],
+        [
+          40899.1,
+          -11115.35
+        ],
+        [
+          40687.65,
+          -10903.9
+        ],
+        [
+          40657.65,
+          -10903.9
+        ],
+        [
+          40540.57,
+          -11020.98
+        ],
+        [
+          40516,
+          -11026
+        ],
+        [
+          40492.85,
+          -11014.95
+        ],
+        [
+          39868.76,
+          -10390.86
+        ],
+        [
+          39861.7,
+          -10367.8
+        ],
+        [
+          39869.01,
+          -10343.94
+        ]
+      ]
+    ],
+    "locationType": "Fachada Sur · 2 Ventanas con Estar",
+    "reducedMobility": "NO",
+    "bedConfig": "1 Cama King (1800×2000 mm) + 2 Mesas de Noche + Poltrona Club Chair + Tapete TA-02",
+    "status": "Disponible",
+    "finishes": {
+      "floorMain": "REF 01 · Piso Vinílico Madera 5mm (24.53 m²)",
+      "floorBath": "REF 02 · Porcelanato Mos The Dream 30×30 (5.03 m²)",
+      "walls": "REF 03 Papel Colgadura Tessera + Cabecero Sikuani REF 08 + Enchape E-5/E-6",
+      "countertop": "REF 14 · Mesón Mármol Antik Silver Blue",
+      "rugs": "TA-02 Tapete Rectangular (4.95 m²)"
+    },
+    "sheetNumber": "A11",
+    "gallery": [
+      {
+        "title": "Render Alcoba King",
+        "src": "./assets/renders/suite_d_cabecero.png",
+        "type": "Render"
+      },
+      {
+        "title": "Render Ventana Fachada",
+        "src": "./assets/renders/fachada_general.png",
+        "type": "Render"
+      },
+      {
+        "title": "Render Baño Renovado",
+        "src": "./assets/renders/doble_bano.png",
+        "type": "Render"
+      },
+      {
+        "title": "Planta General Arquitectónica Piso 2",
+        "src": "./assets/plans/p2_planta_arquitectonica.png",
+        "type": "Plano"
+      }
+    ],
+    "mainLoop": [
+      [
+        36016,
+        -12365
+      ],
+      [
+        36059,
+        -12386
+      ],
+      [
+        36100,
+        -12365
+      ],
+      [
+        36286,
+        -12365
+      ],
+      [
+        36286,
+        -12179
+      ],
+      [
+        36306,
+        -12141
+      ],
+      [
+        36286,
+        -12097
+      ],
+      [
+        36286,
+        -11586
+      ],
+      [
+        36116,
+        -11586
+      ],
+      [
+        36090,
+        -11562
+      ],
+      [
+        36094,
+        -11525
+      ],
+      [
+        37950,
+        -9669
+      ],
+      [
+        37977,
+        -9662
+      ],
+      [
+        37992,
+        -9669
+      ],
+      [
+        38372,
+        -10049
+      ],
+      [
+        38397,
+        -10049
+      ],
+      [
+        40175,
+        -8271
+      ],
+      [
+        40892,
+        -8988
+      ],
+      [
+        40898,
+        -9040
+      ],
+      [
+        40872,
+        -9071
+      ],
+      [
+        40841,
+        -9074
+      ],
+      [
+        40796,
+        -9036
+      ],
+      [
+        40767,
+        -9036
+      ],
+      [
+        40655,
+        -9148
+      ],
+      [
+        40655,
+        -9175
+      ],
+      [
+        40694,
+        -9220
+      ],
+      [
+        40691,
+        -9252
+      ],
+      [
+        40485,
+        -9458
+      ],
+      [
+        40477,
+        -9495
+      ],
+      [
+        39888,
+        -10084
+      ],
+      [
+        39871,
+        -10094
+      ],
+      [
+        39850,
+        -10094
+      ],
+      [
+        39131,
+        -10812
+      ],
+      [
+        39131,
+        -10841
+      ],
+      [
+        39237,
+        -10947
+      ],
+      [
+        39266,
+        -10947
+      ],
+      [
+        39681,
+        -10531
+      ],
+      [
+        39700,
+        -10520
+      ],
+      [
+        39726,
+        -10520
+      ],
+      [
+        40360,
+        -11155
+      ],
+      [
+        40369,
+        -11173
+      ],
+      [
+        40360,
+        -11203
+      ],
+      [
+        39940,
+        -11623
+      ],
+      [
+        39940,
+        -11651
+      ],
+      [
+        41075,
+        -12786
+      ],
+      [
+        41085,
+        -12805
+      ],
+      [
+        41084,
+        -12828
+      ],
+      [
+        38744,
+        -15168
+      ],
+      [
+        38726,
+        -15178
+      ],
+      [
+        34852,
+        -15178
+      ],
+      [
+        34827,
+        -15164
+      ],
+      [
+        34813,
+        -15128
+      ],
+      [
+        35130,
+        -12379
+      ],
+      [
+        35142,
+        -12357
+      ],
+      [
+        35442,
+        -12057
+      ],
+      [
+        35468,
+        -12046
+      ],
+      [
+        35496,
+        -12058
+      ],
+      [
+        35508,
+        -12082
+      ],
+      [
+        35508,
+        -12365
+      ]
+    ],
+    "areaMainM2": 24.54,
+    "areaBathM2": 5.03,
+    "areaPrivateM2": 29.56,
+    "areaBuiltM2": 33.7,
+    "bounds": {
+      "minX": 34813,
+      "minY": -15178,
+      "maxX": 42953.9,
+      "maxY": -8271,
+      "centerX": 38883,
+      "centerY": -11724,
+      "widthMm": 8141,
+      "depthMm": 6907
+    },
+    "windows": [
+      {
+        "fo": [
+          0,
+          -1
+        ],
+        "w": 1350,
+        "id": 410370,
+        "t": 170,
+        "p": [
+          37846,
+          -15290
+        ]
+      },
+      {
+        "fo": [
+          0,
+          -1
+        ],
+        "w": 1340,
+        "id": 410372,
+        "t": 170,
+        "p": [
+          35834,
+          -15290
+        ]
+      }
+    ],
+    "revitFurnitureSummary": [
+      {
+        "fo": [
+          0.707,
+          -0.707
+        ],
+        "fam": "Cama-Cuadro",
+        "type": "HLF CAMA 1800x2000",
+        "id": 691104,
+        "p": [
+          39069,
+          -13289
+        ],
+        "bb": [
+          37725,
+          -14633,
+          40413,
+          -11945,
+          483
+        ]
+      },
+      {
+        "fo": [
+          0.707,
+          -0.707
+        ],
+        "fam": "Mesa - De coche",
+        "type": "HLF MESA DE NOCHE 450x450",
+        "id": 691119,
+        "p": [
+          38823,
+          -14667
+        ],
+        "bb": [
+          38505,
+          -14985,
+          39141,
+          -14349,
+          550
+        ]
+      },
+      {
+        "fo": [
+          0.707,
+          -0.707
+        ],
+        "fam": "Mesa - De coche",
+        "type": "HLF MESA DE NOCHE 450x450",
+        "id": 691124,
+        "p": [
+          40447,
+          -13045
+        ],
+        "bb": [
+          40129,
+          -13363,
+          40765,
+          -12727,
+          550
+        ]
+      },
+      {
+        "fo": [
+          0,
+          1
+        ],
+        "fam": "Club_Chair_10897",
+        "type": "Club_Chair_10897",
+        "id": 691145,
+        "p": [
+          36854,
+          -11252
+        ],
+        "bb": [
+          36460,
+          -12090,
+          37248,
+          -11252,
+          806
+        ]
+      }
+    ]
+  }
+]

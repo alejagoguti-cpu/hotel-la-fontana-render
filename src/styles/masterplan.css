@@ -1,0 +1,1097 @@
+/* ==========================================================================
+   Hotel La Fontana — Web Masterplan UI (Umbra3D / Las Galias Centrum Style)
+   ========================================================================== */
+
+:root {
+  --umbra-red: #d81e28;
+  --umbra-red-hover: #f02834;
+  --umbra-red-glow: rgba(216, 30, 40, 0.45);
+  --glass-bg: linear-gradient(155deg, rgba(68, 68, 70, 0.84) 0%, rgba(42, 42, 44, 0.88) 100%);
+  --glass-card-bg: linear-gradient(155deg, rgba(58, 38, 40, 0.88) 0%, rgba(44, 34, 36, 0.92) 100%);
+  --glass-dock-bg: rgba(118, 122, 126, 0.68);
+  --glass-border: rgba(255, 255, 255, 0.18);
+  --btn-muted: rgba(255, 255, 255, 0.16);
+  --btn-muted-hover: rgba(255, 255, 255, 0.28);
+  --btn-active-gray: rgba(205, 208, 212, 0.72);
+  --text-white: #ffffff;
+  --text-soft: rgba(255, 255, 255, 0.82);
+  --text-dim: rgba(255, 255, 255, 0.52);
+  --whatsapp-green: #25d366;
+  --font-main: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: var(--font-main);
+  background: #14181d;
+  color: var(--text-white);
+}
+
+#app {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#canvas-container {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  cursor: grab;
+}
+
+#canvas-container:active {
+  cursor: grabbing;
+}
+
+/* Top Left Brand Badge (BACO STUDIO) */
+.top-left-brand {
+  position: absolute;
+  top: 14px;
+  left: 18px;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(20, 23, 28, 0.88);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  padding: 4px 16px 4px 6px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+}
+
+.top-baco-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #fff;
+  padding: 1.5px;
+  object-fit: contain;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.top-baco-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.top-baco-title {
+  font-family: var(--font-main);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+.top-baco-sub {
+  font-size: 9.5px;
+  color: var(--text-soft);
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+/* ==========================================================================
+   Top Right Controls
+   ========================================================================== */
+.top-right-bar {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mode-switch-group {
+  display: flex;
+  align-items: center;
+  background: rgba(38, 40, 44, 0.76);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--glass-border);
+  border-radius: 999px;
+  padding: 3px;
+  gap: 3px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.28);
+}
+
+.mode-pill-btn {
+  border: none;
+  background: transparent;
+  color: var(--text-soft);
+  font-family: var(--font-main);
+  font-size: 11.5px;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.mode-pill-btn:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.mode-pill-btn.active {
+  background: var(--umbra-red);
+  color: #fff;
+  box-shadow: 0 2px 10px var(--umbra-red-glow);
+}
+
+.icon-circle-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--glass-border);
+  background: rgba(110, 114, 118, 0.65);
+  backdrop-filter: blur(12px);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.icon-circle-btn:hover {
+  background: rgba(140, 144, 148, 0.85);
+  transform: translateY(-1px);
+}
+
+.contact-pill-btn {
+  border: none;
+  background: var(--umbra-red);
+  color: #fff;
+  font-family: var(--font-main);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 6px 16px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px var(--umbra-red-glow);
+  transition: all 0.2s ease;
+}
+
+.contact-pill-btn:hover {
+  background: var(--umbra-red-hover);
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   Left Sidebar Filters (BACO STUDIO · Masterplan Architecture & Remodeling)
+   ========================================================================== */
+.left-sidebar-wrapper {
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  bottom: 64px;
+  width: 316px;
+  z-index: 25;
+  display: flex;
+  align-items: center;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.left-sidebar-wrapper.collapsed {
+  transform: translateX(-336px);
+}
+
+.left-sidebar {
+  width: 316px;
+  height: 100%;
+  max-height: 840px;
+  background: rgba(20, 23, 28, 0.92);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: 16px 14px 14px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55);
+  position: relative;
+  overflow: hidden;
+}
+
+.sidebar-close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(45, 48, 54, 0.65);
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.sidebar-close-btn:hover {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.sidebar-collapse-tab {
+  position: absolute;
+  right: -24px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 76px;
+  background: rgba(70, 75, 82, 0.85);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-left: none;
+  border-radius: 0 10px 10px 0;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.sidebar-collapse-tab:hover {
+  background: rgba(100, 105, 115, 0.95);
+}
+
+/* BACO STUDIO Brand Header */
+.sidebar-brand-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 10px;
+}
+
+.baco-sidebar-logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #fff;
+  padding: 2px;
+  object-fit: contain;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  flex-shrink: 0;
+}
+
+.baco-brand-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.baco-brand-name {
+  font-family: var(--font-main);
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  color: #ffffff;
+}
+
+.baco-brand-project {
+  font-size: 10px;
+  letter-spacing: 0.5px;
+  color: var(--text-soft);
+  font-weight: 500;
+}
+
+.sidebar-header-controls {
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 12px;
+}
+
+.toggle-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.umbra-switch {
+  position: relative;
+  width: 34px;
+  height: 18px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.25s;
+}
+
+.umbra-switch.on {
+  background: var(--umbra-red);
+}
+
+.umbra-switch-knob {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 14px;
+  height: 14px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform 0.25s;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+}
+
+.umbra-switch.on .umbra-switch-knob {
+  transform: translateX(16px);
+}
+
+.toggle-label {
+  font-size: 12px;
+  color: var(--text-soft);
+}
+
+.sidebar-body {
+  flex: 1;
+  overflow-y: auto;
+  padding-top: 12px;
+  padding-right: 4px;
+}
+
+.sidebar-body::-webkit-scrollbar {
+  width: 4px;
+}
+
+.sidebar-body::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 4px;
+}
+
+.filter-main-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: var(--text-soft);
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+
+.filter-section {
+  margin-bottom: 18px;
+}
+
+.filter-section-label {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-soft);
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.38);
+}
+
+.filter-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.filter-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  max-height: 215px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.filter-stack::-webkit-scrollbar {
+  width: 3px;
+}
+
+.filter-stack::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.45);
+  border-radius: 3px;
+}
+
+/* BACO STUDIO Room Cards & Pill Buttons */
+.baco-pill-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.baco-pill-btn {
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.75);
+  font-family: var(--font-main);
+  font-size: 11px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  white-space: nowrap;
+}
+
+.baco-pill-btn:hover {
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+}
+
+.baco-pill-btn.active {
+  background: rgba(255, 255, 255, 0.24);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.45);
+}
+
+.baco-room-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  max-height: 250px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.baco-room-stack::-webkit-scrollbar {
+  width: 3px;
+}
+
+.baco-room-stack::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 3px;
+}
+
+.baco-room-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 12px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  cursor: pointer;
+  transition: all 0.18s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.baco-room-card:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.22);
+  transform: translateX(2px);
+}
+
+.baco-room-card.active {
+  background: linear-gradient(135deg, rgba(216, 30, 40, 0.26), rgba(216, 30, 40, 0.08));
+  border: 1px solid rgba(216, 30, 40, 0.75);
+  box-shadow: 0 4px 14px rgba(216, 30, 40, 0.25);
+}
+
+.baco-room-main {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.baco-room-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.baco-room-type {
+  font-size: 11px;
+  color: var(--text-soft);
+  font-weight: 400;
+}
+
+.baco-room-badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.09);
+  color: #e2e8f0;
+  white-space: nowrap;
+}
+
+.baco-room-card.active .baco-room-badge {
+  background: var(--umbra-red);
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   Center Floating Detail Card ("Inmueble / Habitación 2XX" — exact Centrum UI)
+   ========================================================================== */
+.room-detail-card {
+  position: absolute;
+  top: 46%;
+  left: 53.5%;
+  transform: translate(-50%, -50%) scale(0.96);
+  width: 294px;
+  background: var(--glass-card-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 18px;
+  padding: 20px 20px 18px;
+  z-index: 28;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.26s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.room-detail-card.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.detail-close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(20, 20, 22, 0.62);
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.detail-close-btn:hover {
+  background: rgba(0, 0, 0, 0.88);
+}
+
+.detail-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 4px;
+  padding-right: 32px;
+}
+
+.detail-subtitle {
+  font-size: 11.5px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.88);
+  margin-bottom: 14px;
+}
+
+.detail-props {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.detail-prop-line {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.35;
+}
+
+.detail-prop-line span.label {
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.detail-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.detail-gallery-btn {
+  width: 100%;
+  border: none;
+  background: rgba(255, 255, 255, 0.36);
+  color: #fff;
+  font-family: var(--font-main);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 9px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.detail-gallery-btn:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.detail-interior-btn {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(216, 30, 40, 0.78);
+  color: #fff;
+  font-family: var(--font-main);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 8px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  transition: all 0.2s ease;
+}
+
+.detail-interior-btn:hover {
+  background: var(--umbra-red-hover);
+}
+
+/* ==========================================================================
+   Active Filter Chip & Bottom Navigation Dock (Exact Centrum UI)
+   ========================================================================== */
+.active-filter-chip {
+  position: absolute;
+  bottom: 108px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 26;
+  background: rgba(52, 52, 56, 0.82);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  padding: 7px 14px;
+  font-size: 12px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+.active-filter-chip button {
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-size: 13px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.active-filter-chip button:hover {
+  opacity: 1;
+}
+
+.bottom-dock-container {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dock-collapse-handle {
+  width: 36px;
+  height: 16px;
+  background: rgba(68, 72, 76, 0.78);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-bottom: none;
+  border-radius: 8px 8px 0 0;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 10px;
+}
+
+.bottom-dock {
+  background: var(--glass-dock-bg);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--glass-border);
+  border-radius: 14px;
+  padding: 7px 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.45);
+}
+
+.baco-dock-brand {
+  background: rgba(248, 248, 250, 0.96);
+  border-radius: 12px;
+  padding: 5px 14px 5px 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 54px;
+}
+
+.baco-dock-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: contain;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  flex-shrink: 0;
+}
+
+.baco-dock-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.baco-dock-name {
+  font-family: var(--font-main);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  color: #111;
+}
+
+.baco-dock-sub {
+  font-size: 9px;
+  color: #666;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.dock-tab-btn {
+  width: 72px;
+  height: 54px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(160, 164, 168, 0.42);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: var(--font-main);
+  font-size: 10px;
+  font-weight: 400;
+}
+
+.dock-tab-btn svg {
+  width: 22px;
+  height: 22px;
+}
+
+.dock-tab-btn:hover {
+  background: rgba(185, 190, 195, 0.58);
+  transform: translateY(-1px);
+}
+
+.dock-tab-btn.active {
+  background: var(--umbra-red);
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 4px 16px var(--umbra-red-glow);
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   WhatsApp Floating Button & Hover 3D Tooltip
+   ========================================================================== */
+.whatsapp-float-btn {
+  position: absolute;
+  bottom: 16px;
+  right: 18px;
+  z-index: 30;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--whatsapp-green);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  text-decoration: none;
+}
+
+.whatsapp-float-btn:hover {
+  transform: scale(1.07);
+}
+
+.hover-room-tooltip {
+  position: absolute;
+  z-index: 24;
+  pointer-events: none;
+  background: rgba(26, 26, 30, 0.88);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-left: 3px solid var(--umbra-red);
+  padding: 6px 11px;
+  border-radius: 8px;
+  font-size: 11.5px;
+  color: #fff;
+  white-space: nowrap;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: opacity 0.12s ease;
+}
+
+.hover-room-tooltip.show {
+  opacity: 1;
+}
+
+/* ==========================================================================
+   Modals: Gallery Lightbox & Location ("Dónde estamos" — 4.704585, -74.043696)
+   ========================================================================== */
+.umbra-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 50;
+  background: rgba(14, 16, 20, 0.82);
+  backdrop-filter: blur(16px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.umbra-modal-backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.umbra-modal-box {
+  width: min(1120px, 92vw);
+  height: min(740px, 86vh);
+  background: rgba(34, 36, 40, 0.94);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.65);
+}
+
+.modal-header {
+  padding: 16px 22px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal-header h3 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.modal-filter-pills {
+  display: flex;
+  gap: 8px;
+}
+
+.modal-body {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery-main-stage {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #121417;
+  padding: 20px;
+  position: relative;
+}
+
+.gallery-main-stage img {
+  max-width: 100%;
+  max-height: calc(100% - 42px);
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+}
+
+.gallery-caption {
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--text-soft);
+}
+
+.gallery-thumbs-sidebar {
+  width: 260px;
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 14px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: rgba(26, 28, 32, 0.9);
+}
+
+.gallery-thumb-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  background: rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  transition: all 0.18s;
+}
+
+.gallery-thumb-item:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.gallery-thumb-item.active {
+  border-color: var(--umbra-red);
+  background: rgba(216, 30, 40, 0.22);
+}
+
+.gallery-thumb-item img {
+  width: 64px;
+  height: 46px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.gallery-thumb-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  overflow: hidden;
+}
+
+.gallery-thumb-info strong {
+  font-size: 11.5px;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.gallery-thumb-info span {
+  font-size: 10px;
+  color: var(--text-dim);
+}
+
+/* Map container in Location Modal */
+#osm-map-container {
+  flex: 1;
+  height: 100%;
+}
+
+.location-info-sidebar {
+  width: 310px;
+  padding: 20px;
+  background: rgba(28, 30, 34, 0.96);
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  overflow-y: auto;
+}
+
+.coord-badge {
+  background: rgba(216, 30, 40, 0.18);
+  border: 1px solid rgba(216, 30, 40, 0.5);
+  color: #ff9ea4;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-family: monospace;
+  font-size: 11.5px;
+}
+
+.poi-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.poi-item {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 9px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ==========================================================================
+   Sky Atmosphere · Hora del día
+   ========================================================================== */
+.sky-time-control {
+  position: absolute;
+  top: 58px;
+  right: 18px;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  background: rgba(38, 40, 44, 0.76);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--glass-border);
+  border-radius: 999px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.28);
+  color: #fff;
+  font-family: var(--font-main);
+  font-size: 11.5px;
+}
+.sky-time-control input[type="range"] {
+  width: 150px;
+  accent-color: var(--umbra-red);
+  cursor: pointer;
+}
+.sky-time-label { min-width: 36px; font-variant-numeric: tabular-nums; }
+@media (max-width: 640px) {
+  .sky-time-control { top: auto; bottom: 86px; right: 12px; }
+  .sky-time-control input[type="range"] { width: 110px; }
+}
+
+/* Iconos planos (reemplazan emojis) */
+.ui-ico { width: 1.05em; height: 1.05em; vertical-align: -0.17em; margin-right: 0.35em; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+.sky-time-icon .ui-ico { margin-right: 0; }

@@ -1,0 +1,856 @@
+{
+ "units": "mm",
+ "zRef": "piso2",
+ "note": "EJEMPLO ilustrativo de formato — no corresponde a redes reales del proyecto",
+ "systems": {
+  "Agua fría": {
+   "color": "#2f80ed"
+  },
+  "Agua caliente": {
+   "color": "#eb5757"
+  },
+  "Sanitaria": {
+   "color": "#8d6e63"
+  },
+  "Aire acondicionado": {
+   "color": "#56ccf2"
+  },
+  "Eléctrica": {
+   "color": "#f2994a"
+  },
+  "Red contra incendio": {
+   "color": "#ff1744"
+  }
+ },
+ "elements": [
+  {
+   "system": "Agua fría",
+   "category": "Pipes",
+   "points": [
+    [
+     -12000,
+     13450,
+     2250
+    ],
+    [
+     24000,
+     13450,
+     2250
+    ]
+   ],
+   "diameter": 50
+  },
+  {
+   "system": "Agua caliente",
+   "category": "Pipes",
+   "points": [
+    [
+     -12000,
+     13650,
+     2250
+    ],
+    [
+     24000,
+     13650,
+     2250
+    ]
+   ],
+   "diameter": 40
+  },
+  {
+   "system": "Sanitaria",
+   "category": "Pipes",
+   "points": [
+    [
+     -12000,
+     13300,
+     -250
+    ],
+    [
+     24000,
+     13300,
+     -350
+    ]
+   ],
+   "diameter": 110
+  },
+  {
+   "system": "Aire acondicionado",
+   "category": "Ducts",
+   "points": [
+    [
+     -12000,
+     13750,
+     2300
+    ],
+    [
+     24000,
+     13750,
+     2300
+    ]
+   ],
+   "width": 500,
+   "height": 250
+  },
+  {
+   "system": "Eléctrica",
+   "category": "CableTray",
+   "points": [
+    [
+     -12000,
+     13950,
+     2330
+    ],
+    [
+     24000,
+     13950,
+     2330
+    ]
+   ],
+   "width": 300,
+   "height": 80
+  },
+  {
+   "system": "Red contra incendio",
+   "category": "Pipes",
+   "points": [
+    [
+     -12000,
+     13250,
+     2350
+    ],
+    [
+     24000,
+     13250,
+     2350
+    ]
+   ],
+   "diameter": 65
+  },
+  {
+   "system": "Agua fría",
+   "category": "Pipes",
+   "points": [
+    [
+     -2258,
+     13450,
+     2250
+    ],
+    [
+     -2258,
+     11053,
+     2250
+    ],
+    [
+     -2258,
+     11053,
+     700
+    ]
+   ],
+   "diameter": 25
+  },
+  {
+   "system": "Agua caliente",
+   "category": "Pipes",
+   "points": [
+    [
+     -2058,
+     13650,
+     2250
+    ],
+    [
+     -2058,
+     11053,
+     2250
+    ],
+    [
+     -2058,
+     11053,
+     700
+    ]
+   ],
+   "diameter": 20
+  },
+  {
+   "system": "Sanitaria",
+   "category": "Pipes",
+   "points": [
+    [
+     -1658,
+     11053,
+     0
+    ],
+    [
+     -1658,
+     11053,
+     -150
+    ],
+    [
+     -1658,
+     13300,
+     -300
+    ]
+   ],
+   "diameter": 110
+  },
+  {
+   "system": "Aire acondicionado",
+   "category": "Ducts",
+   "points": [
+    [
+     -1958,
+     13750,
+     2300
+    ],
+    [
+     -1958,
+     8092,
+     2300
+    ]
+   ],
+   "width": 250,
+   "height": 200
+  },
+  {
+   "system": "Eléctrica",
+   "category": "Pipes",
+   "points": [
+    [
+     -1458,
+     13950,
+     2330
+    ],
+    [
+     -1458,
+     8092,
+     2330
+    ],
+    [
+     -1458,
+     6592,
+     2330
+    ]
+   ],
+   "diameter": 20
+  },
+  {
+   "system": "Red contra incendio",
+   "category": "Pipes",
+   "points": [
+    [
+     -1808,
+     13250,
+     2350
+    ],
+    [
+     -1808,
+     8092,
+     2350
+    ]
+   ],
+   "diameter": 32
+  },
+  {
+   "system": "Red contra incendio",
+   "category": "Fixture",
+   "position": [
+    -1808,
+    8092,
+    2300
+   ],
+   "size": 120,
+   "name": "Rociador"
+  },
+  {
+   "system": "Sanitaria",
+   "category": "Fixture",
+   "position": [
+    -1658,
+    11053,
+    40
+   ],
+   "size": 180,
+   "name": "Sifón"
+  },
+  {
+   "system": "Agua fría",
+   "category": "Pipes",
+   "points": [
+    [
+     954,
+     13450,
+     2250
+    ],
+    [
+     954,
+     11053,
+     2250
+    ],
+    [
+     954,
+     11053,
+     700
+    ]
+   ],
+   "diameter": 25
+  },
+  {
+   "system": "Agua caliente",
+   "category": "Pipes",
+   "points": [
+    [
+     1154,
+     13650,
+     2250
+    ],
+    [
+     1154,
+     11053,
+     2250
+    ],
+    [
+     1154,
+     11053,
+     700
+    ]
+   ],
+   "diameter": 20
+  },
+  {
+   "system": "Sanitaria",
+   "category": "Pipes",
+   "points": [
+    [
+     1554,
+     11053,
+     0
+    ],
+    [
+     1554,
+     11053,
+     -150
+    ],
+    [
+     1554,
+     13300,
+     -300
+    ]
+   ],
+   "diameter": 110
+  },
+  {
+   "system": "Aire acondicionado",
+   "category": "Ducts",
+   "points": [
+    [
+     1254,
+     13750,
+     2300
+    ],
+    [
+     1254,
+     8092,
+     2300
+    ]
+   ],
+   "width": 250,
+   "height": 200
+  },
+  {
+   "system": "Eléctrica",
+   "category": "Pipes",
+   "points": [
+    [
+     1754,
+     13950,
+     2330
+    ],
+    [
+     1754,
+     8092,
+     2330
+    ],
+    [
+     1754,
+     6592,
+     2330
+    ]
+   ],
+   "diameter": 20
+  },
+  {
+   "system": "Red contra incendio",
+   "category": "Pipes",
+   "points": [
+    [
+     1404,
+     13250,
+     2350
+    ],
+    [
+     1404,
+     8092,
+     2350
+    ]
+   ],
+   "diameter": 32
+  },
+  {
+   "system": "Red contra incendio",
+   "category": "Fixture",
+   "position": [
+    1404,
+    8092,
+    2300
+   ],
+   "size": 120,
+   "name": "Rociador"
+  },
+  {
+   "system": "Sanitaria",
+   "category": "Fixture",
+   "position": [
+    1554,
+    11053,
+    40
+   ],
+   "size": 180,
+   "name": "Sifón"
+  },
+  {
+   "system": "Agua fría",
+   "category": "Pipes",
+   "points": [
+    [
+     4804,
+     13450,
+     2250
+    ],
+    [
+     4804,
+     11053,
+     2250
+    ],
+    [
+     4804,
+     11053,
+     700
+    ]
+   ],
+   "diameter": 25
+  },
+  {
+   "system": "Agua caliente",
+   "category": "Pipes",
+   "points": [
+    [
+     5004,
+     13650,
+     2250
+    ],
+    [
+     5004,
+     11053,
+     2250
+    ],
+    [
+     5004,
+     11053,
+     700
+    ]
+   ],
+   "diameter": 20
+  },
+  {
+   "system": "Sanitaria",
+   "category": "Pipes",
+   "points": [
+    [
+     5404,
+     11053,
+     0
+    ],
+    [
+     5404,
+     11053,
+     -150
+    ],
+    [
+     5404,
+     13300,
+     -300
+    ]
+   ],
+   "diameter": 110
+  },
+  {
+   "system": "Aire acondicionado",
+   "category": "Ducts",
+   "points": [
+    [
+     5104,
+     13750,
+     2300
+    ],
+    [
+     5104,
+     8091,
+     2300
+    ]
+   ],
+   "width": 250,
+   "height": 200
+  },
+  {
+   "system": "Eléctrica",
+   "category": "Pipes",
+   "points": [
+    [
+     5604,
+     13950,
+     2330
+    ],
+    [
+     5604,
+     8091,
+     2330
+    ],
+    [
+     5604,
+     6591,
+     2330
+    ]
+   ],
+   "diameter": 20
+  },
+  {
+   "system": "Red contra incendio",
+   "category": "Pipes",
+   "points": [
+    [
+     5254,
+     13250,
+     2350
+    ],
+    [
+     5254,
+     8091,
+     2350
+    ]
+   ],
+   "diameter": 32
+  },
+  {
+   "system": "Red contra incendio",
+   "category": "Fixture",
+   "position": [
+    5254,
+    8091,
+    2300
+   ],
+   "size": 120,
+   "name": "Rociador"
+  },
+  {
+   "system": "Sanitaria",
+   "category": "Fixture",
+   "position": [
+    5404,
+    11053,
+    40
+   ],
+   "size": 180,
+   "name": "Sifón"
+  },
+  {
+   "system": "Agua fría",
+   "category": "Pipes",
+   "points": [
+    [
+     8067,
+     13450,
+     2250
+    ],
+    [
+     8067,
+     11053,
+     2250
+    ],
+    [
+     8067,
+     11053,
+     700
+    ]
+   ],
+   "diameter": 25
+  },
+  {
+   "system": "Agua caliente",
+   "category": "Pipes",
+   "points": [
+    [
+     8267,
+     13650,
+     2250
+    ],
+    [
+     8267,
+     11053,
+     2250
+    ],
+    [
+     8267,
+     11053,
+     700
+    ]
+   ],
+   "diameter": 20
+  },
+  {
+   "system": "Sanitaria",
+   "category": "Pipes",
+   "points": [
+    [
+     8667,
+     11053,
+     0
+    ],
+    [
+     8667,
+     11053,
+     -150
+    ],
+    [
+     8667,
+     13300,
+     -300
+    ]
+   ],
+   "diameter": 110
+  },
+  {
+   "system": "Aire acondicionado",
+   "category": "Ducts",
+   "points": [
+    [
+     8367,
+     13750,
+     2300
+    ],
+    [
+     8367,
+     8091,
+     2300
+    ]
+   ],
+   "width": 250,
+   "height": 200
+  },
+  {
+   "system": "Eléctrica",
+   "category": "Pipes",
+   "points": [
+    [
+     8867,
+     13950,
+     2330
+    ],
+    [
+     8867,
+     8091,
+     2330
+    ],
+    [
+     8867,
+     6591,
+     2330
+    ]
+   ],
+   "diameter": 20
+  },
+  {
+   "system": "Red contra incendio",
+   "category": "Pipes",
+   "points": [
+    [
+     8517,
+     13250,
+     2350
+    ],
+    [
+     8517,
+     8091,
+     2350
+    ]
+   ],
+   "diameter": 32
+  },
+  {
+   "system": "Red contra incendio",
+   "category": "Fixture",
+   "position": [
+    8517,
+    8091,
+    2300
+   ],
+   "size": 120,
+   "name": "Rociador"
+  },
+  {
+   "system": "Sanitaria",
+   "category": "Fixture",
+   "position": [
+    8667,
+    11053,
+    40
+   ],
+   "size": 180,
+   "name": "Sifón"
+  },
+  {
+   "system": "Agua fría",
+   "category": "Pipes",
+   "points": [
+    [
+     -9372,
+     13450,
+     2250
+    ],
+    [
+     -9372,
+     11310,
+     2250
+    ],
+    [
+     -9372,
+     11310,
+     700
+    ]
+   ],
+   "diameter": 25
+  },
+  {
+   "system": "Agua caliente",
+   "category": "Pipes",
+   "points": [
+    [
+     -9172,
+     13650,
+     2250
+    ],
+    [
+     -9172,
+     11310,
+     2250
+    ],
+    [
+     -9172,
+     11310,
+     700
+    ]
+   ],
+   "diameter": 20
+  },
+  {
+   "system": "Sanitaria",
+   "category": "Pipes",
+   "points": [
+    [
+     -8772,
+     11310,
+     0
+    ],
+    [
+     -8772,
+     11310,
+     -150
+    ],
+    [
+     -8772,
+     13300,
+     -300
+    ]
+   ],
+   "diameter": 110
+  },
+  {
+   "system": "Aire acondicionado",
+   "category": "Ducts",
+   "points": [
+    [
+     -9072,
+     13750,
+     2300
+    ],
+    [
+     -9072,
+     8215,
+     2300
+    ]
+   ],
+   "width": 250,
+   "height": 200
+  },
+  {
+   "system": "Eléctrica",
+   "category": "Pipes",
+   "points": [
+    [
+     -8572,
+     13950,
+     2330
+    ],
+    [
+     -8572,
+     8215,
+     2330
+    ],
+    [
+     -8572,
+     6715,
+     2330
+    ]
+   ],
+   "diameter": 20
+  },
+  {
+   "system": "Red contra incendio",
+   "category": "Pipes",
+   "points": [
+    [
+     -8922,
+     13250,
+     2350
+    ],
+    [
+     -8922,
+     8215,
+     2350
+    ]
+   ],
+   "diameter": 32
+  },
+  {
+   "system": "Red contra incendio",
+   "category": "Fixture",
+   "position": [
+    -8922,
+    8215,
+    2300
+   ],
+   "size": 120,
+   "name": "Rociador"
+  },
+  {
+   "system": "Sanitaria",
+   "category": "Fixture",
+   "position": [
+    -8772,
+    11310,
+    40
+   ],
+   "size": 180,
+   "name": "Sifón"
+  }
+ ]
+}

@@ -1,0 +1,802 @@
+{
+  "especificaciones": {
+    "ACABADOS": [
+      [
+        1,
+        "Piso Vinilico apariencia madera Ref. Por definir según aprobación por Operaciones Hotel."
+      ],
+      [
+        2,
+        "Enchape de piso en porcelanato ref. KV04BL623 Mos the Dream blanco 30x30 de Decorceramica."
+      ],
+      [
+        3,
+        "Muros revestidos en papel de colgadura Tessera Ref. 1071.27 de Vescom"
+      ],
+      [
+        4,
+        "Enchape en panel melaminico formato 1.83x 2.44m Ref. Sikuani de Primadera. Instalación sobre bastidor de soporte oculto en perfiles metálicos o madera según proveedor."
+      ],
+      [
+        5,
+        "Enchape Espejo de 5mm color natural con cantos pulidos, estampillado directamente al muro."
+      ],
+      [
+        6,
+        "Muro con aplicación de pintura color Ref. TR136-P Sobre las Nubes de Pintuco. El color se debe aprobar con muestra física. NOTA: Esta pintura va perimetralmente en los muros de la habitación despues de la cornisa exiatente."
+      ],
+      [
+        7,
+        "Muro franja cabecero revestido en papel de colgadura Lismore Ref: 1097.28 de Vescom. Sobre puesto lleva molduras en melamina Ref. Sikuani de Primadera (Ver detalle)."
+      ],
+      [
+        8,
+        "Cabecero en aglomerado de madera de 20mm con acabado en melamina Ref. Sikuani de Primadera. Estructura interna tipo cuchilla o similar a definir por el proveedor anclada al muro. Se debe contemplar salidas eléctricas y luz led indirecta. (Ver detalle)."
+      ],
+      [
+        9,
+        "Enchape en porcelanato Santorini Grey 120cm x 120cm Ref. 100355038 de Porcelanosa."
+      ],
+      [
+        10,
+        "Enchape en mármol (nicho) acabado Antik Ref. Silver Blue de Gramar o similar."
+      ],
+      [
+        11,
+        "Espejo flotado calidad cristal de 5 mm con cantos pulidos y perfil metálico perimetral a definor según fabricante. Estructura en MDF de 15mm fijado sobre madera o metal tipo cuchilla."
+      ],
+      [
+        12,
+        "Cielo falso plano NCA +2.40m, +2.10m, +2.06m en drywall placa de 1/2 terminacion nivel 4 + acabado en Pintura ref. Sobre las Nubes Ref.TR136-P de Pintuco. o similar apariencia y calidad."
+      ],
+      [
+        13,
+        "Cielo falso plano NCA +2.40m en drywall placa RH de 1/2 terminacion nivel 4 + acabado en Pintura ref. Sobre las Nubes Ref.TR136-P de Pintuco. o similar apariencia y calidad."
+      ],
+      [
+        14,
+        "Mesón de lavamanos + entrepaño bajo en marmol acabado Antik Ref. Silver Blue de Gramar o similar. Estructura metálica oculta y anclada al muro."
+      ],
+      [
+        15,
+        "Guardaescobas h. 10cm en aglomerado de madera con acabado homologado a tono de piso."
+      ],
+      [
+        16,
+        "Base inferior tapizada en cuero Ref. 335x4680 de Dekor Group o similar sobre una lámina de espuma de alta densidad + Superficie en piedra sinterizada Ref: Altea Phantom Dark Grey."
+      ],
+      [
+        17,
+        "Cabezal de ducha monofunción de 8\" Ref. K-76464-G-CP de Kohler."
+      ],
+      [
+        18,
+        "Ducha de mano de tres funciones + accesorios. Ref. K-72420-G-CP de Kohler."
+      ],
+      [
+        19,
+        "Grifería de lavamanos monomando Ref. K-37885-4-CP de Kohler."
+      ],
+      [
+        20,
+        "Sanitario de piso Reach Blanco Ref. KO09BL942 de Kohler."
+      ],
+      [
+        21,
+        "Lavamanos de bajo mesón biar con rebose Ref. 118350004 de Sanindusa"
+      ],
+      [
+        22,
+        "Aplique de pared Ref. H Led Oro mate de Leds C4 - Euroluce"
+      ],
+      [
+        23,
+        "Lampara de pie Ref. Organic E27 Negro de Leds C4 - Euroluce"
+      ],
+      [
+        24,
+        "Mesa auxiliar base en lamina de acero con pintura electrostática negra mate y superficie en madera maciza en roble tono nogal acabado semimate."
+      ],
+      [
+        25,
+        "Silla de escritorio ref. Musa Fura de Ofipartes."
+      ],
+      [
+        26,
+        "Base tonrneada lamina de acero con pintura electrostática negra mate y superficie en piedra sinterizada Ref: Altea Phantom Dark Grey."
+      ],
+      [
+        27,
+        "División de ducha en vidrio + chapetas en acero inoxidable. Rectificar estado de divisiones actuales."
+      ],
+      [
+        28,
+        "Enchape de piso en porcelanato Santorini Bone ADZ 120cm x 60cm Ref. PO04GR026 de Porcelanosa."
+      ]
+    ],
+    "MUEBLES": [
+      [
+        1,
+        "Caras internas en aglomerado de 20mm en madera con acabado en melamina Ref. Sikuani de Primadera"
+      ],
+      [
+        2,
+        "Mesa de plancha con soporte."
+      ],
+      [
+        3,
+        "Entrepaño en aglomerado de 20mm en madera con acabado en melamina Ref. Sikuani de Primadera"
+      ],
+      [
+        4,
+        "Puertas abatibles en aglomerado de madera de 20mm con acabado en melamina Ref. Sikuani de Primadera Lleva haladera en acero inoxidable según muestra aprobada."
+      ],
+      [
+        5,
+        "Manija en lámina metálica con acabado en pintura de poliuretano similar a color RAL1036 Pearl Gold"
+      ],
+      [
+        6,
+        "Entrpaño superior en en melamina Ref. Sikuani de Primadera. Luz LED con perfil difusor en inferior de entrpaño."
+      ],
+      [
+        7,
+        "Bolillo en acero inoxidable."
+      ],
+      [
+        8,
+        "Espaldar en aglomerado de 20mm en madera con acabado en melamina Ref. Sikuani de Primadera"
+      ],
+      [
+        9,
+        "Cajón para empotrar cajilla de seguridad en aglomerado de 20mm en madera con acabado en melamina Ref. Sikuani de Primadera"
+      ],
+      [
+        10,
+        "Cajilla de seguridad dimensiones y especificaciones según referencia seleccionada por el operador hotelero."
+      ],
+      [
+        11,
+        "Cajón en aglomerado de 20mm en madera con acabado en melamina Ref. Sikuani de Primadera Rieles en acero inoxidable de extensión ocultos y de cierre lento. Tapa con bisel de agarre."
+      ],
+      [
+        12,
+        "Zócalo retrasado H:10cm en aglomerado de 20mm en madera RH con acabado en melamina Ref. Sikuani de Primadera"
+      ],
+      [
+        13,
+        "Perforaciones para ventilación de la nevera y preveer pasacables para conexiónes eléctricas."
+      ],
+      [
+        14,
+        "Proyección cajón interno en aglomerado de 20mm en madera con acabado en melamina Ref. Sikuani de Primadera. Rieles en acero inoxidable de extensión ocultos y de cierre lento. Tapa con bisel de agarre."
+      ],
+      [
+        15,
+        "Caras laterales y posterior en aglomerado de madera de 20mm con acabado en melamina Ref. Sikuani de Primadera."
+      ],
+      [
+        16,
+        "Cara inferior interna en aglomerado de madera de 20mm con acabado en melamina Ref. Sikuani de Primadera."
+      ],
+      [
+        17,
+        "Entrepaño graduable en aglomerado de madera de 20mm con acabado en melamina Ref. Sikuani de Primadera."
+      ],
+      [
+        18,
+        "Estructura interna a definir por proveedor según especificación de la nevera (debe preeverse la ventilación del minibar)."
+      ],
+      [
+        19,
+        "Proyección nevera minibar. Características y especificaciones según dotación del operador hotelero."
+      ],
+      [
+        20,
+        "Superficie en piedra sinterizada Ref: Ref: Altea Phantom Dark Grey."
+      ],
+      [
+        21,
+        "Alas abatibles en aglomerado de madera de 20mm con acabado en madera natural martillada con tintilla similar a tono de la melamina del mueble. Redondeo en sus extremos de ∅4cm. Lleva haladera semicircular en lamina de acero egún muestra aprobada.RAL1036."
+      ],
+      [
+        22,
+        "Platina como haladera acabado en pintura de poliuretano similar a color RAL1036 Pearl Gold, sale 2cm, remetida o incrustada con tornillo avellanado."
+      ],
+      [
+        23,
+        "Dilatación en Platina metálica acabado en pintura de poliuretano similar a color RAL1036 Pearl Gold. Calibre a definir en planos de taller y prototipo."
+      ],
+      [
+        24,
+        "Patas redondas en perfiles metálicos en hierro calibre a definir con el fabricante en planos de taller y prototipo. Acabado en pintura de poliuretano similar a color RAL1036 Pearl Gold."
+      ]
+    ],
+    "DETALLE PANEL TV": [
+      [
+        2,
+        "Mueble conosla auxiliar elaborado en formica ref: Lucca 1567 UP. Bordes redondeados."
+      ],
+      [
+        3,
+        "Mesón de superficie elaborado en piedra sinterizada Ref: Ref: Altea Phantom Dark Grey. Ver Detalle para remate de nariz."
+      ],
+      [
+        4,
+        "Panel frontal elaborado en aglomerado de 20mm en madera con acabado en melamina Ref. Sikuani de Primadera. Estructura interna con bastidores metálicos o de madera según recomendación."
+      ],
+      [
+        5,
+        "Panel recedido TV elaborado en aglomerado de 20mm en madera con acabado en melamina Ref. Sikuani de Primadera. Estructura interna con bastidores metálicos o de madera según recomendación."
+      ],
+      [
+        6,
+        "Toma corrientes para TV (Incluye, punto de energía, datos y cable)"
+      ],
+      [
+        7,
+        "Panel lateral elaborado en aglomerado de 20mm en madera con acabado en melamina Ref. Sikuani de Primadera. Estructura interna con bastidores metálicos o de madera según recomendación."
+      ],
+      [
+        8,
+        "Pieza dilatadora recubierta con canto recubierto en perfil metalico con pintutra electroestatica Ref: 1036 Pearl Gold."
+      ],
+      [
+        9,
+        "Guarda escobas h:10cm en aglomerado de madera con acabado homologado a tono de piso existente."
+      ],
+      [
+        10,
+        "Muro con aplicación de pintura color Ref. TR136-P Sobre las Nubes de Pintuco. El color se debe aprobar con muestra física. NOTA: Esta pintura va perimetralmente en los muros de la habitación despues de la cornisa existente."
+      ]
+    ],
+    "DETALLE CONSOLA TV": [
+      [
+        1,
+        "Consola inferior fija elaborada en aglomerado de 20mm en madera con acabado en melamina Ref. Sikuani de Primadera. Tener en cuenta los bordes redondeados de las cuatro esquinas."
+      ],
+      [
+        2,
+        "Panel frontal elaborado en aglomerado de 20mm en madera con acabado en melamina Ref. Sikuani de Primadera. Estructura interna con bastidores metálicos o de madera según recomendación."
+      ],
+      [
+        3,
+        "Tubulares metálicos de sección cuadrada 40x40mm acabados + platina de anclaje inferior y superior Cal. 24, ambos en pintura electroestática color RAL1036 Pearl Gold."
+      ],
+      [
+        4,
+        "Panel lateral elaborado en aglomerado de 20mm en madera con acabado en melamina Ref. Sikuani de Primadera. Estructura interna con bastidores metálicos o de madera según recomendación."
+      ],
+      [
+        5,
+        "Panel posterior elaborado en aglomerado de 20mm en madera con acabado en melamina Ref. Sikuani de Primadera. Estructura interna con bastidores metálicos o de madera según recomendación."
+      ],
+      [
+        6,
+        "Panel recedido TV elaborado en aglomerado de 20mm en madera con acabado en melamina Ref. Sikuani de Primadera. Estructura interna con bastidores metálicos o de madera según recomendación."
+      ],
+      [
+        7,
+        "Remate de anclaje a piso y cielo raso elaborado en tubular metálico sección circular Ø12,7mm y platina sección circular Cal. 20 de fijación acabado en pintura electroestática color negro mate."
+      ],
+      [
+        8,
+        "Toma corrientes para TV (Incluye, punto de energía, datos y cable)"
+      ]
+    ],
+    "DETALLE BANCA CORRIDA": [
+      [
+        1,
+        "Panel frontal elaborado en aglomerado de 20mm en madera con acabado en melamina Ref. Sikuani de Primadera. Estructura interna en bastidores de madera o metálico según recomendaciones."
+      ],
+      [
+        2,
+        "Pieza dilatadora elaborada en madera recubierta con canto rígido del mismo color de la melamina del panel y consola."
+      ],
+      [
+        3,
+        "Guarda escobas h:10cm en aglomerado de madera con acabado homologado a tono de piso existente."
+      ],
+      [
+        4,
+        "Mesón superior elaborado en aglomerado de 20mm en madera con acabado en melamina Ref. Sikuani de Primadera."
+      ],
+      [
+        5,
+        "Asiento de 5 cm de espesor con núcleo espuma alta densidad y capa superior de en espuma Penta o Soft. Acabado en textil a definir con proveedor."
+      ],
+      [
+        6,
+        "Espaldar de 15 cm de espesor con núcleo espuma alta densidad y capa superior de en espuma Penta o Soft. Acabado en textil a definir con proveedor."
+      ],
+      [
+        7,
+        "Fondo elaborado en aglomerado de 20mm en madera con acabado en melamina Ref. Sikuani de Primadera"
+      ],
+      [
+        8,
+        "Viga en concreto existente"
+      ]
+    ],
+    "DETALLE MINIBAR": [
+      [
+        1,
+        "Entrepaño compuesto por marco perimetral en platina 20mm de espesor Cal. 24 acabado pintura electroestática color RAL1036 Pearl Gold + superficie en vidrio color natural, espesor 6mm fijación mecánica a estructura."
+      ],
+      [
+        2,
+        "Marco perimetral elaborado en aglomerado de madera espesor (MDF) 20mm acabado en pintura de poliuretano similar a color RAL1036 Pearl Gold + dilatadores perimetrales en madera 10mm acabados en pintura poliuretano color negro mate."
+      ],
+      [
+        3,
+        "Tubulares metálicos de sección circular Ø25mm acabados + platina de anclaje inferior y superior Cal. 24, ambos en pintura electroestática color RAL1036 Pearl Gold fijada mediantes tornillos autoperforantes."
+      ],
+      [
+        4,
+        "Muro existente en mampostería común acabado en estuco + pintura, enchapado en espejo color natural con bordes pulidos, espesor 6mm estampillado sobre sustrato de aglomerado de madera 12mm."
+      ],
+      [
+        5,
+        "Guarda escobas h:10cm en aglomerado de madera con acabado homologado a tono de piso existente."
+      ],
+      [
+        6,
+        "Entrepaño elaborado en aglomerado de 20mm en madera con acabado en melamina Ref. Sikuani de Primadera"
+      ],
+      [
+        7,
+        "Marco elaborado en aglomerado de 20mm en madera con acabado en melamina Ref. Sikuani de Primadera"
+      ],
+      [
+        8,
+        "Fondo elaborado en aglomerado de 20mm en madera con acabado en melamina Ref. Sikuani de Primadera"
+      ],
+      [
+        9,
+        "Mueble carpintería especial de mini bar (ME-02). Para ver más información ver el plano de Detalle INT-604."
+      ]
+    ],
+    "DETALLE CLÓSET": [
+      [
+        1,
+        "Divisor interno elaborado en aglomerado de 20mm en madera con acabado en melamina Ref. Sikuani de Primadera"
+      ],
+      [
+        2,
+        "Mesa de plancha con soporte."
+      ],
+      [
+        3,
+        "Entrepaño elaborado en aglomerado de 20mm en madera con acabado en melamina Ref. Sikuani de Primadera"
+      ],
+      [
+        4,
+        "Puerta de cajonera elaborada en aglomerado de 20mm en madera con acabado en melamina Ref. Sikuani de Primadera. Apertura tipo gola con chaflán superior con cantos recubiertos. Herrajes de cierre lento."
+      ],
+      [
+        5,
+        "Cajón elaborado en aglomerado de 20mm en madera con acabado en melamina Ref. Sikuani de Primadera"
+      ],
+      [
+        6,
+        "Bolillo Ø 25mm en acero inoxidable."
+      ],
+      [
+        7,
+        "Marco perimetral elaborado en aglomerado de 20mm en madera con acabado en melamina Ref. Sikuani de Primadera. Perfil de dilatación de 10mm a muro revestido con canto rígido del mismo color de la melamina."
+      ],
+      [
+        8,
+        "Zócalo recedido 20mm elaborado en aglomerado de 20mm en madera con acabado en melamina Ref. Sikuani de Primadera + bastidores internos de madera o metálicos."
+      ],
+      [
+        9,
+        "Espejo compuesto por sustrado de aglomerado de madera 18mm + espejo color natural 6mm con los bordes pulidos y biselados + marco en platina metálica perimetral acabado en pintura electroestática color negro mate."
+      ],
+      [
+        10,
+        "Varillas semicirculares Ø 10mm en acero inoxidable ancladas sobre entrepaño de aglomerado de madera 20mm ruteado."
+      ],
+      [
+        11,
+        "Marco de acceso compuesto por dilatadores en tubulares cuadrangulares 10mm acabados en pintura electroestática color negro mate + lámina metálica Cal. 24 acabado tipo bronce."
+      ],
+      [
+        12,
+        "Fondo de mueble elaborado en aglomerado de 20mm en madera con acabado en melamina Ref. Sikuani de Primadera"
+      ]
+    ],
+    "DETALLE CABECEROS": [
+      [
+        1,
+        "Panel en aglomerdado de madera 20mm con acabado en papel de colgadura Lismore Ref: 1097.28 de Vescom. Instalado sobre muro y dilatación entre panel de 3mm según detalle."
+      ],
+      [
+        2,
+        "Cabecero en aglomerado de madera de 20mm con acabado en melamina Ref. Sikuani de Primadera. Estructura interna tipo cuchilla o similar a definir por el proveedor anclada al muro. Se debe contemplar salidas eléctricas y luz led indirecta. (Ver detalle)."
+      ],
+      [
+        3,
+        "Guardaescobas h. 10cm en aglomerado de madera con acabado homologado a tono de piso."
+      ],
+      [
+        4,
+        "Aplique de pared Ref. H Led Oro mate de Leds C4 - Euroluce"
+      ],
+      [
+        5,
+        "Enchape Espejo de 5mm color natural con cantos pulidos, estampillado directamente al muro."
+      ],
+      [
+        6,
+        "Espaldar tapizado 50mm con embonado perimetral 10mm según detalle. Referencia de textil por definir. Instalado sobre un tablero aglomerado de 15mm, en el cual se tiempla el textil."
+      ],
+      [
+        7,
+        "Perfil led sobrepuesto en dilatación de Panel. Ref. a especificar por asesor."
+      ],
+      [
+        8,
+        "Proyección de salidas eléctricas según planos y caracterisiticas suministrados por el asesor electrico."
+      ],
+      [
+        9,
+        "Marco interior de madera en dilatación 20mm con acabado en melamina Ref. Sikuani de Primadera"
+      ],
+      [
+        10,
+        "Estructura interna del marco tipo cuchilla o soporte a pared determinada por el proveedor."
+      ]
+    ],
+    "MAT": [
+      [
+        1,
+        "PISO VINILICO MADERA",
+        [
+          150,
+          111,
+          74
+        ]
+      ],
+      [
+        2,
+        "PORCELANATO MOS THE DREAM 30x30 BLANCO",
+        [
+          238,
+          238,
+          234
+        ]
+      ],
+      [
+        3,
+        "PAPEL COLGADURA TESSERA 1071.27 VESCOM",
+        [
+          196,
+          188,
+          172
+        ]
+      ],
+      [
+        4,
+        "PANEL MELAMINICO SIKUANI PRIMADERA",
+        [
+          160,
+          120,
+          85
+        ]
+      ],
+      [
+        5,
+        "ESPEJO 5mm ESTAMPILLADO",
+        [
+          200,
+          210,
+          215
+        ]
+      ],
+      [
+        6,
+        "PINTURA SOBRE LAS NUBES TR136-P PINTUCO",
+        [
+          232,
+          232,
+          228
+        ]
+      ],
+      [
+        7,
+        "PAPEL COLGADURA LISMORE 1097.28 VESCOM",
+        [
+          170,
+          160,
+          145
+        ]
+      ],
+      [
+        8,
+        "CABECERO MELAMINA SIKUANI",
+        [
+          160,
+          120,
+          85
+        ]
+      ],
+      [
+        9,
+        "PORCELANATO SANTORINI GREY 120x120",
+        [
+          150,
+          150,
+          148
+        ]
+      ],
+      [
+        10,
+        "MARMOL ANTIK SILVER BLUE (NICHO)",
+        [
+          120,
+          130,
+          140
+        ]
+      ],
+      [
+        11,
+        "ESPEJO FLOTADO 5mm",
+        [
+          200,
+          210,
+          215
+        ]
+      ],
+      [
+        12,
+        "CIELO DRYWALL 1/2 PINTURA SOBRE LAS NUBES",
+        [
+          240,
+          240,
+          236
+        ]
+      ],
+      [
+        13,
+        "CIELO DRYWALL RH 1/2 PINTURA SOBRE LAS NUBES",
+        [
+          236,
+          240,
+          240
+        ]
+      ],
+      [
+        14,
+        "MESON MARMOL ANTIK SILVER BLUE",
+        [
+          120,
+          130,
+          140
+        ]
+      ],
+      [
+        15,
+        "GUARDAESCOBA AGLOMERADO H10",
+        [
+          140,
+          100,
+          70
+        ]
+      ],
+      [
+        28,
+        "PORCELANATO SANTORINI BONE 120x60",
+        [
+          215,
+          205,
+          185
+        ]
+      ]
+    ]
+  },
+  "pbrCatalog": {
+    "REF01": {
+      "name": "HLF-REF 01 PISO VINILICO MADERA 5mm",
+      "texture": "./assets/textures/hlf_piso_madera.png",
+      "bump": "./assets/textures/hlf_ref01_veta_seamless.png",
+      "scaleMm": 1800,
+      "color": "#966442",
+      "roughness": 0.62,
+      "metalness": 0.05
+    },
+    "REF02": {
+      "name": "HLF-REF 02 PORCELANATO MOS THE DREAM 30x30 BLANCO",
+      "texture": "./assets/textures/hlf_mosaico2.png",
+      "scaleMm": 700,
+      "color": "#d6c8ac",
+      "roughness": 0.55,
+      "metalness": 0.05
+    },
+    "REF03": {
+      "name": "HLF-REF 03 PAPEL COLGADURA TESSERA 1071.27 VESCOM",
+      "texture": "./assets/textures/hlf_grasscloth.png",
+      "scaleMm": 600,
+      "color": "#c8b696",
+      "roughness": 0.88,
+      "metalness": 0
+    },
+    "REF04": {
+      "name": "HLF-REF 04 PANEL MELAMINICO SIKUANI PRIMADERA",
+      "texture": "./assets/textures/hlf_nogal4_v.png",
+      "scaleMm": 1000,
+      "color": "#60422c",
+      "roughness": 0.58,
+      "metalness": 0.05
+    },
+    "REF06": {
+      "name": "HLF-REF 06 PINTURA SOBRE LAS NUBES TR136-P PINTUCO",
+      "texture": null,
+      "scaleMm": 0,
+      "color": "#ece5d8",
+      "roughness": 0.9,
+      "metalness": 0
+    },
+    "REF07": {
+      "name": "HLF-REF 07 PAPEL COLGADURA LISMORE 1097.28 VESCOM",
+      "texture": "./assets/textures/hlf_roble_claro_v.png",
+      "scaleMm": 900,
+      "color": "#d2b892",
+      "roughness": 0.8,
+      "metalness": 0
+    },
+    "REF08": {
+      "name": "HLF-REF 08 CABECERO MELAMINA SIKUANI",
+      "texture": "./assets/textures/hlf_nogal4_v.png",
+      "scaleMm": 1000,
+      "color": "#60422c",
+      "roughness": 0.55,
+      "metalness": 0.05
+    },
+    "REF09": {
+      "name": "HLF-REF 09 PORCELANATO SANTORINI GREY 120x120",
+      "texture": "./assets/textures/hlf_piedra_grey.png",
+      "scaleMm": 1200,
+      "color": "#cec2aa",
+      "roughness": 0.72,
+      "metalness": 0.05
+    },
+    "REF10": {
+      "name": "HLF-REF 10/14 MARMOL ANTIK SILVER BLUE",
+      "texture": "./assets/textures/hlf_marmol3.png",
+      "scaleMm": 900,
+      "color": "#8a7866",
+      "roughness": 0.25,
+      "metalness": 0.1
+    },
+    "REF28": {
+      "name": "HLF-REF 28 PORCELANATO SANTORINI BONE 120x60",
+      "texture": "./assets/textures/hlf_piedra_bone.png",
+      "scaleMm": 1200,
+      "color": "#d4c6aa",
+      "roughness": 0.72,
+      "metalness": 0.05
+    },
+    "HALL_ALFOMBRA": {
+      "name": "HLF-PISO HALL ALFOMBRA TWEED 10mm",
+      "texture": "./assets/textures/hlf_alfombra_hall.jpg",
+      "scaleMm": 1200,
+      "color": "#58524c",
+      "roughness": 0.92,
+      "metalness": 0
+    },
+    "HALL_MARMOL": {
+      "name": "HLF-PISO HALL BORDE MARMOL 20mm",
+      "texture": "./assets/textures/hlf_marmol.png",
+      "scaleMm": 1000,
+      "color": "#d8d0c2",
+      "roughness": 0.28,
+      "metalness": 0.08
+    },
+    "LADRILLO": {
+      "name": "HLF-FACHADA LADRILLO A LA VISTA BOGOTA",
+      "texture": "./assets/textures/hlf_ladrillo.png",
+      "bump": "./assets/textures/hlf_ladrillo_bump.png",
+      "scaleMm": 1200,
+      "color": "#9c4f36",
+      "roughness": 0.82,
+      "metalness": 0.02
+    },
+    "HIEDRA": {
+      "name": "HLF-VEGETACION FACHADA HIEDRA",
+      "texture": "./assets/textures/hlf_hiedra.png",
+      "scaleMm": 900,
+      "color": "#3b5e34",
+      "roughness": 0.85,
+      "metalness": 0
+    },
+    "NOGAL": {
+      "name": "HLF-MOB MELAMINA SIKUANI NOGAL",
+      "texture": "./assets/textures/hlf_nogal4_v.png",
+      "scaleMm": 1000,
+      "color": "#60422c",
+      "roughness": 0.52,
+      "metalness": 0.05
+    },
+    "TAPIZ": {
+      "name": "HLF-MOB TAPIZ TRAILBLAZER 32 MARBLE",
+      "texture": "./assets/textures/hlf_boucle_taupe.png",
+      "scaleMm": 300,
+      "color": "#967a62",
+      "roughness": 0.88,
+      "metalness": 0
+    },
+    "AVENA": {
+      "name": "HLF-MOB TEJIDO AVENA",
+      "texture": "./assets/textures/hlf_tejido_avena.png",
+      "scaleMm": 300,
+      "color": "#c0b6a6",
+      "roughness": 0.88,
+      "metalness": 0
+    },
+    "OLIVA": {
+      "name": "HLF-MOB TEJIDO OLIVA",
+      "texture": "./assets/textures/hlf_tejido_oliva.png",
+      "scaleMm": 250,
+      "color": "#706c42",
+      "roughness": 0.88,
+      "metalness": 0
+    },
+    "TERRACOTA": {
+      "name": "HLF-MOB TEJIDO TERRACOTA",
+      "texture": "./assets/textures/hlf_tejido_terracota.png",
+      "scaleMm": 250,
+      "color": "#d48a70",
+      "roughness": 0.88,
+      "metalness": 0
+    },
+    "QUILT": {
+      "name": "HLF-MOB QUILT OSCURO",
+      "texture": "./assets/textures/hlf_quilt_oscuro.png",
+      "scaleMm": 400,
+      "color": "#3e3026",
+      "roughness": 0.75,
+      "metalness": 0.05
+    },
+    "MARMOL": {
+      "name": "HLF-MOB MARMOL ANTIK SILVER",
+      "texture": "./assets/textures/hlf_marmol3.png",
+      "scaleMm": 900,
+      "color": "#887868",
+      "roughness": 0.25,
+      "metalness": 0.1
+    },
+    "PIEDRA": {
+      "name": "HLF-MOB PIEDRA SINTERIZADA ALTEA PHANTOM DARK",
+      "texture": "./assets/textures/hlf_marmol.png",
+      "scaleMm": 900,
+      "color": "#5a5654",
+      "roughness": 0.35,
+      "metalness": 0.1
+    },
+    "TA01": {
+      "name": "HLF-TAPETE TA-01",
+      "texture": "./assets/textures/hlf_tapete_ta01.png",
+      "scaleMm": 600,
+      "color": "#e2d0b0",
+      "roughness": 0.92,
+      "metalness": 0
+    },
+    "TA02": {
+      "name": "HLF-TAPETE TA-02",
+      "texture": "./assets/textures/hlf_tapete_ta02.png",
+      "scaleMm": 600,
+      "color": "#b9a076",
+      "roughness": 0.92,
+      "metalness": 0
+    },
+    "TA04": {
+      "name": "HLF-TAPETE TA-04",
+      "texture": "./assets/textures/hlf_tapete_ta04.png",
+      "scaleMm": 600,
+      "color": "#8c9298",
+      "roughness": 0.92,
+      "metalness": 0
+    }
+  }
+}

@@ -15,7 +15,8 @@ const ORIGIN_LON = LON0 - DX / MLON, ORIGIN_LAT = LAT0 + DZ / MLAT;
 const GROUND_H = 2575;                 // altura elipsoidal aproximada del suelo (luego se calibra)
 const MASK = { x0: -112, z0: -152, size: 256, px: 1024 };   // cuadrado local que cubre el predio
 const SITE = [[-24.0, 23.28], [50.0, 30.9], [50.0, -4.0], [-24.0, -4.0]]; // plazoleta (hasta el lindero oriental real)
-const DILATE = 2.2;                    // la fotogrametría del hotel se desborda un poco de su huella
+const MASK2 = { x0: -300, z0: -520, w: 760, h: 1020, k: 1.6 };   // vías + Unicentro (1.6 px/m)
+const DILATE = 2.2;                   // la fotogrametría del hotel se desborda un poco de su huella
 
 export class GoogleContext {
   constructor(scene, { renderer, camera, sky, hotelFootprints = [], low = false, mobile = false } = {}) {
@@ -28,6 +29,8 @@ export class GoogleContext {
       uLuz: { value: new THREE.Color(1, 1, 1) },
       uMask: { value: this._makeMask(hotelFootprints) },
       uMaskBox: { value: new THREE.Vector3(MASK.x0, MASK.z0, MASK.size) },
+      uMask2: { value: this._makeMask2() },
+      uMaskBox2: { value: new THREE.Vector4(MASK2.x0, MASK2.z0, MASK2.w, MASK2.h) },
       uSat: { value: 0.96 },
       uShadow: { value: 1 }
     };
@@ -55,6 +58,30 @@ export class GoogleContext {
     tex.flipY = false; tex.colorSpace = THREE.NoColorSpace; tex.minFilter = THREE.LinearFilter; tex.generateMipmaps = false;
     this.maskCanvas = cv;
     return tex;
+  }
+
+  /** Segunda máscara (vías de Catastro y lote de Unicentro): ahí la foto se recorta y manda el modelo 3D. */
+  _makeMask2() {
+    const cv = document.createElement('canvas');
+    cv.width = Math.round(MASK2.w * MASK2.k); cv.height = Math.round(MASK2.h * MASK2.k);
+    const g = cv.getContext('2d'); g.fillStyle = '#000'; g.fillRect(0, 0, cv.width, cv.height);
+    const tex = new THREE.CanvasTexture(cv);
+    tex.flipY = false; tex.colorSpace = THREE.NoColorSpace; tex.minFilter = THREE.LinearFilter; tex.generateMipmaps = false;
+    this.mask2 = { cv, g, tex };
+    return tex;
+  }
+
+  /** Recorta la malla de Google bajo estos polígonos [[x,z],...] (con un leve engrosamiento `grow` en metros). */
+  addMask(polys, grow = 0) {
+    const { g, tex } = this.mask2, k = MASK2.k;
+    g.fillStyle = g.strokeStyle = '#fff'; g.lineJoin = 'round'; g.lineWidth = Math.max(1, grow * 2 * k);
+    for (const P of polys) {
+      if (!P || P.length < 3) continue;
+      g.beginPath();
+      P.forEach(([x, z], i) => { const X = (x - MASK2.x0) * k, Y = (z - MASK2.z0) * k; if (i) g.lineTo(X, Y); else g.moveTo(X, Y); });
+      g.closePath(); g.fill(); if (grow > 0) g.stroke();
+    }
+    tex.needsUpdate = true;
   }
 
   /** Suelo propio dentro del predio (andén perimetral), con sombras del modelo. */
@@ -100,11 +127,13 @@ export class GoogleContext {
           // la malla no trae normales: sin una normal valida el sesgo de la sombra da NaN y la sombra no se dibuja
           .replace('#include <beginnormal_vertex>', '#include <beginnormal_vertex>\nobjectNormal = vec3(0.0, 0.0, 1.0);');
         sh.fragmentShader = sh.fragmentShader
-          .replace('#include <common>', '#include <common>\nvarying vec2 vHlfXZ; uniform sampler2D uMask; uniform vec3 uMaskBox; uniform vec3 uLuz; uniform float uSat; uniform float uShadow;')
+          .replace('#include <common>', '#include <common>\nvarying vec2 vHlfXZ; uniform sampler2D uMask; uniform vec3 uMaskBox; uniform sampler2D uMask2; uniform vec4 uMaskBox2; uniform vec3 uLuz; uniform float uSat; uniform float uShadow;')
           .replace('#include <shadowmap_pars_fragment>', sh.fragmentShader.includes('shadowmask_pars_fragment') ? '#include <shadowmap_pars_fragment>' : '#include <shadowmap_pars_fragment>\n#include <shadowmask_pars_fragment>')
           .replace('#include <clipping_planes_fragment>', `#include <clipping_planes_fragment>
             { vec2 muv = (vHlfXZ - uMaskBox.xy) / uMaskBox.z;
-              if (muv.x > 0.0 && muv.x < 1.0 && muv.y > 0.0 && muv.y < 1.0 && texture2D(uMask, muv).r > 0.5) discard; }`)
+              if (muv.x > 0.0 && muv.x < 1.0 && muv.y > 0.0 && muv.y < 1.0 && texture2D(uMask, muv).r > 0.5) discard;
+              vec2 m2 = (vHlfXZ - uMaskBox2.xy) / uMaskBox2.zw;
+              if (m2.x > 0.0 && m2.x < 1.0 && m2.y > 0.0 && m2.y < 1.0 && texture2D(uMask2, m2).r > 0.5) discard; }`)
           .replace('#include <opaque_fragment>', `{ vec3 c = pow(max(outgoingLight, 0.0), vec3(0.80));   // abre las sombras de la foto: el tono fílmico del visor las cerraba
               float l = dot(c, vec3(0.2126, 0.7152, 0.0722));
               c = max(mix(vec3(l), c, uSat), 0.0);
@@ -164,7 +193,7 @@ export class GoogleContext {
       const d = this.sky?.sunDir;
       if (d) {
         const day = THREE.MathUtils.smoothstep(d.y, -0.04, 0.42), low = 1 - THREE.MathUtils.smoothstep(d.y, 0.05, 0.5);
-        const b = 0.14 + 0.92 * day;
+        const b = (0.14 + 0.92 * day) * 0.86;   // compensa la exposición más alta del visor (la foto ya trae su luz)
         this.uniforms.uShadow.value = THREE.MathUtils.smoothstep(d.y, 0.02, 0.22);   // sin sol no hay sombra arrojada
         this.uniforms.uLuz.value.setRGB(b * (1 + 0.10 * low), b * (1 - 0.03 * low), b * (1 - 0.22 * low));
       }

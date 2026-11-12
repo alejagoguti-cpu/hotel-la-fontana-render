@@ -79,8 +79,10 @@ function sAt(path, pred) {
 }
 
 export class Traffic {
-  constructor(axes, group, makeCar) {
+  constructor(axes, group, makeCar, { y = 0.02, maxCars = 84 } = {}) {
     this.group = group;
+    this.y = y;
+    this.maxCars = maxCars;
     this.makeCar = makeCar;
     this.time = 0;
     this.phaseIdx = 0;
@@ -110,9 +112,10 @@ export class Traffic {
     const cra = route(smooth([...sbAx.slice(0, sbAx.length - 1), [sbAx[sbAx.length - 1][0] + 1.2, 41], [92, 46.2], ...ebR.filter((p) => p[0] > 100)]), 'B');
 
     this.sources = [
-      { routes: [eb[0], eb[1]], weights: [0.5, 0.5], rate: 3.2, next: 0 },
-      { routes: [wb[0], wb[1], wbTurn], weights: [0.4, 0.35, 0.25], rate: 3.6, next: 1.5 },
-      { routes: [cra], weights: [1], rate: 9.0, next: 0.8 }
+      // hora de alto flujo en la 127 (Unicentro / Santa Bárbara): un carro cada 1–2 s por sentido
+      { routes: [eb[0], eb[1]], weights: [0.5, 0.5], rate: 1.25, next: 0 },
+      { routes: [wb[0], wb[1], wbTurn], weights: [0.4, 0.35, 0.25], rate: 1.4, next: 0.5 },
+      { routes: [cra], weights: [1], rate: 3.2, next: 0.8 }
     ];
     this.routes = [...eb, ...wb, wbTurn, cra];
 
@@ -191,7 +194,7 @@ export class Traffic {
     for (let i = 0; i < src.routes.length; i++) { acc += src.weights[i]; if (u <= acc) { r = i; break; } }
     const route = src.routes[r];
     // entrada libre?
-    for (const c of this.cars) if (c.route === route && c.s < 14) return false;
+    for (const c of this.cars) if (c.route === route && c.s < 9) return false;
     const car = { route, s: 0, v: 8 + Math.random() * 2, v0: 10.5 + Math.random() * 2.5, obj: this.makeCar() };
     if (!car.obj) return false;
     this.group.add(car.obj);
@@ -204,7 +207,7 @@ export class Traffic {
     const p = sample(car.route, car.s);
     car.x = p.x; car.z = p.z;
     const h = Math.atan2(p.hx, p.hz);
-    car.obj.position.set(p.x, 0.02, p.z);
+    car.obj.position.set(p.x, this.y, p.z);
     let d = h - car.obj.rotation.y;
     d = Math.atan2(Math.sin(d), Math.cos(d));
     car.obj.rotation.y += d * (car.placed ? 0.25 : 1);
@@ -226,9 +229,9 @@ export class Traffic {
     // generación
     for (const src of this.sources) {
       src.next -= dt;
-      if (src.next <= 0 && this.cars.length < 34) {
+      if (src.next <= 0 && this.cars.length < this.maxCars) {
         if (this.spawn(src)) src.next = src.rate * (0.6 + Math.random() * 0.9);
-        else src.next = 0.8;
+        else src.next = 0.4;
       }
     }
     // IDM

@@ -51,13 +51,13 @@ export class MaterialLibrary {
       map: brickMap,
       bumpMap: brickBump,
       bumpScale: 0.11,
-      color: 0xe2d6cc, // ladrillo un poco menos saturado, como se ve a la intemperie
-      roughness: 0.9,
+      color: 0xfff4ec, // ladrillo naranja-rojizo bogotano a pleno sol (antes se veía casi café)
+      roughness: 0.86,
       metalness: 0.0,
-      envMapIntensity: 0.35
+      envMapIntensity: 0.9
     }));
     // manchas de humedad y desgaste a gran escala + rotura de la repeticion del ladrillo
-    addMacroVariation(this.materials.get('BRICK_FACADE'), { macroScale: 0.045, strength: 0.3 });
+    addMacroVariation(this.materials.get('BRICK_FACADE'), { macroScale: 0.045, strength: 0.16 });
 
     // 1B. Spanish Terracotta Clay Roof Tiles (Teja de barro colonial roja - Photo 1 & 2 reference)
     const tileCanvas = document.createElement('canvas');
@@ -92,7 +92,7 @@ export class MaterialLibrary {
       map: tileTex,
       bumpMap: tileTex,
       bumpScale: 0.06,
-      color: 0x9c5a44,
+      color: 0xc27a5f,
       roughness: 0.92,
       metalness: 0.0,
       envMapIntensity: 0.3

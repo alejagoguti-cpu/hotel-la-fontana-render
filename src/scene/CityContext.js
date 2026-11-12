@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { makeTreeImpostors } from './RealTrees.js';
+import { RealTrees } from './RealTrees.js';
 import { load as loadPBR } from './PBRSurfaces.js';
 
 /**
@@ -23,6 +23,7 @@ const tile2lon = (x, z) => (x / 2 ** z) * 360 - 180;
 const tile2lat = (y, z) => (180 / Math.PI) * Math.atan(Math.sinh(Math.PI - (2 * Math.PI * y) / 2 ** z));
 const lx = (lon) => (lon - LON0) * MLON + DX;
 const lz = (lat) => -(lat - LAT0) * MLAT + DZ;
+const inPoly = (x, z, P) => { let c = false; for (let i = 0, j = P.length - 1; i < P.length; j = i++) { if (((P[i][1] > z) !== (P[j][1] > z)) && (x < (P[j][0] - P[i][0]) * (z - P[i][1]) / (P[j][1] - P[i][1]) + P[i][0])) c = !c; } return c; };
 const smooth = (a, b, x) => { const t = Math.min(1, Math.max(0, (x - a) / (b - a))); return t * t * (3 - 2 * t); };
 
 function loadImg(url) {
@@ -56,8 +57,9 @@ function planMosaic(z, half) {
 }
 
 export class CityContext {
-  constructor(scene, { renderer, mobile = false } = {}) {
+  constructor(scene, { renderer, mobile = false, exclude = [] } = {}) {
     this.scene = scene;
+    this.exclude = exclude;     // lotes modelados aparte (Unicentro): sin cajas de catastro ni árboles encima
     this.renderer = renderer;
     this.mobile = mobile;
     this.group = new THREE.Group();
@@ -245,12 +247,15 @@ export class CityContext {
     const cityP = fetch('./data/geometry/city-context.json')
       .then((r) => (r.ok ? r.json() : null)).catch(() => null)
       .then((d) => (d?.b?.length ? d : this._fetchCatastro(1100).catch((e) => { console.warn('Catastro en vivo no disponible', e); return null; })));
+    const uniP = fetch('./data/geometry/unicentro.json').then((r) => (r.ok ? r.json() : null)).catch(() => null)
+      .then((u) => { if (u?.lot) this.exclude.push(u.lot); });
     const far3 = this._fillLevel(L3); // pocas teselas: el horizonte aparece enseguida
     const near = Promise.all([L0 && this._fillLevel(L0), this._fillLevel(L1)]);
     const far2 = near.then(() => this._fillLevel(L2));
     try { await this._loadDEM(); } catch (e) { console.warn('DEM no disponible', e); }
     [L3, L2, L1, L0].forEach((L) => L && this._applyHeights(L));
     const city = await cityP;
+    await uniP;
     if (city?.b?.length) this._buildBuildings(city.b, L0 || L1, L1, L2);
     await near;
     try { this._buildTrees(L1); } catch (e) { console.warn('árboles satelitales', e); }
@@ -314,6 +319,7 @@ export class CityContext {
       for (let k = 0; k < pts.length; k++) { const p = pts[k], q = pts[(k + 1) % pts.length]; ar += p[0] * q[1] - q[0] * p[1]; }
       if (ar > 0) pts.reverse();
       let cx = 0, cz = 0; pts.forEach((p) => { cx += p[0]; cz += p[1]; }); cx /= pts.length; cz /= pts.length;
+      if (this.exclude.some((P) => inPoly(cx, cz, P))) continue;
       const g = this.heightAt(cx, cz);
       const y0 = g - 1.5, y1 = g + h;
       // muros
@@ -460,24 +466,20 @@ export class CityContext {
     }
     if (!pts.length) return;
 
-    // Arboleda de la ciudad: la imagen real del fresno (SKPTrees) girada siempre hacia la cámara,
-    // teñida suavemente con el color de la ortofoto (2 triángulos por árbol).
-    const crowns = makeTreeImpostors(pts.length);
-    const matrix = new THREE.Matrix4(), rotation = new THREE.Quaternion();
-    const scale = new THREE.Vector3(), position = new THREE.Vector3(), color = new THREE.Color();
-    const white = new THREE.Color(1, 1, 1);
-    pts.forEach(([x, z, r, g, b, variation, widthVariation, hueVariation], k) => {
-      const groundY = this.heightAt(x, z);
-      const h = 6.5 + variation * 6 + widthVariation * 2;
-      matrix.compose(position.set(x, groundY - 0.1, z), rotation, scale.set(h * (0.9 + hueVariation * 0.3), h, 1));
-      crowns.setMatrixAt(k, matrix);
-      color.setRGB(r / 255, g / 255, b / 255, THREE.SRGBColorSpace).multiplyScalar(2.2);
-      crowns.setColorAt(k, white.clone().lerp(color, 0.3));
+    // Arboleda de la ciudad: árboles 3D reales (mismas especies del SKPTrees que junto al hotel, en
+    // versión liviana) sobre cada copa detectada en la ortofoto. Antes eran imágenes planas.
+    const group = new THREE.Group(); group.name = 'CityTrees';
+    const tints = [], points = [];
+    pts.forEach(([x, z, r, g, b]) => {
+      if (this.exclude?.some((P) => inPoly(x, z, P))) return;
+      points.push([x, this.heightAt(x, z) - 0.1, z]);
+      tints.push(new THREE.Color().setRGB(r / 255, g / 255, b / 255, THREE.SRGBColorSpace).multiplyScalar(2.6));
     });
-    crowns.castShadow = false;
-    crowns.receiveShadow = false;
-    this.group.add(crowns);
-    this.trees = crowns;
+    this.realTrees = this.realTrees || new RealTrees();
+    this.realTrees.plant(points, group, { mix: ['ash', 'ash', 'celtis', 'euc', 'euc', 'celtis', 'pine', 'palm'], variants: 3, shadows: false, lod: 1, scale: 1.12, tints });
+    group.traverse((o) => { if (o.isInstancedMesh) o.receiveShadow = false; });
+    this.group.add(group);
+    this.trees = group;
   }
 
 

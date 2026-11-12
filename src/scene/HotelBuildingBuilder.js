@@ -449,17 +449,21 @@ export class HotelBuildingBuilder {
     // 3. Official Bogotá Road Network (Calzadas, Andenes, Separadores, Ciclorrutas)
     const calzadaMat = this.materials.get('ROAD_ASPHALT');
     // Asfalto real con fisuras, parcheo y desgaste (UV de ExtrudeGeometry en metros)
-    applyPBR(calzadaMat, SURFACES.ASPHALT, { metersPerTile: 5.0, tint: 0xb8b8b8, normalScale: 1.0, macro: { macroScale: 0.06, strength: 0.38 } });
+    applyPBR(calzadaMat, SURFACES.ASPHALT, { metersPerTile: 5.0, tint: 0xdcdcda, normalScale: 1.0, macro: { macroScale: 0.06, strength: 0.38 } });
     const andenMat = this.materials.get('SIDEWALK_PAVING');
     const alamedaMat = this.materials.get('TURF_GRASS');
     applyPBR(alamedaMat, SURFACES.GRASS, { metersPerTile: 2.4, tint: 0xd8e2c8, normalScale: 1.25, rough: true, macro: { macroScale: 0.045, strength: 0.35 } });
     const cicloMat = this.materials.get('BIKEWAY_BLUE');
 
-    const G = !!this.googleContext;   // con la malla de Google, las vías y el arbolado reales ya vienen en la foto
-    for (const poly of (G ? [] : urbanNetwork.calzadas || [])) {
+    // Con la malla de Google las vías reales de Catastro (calzadas, andenes, separadores) van ENCIMA de la
+    // foto satelital, un poco más gruesas para que el relieve fotogramétrico no las atraviese.
+    const G = !!this.googleContext;
+    this.roadY = G ? 0.2 : 0.04;
+    if (G) [calzadaMat, andenMat, alamedaMat, cicloMat].forEach((m) => { if (m) { m.polygonOffset = true; m.polygonOffsetFactor = -2; m.polygonOffsetUnits = -2; } });
+    for (const poly of (urbanNetwork.calzadas || [])) {
       try {
         const shape = ptsToShape(poly);
-        const geo = new THREE.ExtrudeGeometry(shape, { depth: 0.04, bevelEnabled: false });
+        const geo = new THREE.ExtrudeGeometry(shape, { depth: this.roadY, bevelEnabled: false });
         geo.rotateX(-Math.PI / 2);
         const mesh = new THREE.Mesh(geo, calzadaMat);
         mesh.position.y = 0.0;
@@ -468,10 +472,10 @@ export class HotelBuildingBuilder {
       } catch (e) {}
     }
 
-    for (const poly of (G ? [] : urbanNetwork.andenes || [])) {
+    for (const poly of (urbanNetwork.andenes || [])) {
       try {
         const shape = ptsToShape(poly);
-        const geo = new THREE.ExtrudeGeometry(shape, { depth: 0.16, bevelEnabled: false });
+        const geo = new THREE.ExtrudeGeometry(shape, { depth: this.roadY + 0.14, bevelEnabled: false });
         geo.rotateX(-Math.PI / 2);
         const mesh = new THREE.Mesh(geo, andenMat);
         mesh.position.y = 0.0;
@@ -480,10 +484,10 @@ export class HotelBuildingBuilder {
       } catch (e) {}
     }
 
-    for (const poly of (G ? [] : urbanNetwork.separadores || [])) {
+    for (const poly of (urbanNetwork.separadores || [])) {
       try {
         const shape = ptsToShape(poly);
-        const geo = new THREE.ExtrudeGeometry(shape, { depth: 0.18, bevelEnabled: false });
+        const geo = new THREE.ExtrudeGeometry(shape, { depth: this.roadY + 0.16, bevelEnabled: false });
         geo.rotateX(-Math.PI / 2);
         const mesh = new THREE.Mesh(geo, alamedaMat);
         mesh.position.y = 0.0;
@@ -492,19 +496,19 @@ export class HotelBuildingBuilder {
       } catch (e) {}
     }
 
-    for (const poly of (G ? [] : urbanNetwork.ciclorrutas || [])) {
+    for (const poly of (urbanNetwork.ciclorrutas || [])) {
       try {
         const shape = ptsToShape(poly);
         const geo = new THREE.ExtrudeGeometry(shape, { depth: 0.02, bevelEnabled: false });
         geo.rotateX(-Math.PI / 2);
         const mesh = new THREE.Mesh(geo, cicloMat);
-        mesh.position.y = 0.15;
+        mesh.position.y = this.roadY + 0.12;
         this.contextGroup.add(mesh);
       } catch (e) {}
     }
 
     // 4. Photorealistic Road Surface Markings & Signage
-    if (!G) this.buildRoadMarkings();
+    this.buildRoadMarkings();
 
     // 5. Hotel La Fontana Central Courtyard & Traditional Multi-Tier Stone Fountain (Photos 1, 2, 3)
     this.buildCourtyard(andenMat, stoneMat);
@@ -646,6 +650,7 @@ export class HotelBuildingBuilder {
     addZebra('sb', 'z', 28);
     addZebra('nb', 'z', 26);
 
+    markGroup.position.y = (this.roadY ?? 0.04) - 0.035;   // siempre sobre la calzada
     this.contextGroup.add(markGroup);
   }
 
@@ -896,8 +901,8 @@ export class HotelBuildingBuilder {
       this.updateTraffic(0);
       // Tráfico de la Calle 127 × Cra 15 con semáforos y seguimiento vehicular (sin choques)
       let k = 0;
-      const mix = ['sedan', 'suv', 'sedan', 'taxi', 'suv', 'sedan', 'taxi', 'sedan'];
-      this.traffic = new Traffic(ROAD_AXES, carGroup, () => makeCar(mix[k++ % mix.length], k));
+      const mix = ['sedan', 'suv', 'sedan', 'taxi', 'suv', 'sedan', 'taxi', 'sedan', 'suv', 'taxi', 'sedan', 'sports'];
+      this.traffic = new Traffic(ROAD_AXES, carGroup, () => makeCar(mix[k++ % mix.length], k), { y: (this.roadY ?? 0.04) - 0.02 });
     });
 
     this.contextGroup.add(carGroup);

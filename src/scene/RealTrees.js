@@ -26,10 +26,11 @@ const RECTS = {
 };
 
 export const SPECIES = {
-  ash: { kind: 'broad', leaf: 'ash', bark: 'ash', h: 9, trunkFrac: 0.42, crownR: 3.4, crownH: 5.8, branches: 8, cards: 170, card: 1.35 },
-  celtis: { kind: 'broad', leaf: 'celtis', bark: 'celtis', h: 7.5, trunkFrac: 0.38, crownR: 3.6, crownH: 4.8, branches: 7, cards: 160, card: 1.25 },
-  euc: { kind: 'broad', leaf: 'euc', bark: 'euc', h: 12, trunkFrac: 0.5, crownR: 2.8, crownH: 6.5, branches: 7, cards: 140, card: 1.6 },
-  pine: { kind: 'conifer', leaf: 'pine', bark: 'pine', h: 10, crownR: 2.6, cards: 150, card: 1.3 },
+  // copas densas: más ramilletes y algo más pequeños (follaje continuo, sin huecos de "cartas")
+  ash: { kind: 'broad', leaf: 'ash', bark: 'ash', h: 9.5, trunkFrac: 0.4, crownR: 3.6, crownH: 6.0, branches: 10, cards: 300, card: 1.2 },
+  celtis: { kind: 'broad', leaf: 'celtis', bark: 'celtis', h: 8, trunkFrac: 0.36, crownR: 3.8, crownH: 5.0, branches: 9, cards: 280, card: 1.12 },
+  euc: { kind: 'broad', leaf: 'euc', bark: 'euc', h: 13, trunkFrac: 0.48, crownR: 3.0, crownH: 7.0, branches: 9, cards: 250, card: 1.4 },
+  pine: { kind: 'conifer', leaf: 'pine', bark: 'pine', h: 11, crownR: 2.8, cards: 240, card: 1.15 },
   palm: { kind: 'palm', leaf: 'palm', bark: 'palm', h: 8.5, fronds: 15, card: 3.4 }
 };
 
@@ -262,8 +263,20 @@ export class RealTrees {
     this.leafTex.anisotropy = 8;
     this.leafMat = new THREE.MeshStandardMaterial({
       map: this.leafTex, alphaTest: 0.42, side: THREE.DoubleSide, vertexColors: true,
-      roughness: 0.78, metalness: 0, envMapIntensity: 0.6
+      roughness: 0.72, metalness: 0, envMapIntensity: 0.75
     });
+    // Translucidez de la hoja: a contraluz el sol atraviesa el follaje (verde amarillento),
+    // y las caras hacia el cielo reciben un relleno suave. Es lo que quita el aspecto "plástico".
+    this.leafMat.onBeforeCompile = (sh) => {
+      sh.fragmentShader = sh.fragmentShader.replace('#include <opaque_fragment>', `
+        #if NUM_DIR_LIGHTS > 0
+        { vec3 L = directionalLights[0].direction; vec3 V = normalize(vViewPosition);
+          float back = pow(clamp(dot(-V, L) * 0.5 + 0.5, 0.0, 1.0), 3.0);
+          outgoingLight += diffuseColor.rgb * directionalLights[0].color * vec3(0.55, 0.62, 0.22) * (0.10 + 0.55 * back); }
+        #endif
+        #include <opaque_fragment>`);
+    };
+    this.leafMat.customProgramCacheKey = () => 'hlfLeafSSS';
     applyWind(this.leafMat, { amp: 0.9, from: 1.5, to: 10 });
     this.barkMats = {};
     for (const k of ['ash', 'celtis', 'euc', 'pine', 'palm']) {
@@ -274,10 +287,12 @@ export class RealTrees {
     this.variants = {};
   }
 
-  variant(name, k) {
-    const key = `${name}_${k}`;
+  variant(name, k, lod = 0) {
+    const key = `${name}_${k}_${lod}`;
     if (!this.variants[key]) {
-      const sp = SPECIES[name];
+      let sp = SPECIES[name];
+      // LOD 1 (arbolado de la ciudad, lejos): menos ramilletes pero más grandes → misma silueta, 1/3 del costo
+      if (lod) sp = { ...sp, cards: Math.round((sp.cards || 0) * 0.32), card: sp.card * 1.7, branches: Math.max(4, Math.round((sp.branches || 6) * 0.6)), fronds: sp.fronds ? 10 : undefined };
       const seed = 17 + k * 101 + name.length * 7;
       this.variants[key] = sp.kind === 'palm' ? palm(sp, seed) : sp.kind === 'conifer' ? conifer(sp, seed) : broadleaf(sp, seed);
     }
@@ -288,25 +303,33 @@ export class RealTrees {
    * Siembra árboles en `points` ([x, y, z, especie?]) y los agrega a `group` como InstancedMesh.
    * `pick(i)` puede elegir la especie; si no, se reparte por un hash de la posición.
    */
-  plant(points, group, { mix = ['ash', 'ash', 'celtis', 'euc', 'pine', 'palm'], variants = 3, shadows = true } = {}) {
+  plant(points, group, { mix = ['ash', 'ash', 'celtis', 'euc', 'pine', 'palm'], variants = 3, shadows = true, lod = 0, scale = 1, tints = null } = {}) {
     const buckets = new Map();
     const m = new THREE.Matrix4(), q = new THREE.Quaternion(), s = new THREE.Vector3(), p = new THREE.Vector3();
+    const c = new THREE.Color(), t = new THREE.Color();
     points.forEach(([x, y, z, sp], i) => {
       const h = Math.abs(Math.sin(x * 12.9898 + z * 78.233) * 43758.5453) % 1;
       const name = sp || mix[Math.floor(h * mix.length) % mix.length];
       const k = Math.floor(((h * 7.31) % 1) * variants);
       const key = `${name}_${k}`;
-      if (!buckets.has(key)) buckets.set(key, { name, k, mats: [] });
+      if (!buckets.has(key)) buckets.set(key, { name, k, mats: [], cols: [] });
       q.setFromAxisAngle(_up, h * 6.283 * 3.1);
-      const sc = 0.82 + ((h * 13.7) % 1) * 0.36;
+      const sc = (0.82 + ((h * 13.7) % 1) * 0.36) * scale;
       m.compose(p.set(x, y, z), q, s.set(sc, sc * (0.92 + ((h * 5.3) % 1) * 0.16), sc));
       buckets.get(key).mats.push(m.clone());
+      // cada ejemplar con su propio tono (verde oliva, verde azulado, más seco…) como en un arbolado real
+      const hv = (h * 31.7) % 1, bv = (h * 57.1) % 1;
+      c.setHSL(0.22 + (hv - 0.5) * 0.07, 0.35 + 0.25 * hv, 0.5);
+      c.multiplyScalar(1.25).lerp(new THREE.Color(1, 1, 1), 0.55).multiplyScalar(0.82 + 0.3 * bv);
+      if (tints?.[i]) c.lerp(t.copy(tints[i]), 0.25);
+      buckets.get(key).cols.push(c.clone());
     });
-    for (const { name, k, mats } of buckets.values()) {
-      const v = this.variant(name, k);
+    for (const { name, k, mats, cols } of buckets.values()) {
+      const v = this.variant(name, k, lod);
       const wood = new THREE.InstancedMesh(v.wood, this.barkMats[SPECIES[name].bark], mats.length);
       const leaves = new THREE.InstancedMesh(v.leaves, this.leafMat, mats.length);
-      mats.forEach((mm, i) => { wood.setMatrixAt(i, mm); leaves.setMatrixAt(i, mm); });
+      mats.forEach((mm, i) => { wood.setMatrixAt(i, mm); leaves.setMatrixAt(i, mm); leaves.setColorAt(i, cols[i]); });
+      if (leaves.instanceColor) leaves.instanceColor.needsUpdate = true;
       wood.castShadow = leaves.castShadow = shadows;
       wood.receiveShadow = leaves.receiveShadow = true;
       wood.computeBoundingSphere(); leaves.computeBoundingSphere();

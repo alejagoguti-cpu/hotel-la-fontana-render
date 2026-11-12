@@ -60,7 +60,7 @@ export class PostFX {
 
     // Tono "render de masterplan": ACES, luminoso y saturado (como los renders de Umbra / Lumion)
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    renderer.toneMappingExposure = 0.95;
+    renderer.toneMappingExposure = 1.12;
 
     const rt = new THREE.WebGLRenderTarget(w, h, { type: THREE.HalfFloatType, samples: this.low ? 2 : 4 });
     this.composer = new EffectComposer(renderer, rt);

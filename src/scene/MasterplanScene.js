@@ -15,6 +15,7 @@ import { applyWind, windUniforms } from './Wind.js';
 import { RevitRoomFurniture, ROOM_INSTANCES } from './RevitRoomFurniture.js';
 import { MaxPiso2Loader } from './MaxPiso2Loader.js';
 import { GoogleContext } from './GoogleContext.js';
+import { Unicentro } from './Unicentro.js';
 
 export class MasterplanScene {
   constructor(container) {
@@ -103,11 +104,12 @@ export class MasterplanScene {
     sunLight.shadow.normalBias = 0.06;
     sunLight.shadow.radius = 4;
     sunLight.shadow.camera.near = 10;
-    sunLight.shadow.camera.far = 420;
-    sunLight.shadow.camera.left = -150;
-    sunLight.shadow.camera.right = 150;
-    sunLight.shadow.camera.top = 150;
-    sunLight.shadow.camera.bottom = -150;
+    // sombras hasta Unicentro y la Calle 127 (antes se cortaban a 150 m del hotel)
+    sunLight.shadow.camera.far = 520;
+    sunLight.shadow.camera.left = -230;
+    sunLight.shadow.camera.right = 230;
+    sunLight.shadow.camera.top = 230;
+    sunLight.shadow.camera.bottom = -230;
     sunLight.shadow.bias = -0.0003;
     this.sunLight = sunLight;
     this.scene.add(sunLight);
@@ -136,6 +138,8 @@ export class MasterplanScene {
     if (this.useGoogle) {
       try {
         this.city = new GoogleContext(this.scene, { renderer: this.renderer, camera: this.camera, sky: this.skyEnv, hotelFootprints: ctxBuildings.map((b) => b.pts), low: !!this.postfx?.low, mobile: /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent) });
+        // las vías reales de Catastro van encima de la foto: bajo ellas se recorta la malla de Google
+        this.city.addMask([...(urbanNetwork.calzadas || []), ...(urbanNetwork.andenes || []), ...(urbanNetwork.separadores || [])], 0.25);
         // Google solo trae la foto sobre el terreno en esta zona: los edificios reales de catastro y el arbolado van encima, en 3D
         const cc = new CityContext(this.scene, { renderer: this.renderer, mobile: /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent) });
         this.scene.remove(cc.group); this.city.group.add(cc.group);
@@ -148,6 +152,14 @@ export class MasterplanScene {
     if (this.city && this.buildingBuilder.groundPlane) this.buildingBuilder.groundPlane.visible = false;
     if (this.useGoogle && this.skyEnv?.farGround) this.skyEnv.farGround.visible = false;
     this.scene.add(building);
+
+    // Centro comercial Unicentro (huella real OSM) con sus parqueaderos llenos
+    try {
+      this.unicentro = new Unicentro(this.scene, { renderer: this.renderer, low: !!this.postfx?.low, mobile: /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent) });
+      const fit = () => this.unicentro.fitToGround(this.city?.tiles?.group);
+      if (this.useGoogle) this.unicentro.ready.then(() => { if (this.unicentro.data?.lot) this.city?.addMask?.([this.unicentro.data.lot], 0.5); });
+      if (this.useGoogle) Promise.all([this.unicentro.ready, this.city?.ready]).then(() => { fit(); setTimeout(fit, 8000); setTimeout(fit, 20000); });
+    } catch (e) { console.warn('Unicentro no disponible', e); }
 
     // 2. Interior Piso 2 — Modelo 1:1 Real exportado de Autodesk 3ds Max (hotel_la_fontana_piso_2.glb)
     // Se conserva únicamente la losa base estructural del Piso 2 y se carga el GLB completo del segundo piso
@@ -537,7 +549,7 @@ export class MasterplanScene {
       ['TREE_ROBLE', 'TREE_CHICALA', 'TREE_SAUCO', 'TREE_FLOWER_YELLOW', 'TREE_ACACIA'].forEach((k) => applyWind(this.materials.materials.get(k)));
       this._windOn = true;
     }
-    if (this.city?.trees && !this._cityWind) { applyWind(this.city.trees.material, { amp: 1.2, from: 2.0, to: 10 }); this._cityWind = true; }
+    if (this.city?.trees?.material && !this._cityWind) { applyWind(this.city.trees.material, { amp: 1.2, from: 2.0, to: 10 }); this._cityWind = true; }
     if (this.postfx) this.postfx.render(dt); else this.renderer.render(this.scene, this.camera);
   }
 }

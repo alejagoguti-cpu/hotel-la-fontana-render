@@ -123,9 +123,9 @@ export class FacadeWindows {
     const frameMat = this.plain
       ? new THREE.MeshStandardMaterial({ color: 0x2b2724, roughness: 0.5, metalness: 0.3 })
       : new THREE.MeshStandardMaterial({ color: 0xe6dfd2, roughness: 0.55, metalness: 0.05 });
-    const revealMat = new THREE.MeshStandardMaterial({ color: 0x15130f, roughness: 1 });
-    // Vidrio OPACO oscuro: nunca deja ver el ladrillo detrás; solo un reflejo suave del cielo (Fresnel)
-    const glassMat = new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.14, metalness: 0.0, envMapIntensity: 0.7 });
+    const revealMat = new THREE.MeshStandardMaterial({ color: 0x3a342e, roughness: 1 });
+    // Vidrio opaco que refleja el cielo (antes casi negro: oscurecía toda la fachada)
+    const glassMat = new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.08, metalness: 0.45, envMapIntensity: 1.6 });
     const railMat = this.materials.get('REVIT_WIN_RAILING') || new THREE.MeshStandardMaterial({ color: 0xe8ebe8 });
     const sillMat = new THREE.MeshStandardMaterial({ color: 0xc9b9a3, roughness: 0.85 });
     const planterMat = this.materials.get('REVIT_WIN_PLANTER') || new THREE.MeshStandardMaterial({ color: 0x585652 });
@@ -146,7 +146,7 @@ export class FacadeWindows {
     const m = new THREE.Matrix4(), q = new THREE.Quaternion(), s = new THREE.Vector3(), p = new THREE.Vector3();
     const up = new THREE.Vector3(0, 1, 0);
     const col = new THREE.Color();
-    const glassTints = [0x1a2125, 0x1e262a, 0x232a2d, 0x1c2023, 0x2a2724, 0x252d31]; // interiores oscuros / cortinas
+    const glassTints = [0x5d6e78, 0x66767e, 0x55646c, 0x6f7a80, 0x7a756e, 0x60707a]; // reflejo de cielo + cortinas claras
     let seed = 1;
     const rnd = () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
 
